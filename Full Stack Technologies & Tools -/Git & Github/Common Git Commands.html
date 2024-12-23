@@ -1,0 +1,214 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Common Git Commands</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Common Git Commands</h1>
+
+      <div class="ck-content">
+        <h3>Common Git Commands (Brief Explanation)</h3>
+        <p>Here are some of the most commonly used Git commands, along with brief
+          explanations:</p>
+        <p><code><strong>git init</strong></code>
+        </p>
+        <ul>
+          <li>Initializes a new Git repository in your project directory.</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git init</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git clone</strong></code>
+        </p>
+        <ul>
+          <li>Creates a copy of an existing remote Git repository on your local machine.</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git clone &lt;repository-url&gt;</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git add</strong></code>
+        </p>
+        <ul>
+          <li>Adds changes from the working directory to the staging area, preparing
+            them for a commit.</li>
+          <li>To add all changes:</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git add &lt;filename&gt;</code> &nbsp; ==&gt; to add all files &nbsp;==&gt; <code>git add .</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git commit</strong></code>
+        </p>
+        <ul>
+          <li>Saves (commits) the staged changes to the local repository with a message
+            describing the changes.</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git commit -m "Commit message"</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git status</strong></code>
+        </p>
+        <ul>
+          <li>Shows the status of changes in the working directory, including untracked,
+            modified, and staged files.</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git status</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git log</strong></code>
+        </p>
+        <ul>
+          <li>Displays a history of commits in the repository.</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git log</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git branch</strong></code>
+        </p>
+        <ul>
+          <li>Lists all branches in the repository or creates a new branch.</li>
+          <li>To list branches:</li>
+          <li>To create a new branch:</li>
+        </ul>
+        <p>#bash</p>
+        <p>to list branches :</p>
+        <p><code>git branch</code>&nbsp;</p>
+        <p>to create a new branch :</p>
+        <p><code>git branch &lt;branch-name&gt;</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git checkout</strong></code>
+        </p>
+        <ul>
+          <li>Switches to another branch or a specific commit.</li>
+          <li>To switch to a branch:</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git checkout &lt;branch-name&gt;</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git merge</strong></code>
+        </p>
+        <ul>
+          <li>Combines the changes from one branch into the current branch.</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git merge &lt;branch-name&gt;</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git pull</strong></code>
+        </p>
+        <ul>
+          <li>Fetches and merges changes from a remote repository into your local branch.</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git pull &lt;remote&gt; &lt;branch&gt;</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git push</strong></code>
+        </p>
+        <ul>
+          <li>Sends your local commits to the remote repository.</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git push &lt;remote&gt; &lt;branch&gt;</code>
+        </p>
+        <p>&nbsp;</p>
+        <p><code><strong>git remote</strong></code>
+        </p>
+        <ul>
+          <li>Manages remote repository connections.</li>
+          <li>To add a remote:</li>
+        </ul>
+        <p>#bash</p>
+        <p><code>git remote add &lt;name&gt; &lt;url&gt;</code>
+        </p>
+        <p>&nbsp;</p>
+        <p>Explaining in Arabic :-</p>
+        <p>&nbsp;</p>
+        <h3>أوامر Git الشائعة (شرح مختصر)</h3>
+        <p>إليك بعض الأوامر الأكثر استخدامًا في Git مع شرح مختصر لكل منها:</p>
+        <p><code><strong>git init</strong></code>
+        </p>
+        <ul>
+          <li>يقوم بتهيئة مستودع Git جديد في دليل مشروعك.</li>
+        </ul>
+        <p><code><strong>git clone</strong></code>
+        </p>
+        <ul>
+          <li>ينشئ نسخة من مستودع Git بعيد موجود على جهازك المحلي.</li>
+        </ul>
+        <p><code><strong>git add</strong></code>
+        </p>
+        <ul>
+          <li>يضيف التعديلات من دليل العمل إلى منطقة التحضير، مما يجهزها للالتزام.</li>
+          <li>لإضافة جميع التعديلات:</li>
+        </ul>
+        <p><code><strong>git commit</strong></code>
+        </p>
+        <ul>
+          <li>يحفظ (يلتزم) بالتعديلات المحضرة في المستودع المحلي مع رسالة تصف التعديلات.</li>
+        </ul>
+        <p><code><strong>git status</strong></code>
+        </p>
+        <ul>
+          <li>يعرض حالة التعديلات في دليل العمل، بما في ذلك الملفات غير المتعقبة، المعدلة،
+            والمحضرّة.</li>
+        </ul>
+        <p><code><strong>git log</strong></code>
+        </p>
+        <ul>
+          <li>يعرض سجل الالتزامات في المستودع.</li>
+        </ul>
+        <p><code><strong>git branch</strong></code>
+        </p>
+        <ul>
+          <li>يعرض جميع الفروع في المستودع أو ينشئ فرعًا جديدًا.</li>
+          <li>لعرض الفروع:</li>
+          <li>لإنشاء فرع جديد:</li>
+        </ul>
+        <p><code><strong>git checkout</strong></code>
+        </p>
+        <ul>
+          <li>يبدل إلى فرع آخر أو إلى التزام محدد.</li>
+          <li>للتبديل إلى فرع:</li>
+        </ul>
+        <p><code><strong>git merge</strong></code>
+        </p>
+        <ul>
+          <li>يدمج التعديلات من فرع إلى الفرع الحالي.</li>
+        </ul>
+        <p><code><strong>git pull</strong></code>
+        </p>
+        <ul>
+          <li>يجلب ويدمج التعديلات من مستودع بعيد إلى فرعك المحلي.</li>
+        </ul>
+        <p><code><strong>git push</strong></code>
+        </p>
+        <ul>
+          <li>يرسل التزاماتك المحلية إلى المستودع البعيد.</li>
+        </ul>
+        <p><code><strong>git remote</strong></code>
+        </p>
+        <ul>
+          <li>يدير اتصالات المستودعات البعيدة.</li>
+          <li>لإضافة مستودع بعيد:</li>
+        </ul>
+        <p>هذه الأوامر هي الأساس للعمل مع Git وإدارة الشيفرة البرمجية بفعالية عبر
+          المستودعات المحلية والبعيدة.</p>
+      </div>
+    </div>
+  </body>
+
+</html>

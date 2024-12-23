@@ -1,0 +1,126 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Angular DOM</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Angular DOM</h1>
+
+      <div class="ck-content">
+        <p>I'll explain the key concepts about Angular's abstraction over the DOM
+          and cover important topics that are often missed.</p>
+        <p>&nbsp;</p>
+        <p>Angular DOM Concepts and Missed Topics</p>
+        <p>Click to open code</p>
+        <p>Here are the key topics and concepts that are often missed in Angular,
+          along with their importance:</p>
+        <ol>
+          <li>DOM Abstraction Layer</li>
+        </ol>
+        <ul>
+          <li>Use Renderer2 instead of direct DOM manipulation</li>
+          <li>Benefits: Platform independence, security, server-side rendering support</li>
+          <li>Key methods: createElement, setStyle, addClass, appendChild</li>
+        </ul>
+        <ol start="2">
+          <li>Important Missing Topics:</li>
+        </ol>
+        <p>a) Performance Optimization:</p>
+        <ul>
+          <li>ChangeDetectionStrategy.OnPush</li>
+          <li>TrackBy with ngFor</li>
+          <li>Pure and Impure Pipes</li>
+          <li>Lazy Loading</li>
+          <li>Preloading Strategies</li>
+        </ul>
+        <p>b) Advanced Component Patterns:</p>
+        <ul>
+          <li>Smart vs Presentational Components</li>
+          <li>Component Composition</li>
+          <li>Dynamic Components</li>
+          <li>Custom Structural Directives</li>
+        </ul>
+        <p>c) RxJS Advanced Concepts:</p>
+        <ul>
+          <li>Higher-order Mapping Operators</li>
+          <li>Custom Operators</li>
+          <li>Subscription Management</li>
+          <li>Error Handling Strategies</li>
+        </ul>
+        <p>d) Advanced Forms:</p>
+        <ul>
+          <li>Custom Form Controls</li>
+          <li>Dynamic Form Generation</li>
+          <li>Complex Validation Scenarios</li>
+          <li>Form Arrays and Nested Forms</li>
+        </ul>
+        <p>e) Security:</p>
+        <ul>
+          <li>Content Security Policy</li>
+          <li>XSS Prevention</li>
+          <li>XSRF/CSRF Protection</li>
+          <li>Safe Pipes</li>
+        </ul>
+        <p>f) Testing:</p>
+        <ul>
+          <li>Component Integration Tests</li>
+          <li>Async Testing</li>
+          <li>E2E Testing with Protractor/Cypress</li>
+          <li>Test Doubles (Spies, Stubs)</li>
+        </ul>
+        <ol start="3">
+          <li>Instead of HTML DOM, Angular provides:</li>
+        </ol>
+        <figure class="table">
+          <table>
+            <thead>
+              <tr>
+                <th>HTML DOM</th>
+                <th>Angular Alternative</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>getElementById</td>
+                <td>@ViewChild</td>
+              </tr>
+              <tr>
+                <td>querySelector</td>
+                <td>ElementRef</td>
+              </tr>
+              <tr>
+                <td>addEventListener</td>
+                <td>@HostListener</td>
+              </tr>
+              <tr>
+                <td>innerHTML</td>
+                <td>[innerHTML] binding</td>
+              </tr>
+              <tr>
+                <td>classList.add</td>
+                <td>Renderer2.addClass</td>
+              </tr>
+              <tr>
+                <td>style.property</td>
+                <td>[ngStyle]</td>
+              </tr>
+              <tr>
+                <td>createElement</td>
+                <td>Renderer2.createElement</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <p>Would you like me to elaborate on any of these topics or provide more
+          specific examples for any particular area?</p>
+      </div>
+    </div>
+  </body>
+
+</html>

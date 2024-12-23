@@ -1,0 +1,142 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Interceptors</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Interceptors</h1>
+
+      <div class="ck-content">
+        <p># Header Interceptor for token :-</p>
+        <p>Interceptors :-</p>
+        <p>&nbsp;</p>
+        <p>1- header interceptor that includes httpclient token :</p>
+        <p><span style="color:#00bff9;"><i>xport</i></span><span style="color:#c792ea;"><i> </i></span>
+          <span
+          style="color:#00bff9;"><i>const</i>
+            </span><span style="color:#c792ea;"><i> </i></span><span style="color:#87aff4;"><i>headerInterceptor</i></span>
+            <span
+            style="color:#00bff9;"><i>:</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#d29ffc;"><i>HttpInterceptorFn</i></span>
+              <span
+              style="color:#c792ea;"><i> </i>
+                </span><span style="color:#00bff9;"><i>=</i></span><span style="color:#c792ea;"><i> (</i></span>
+                <span
+                style="color:#d7dbe0;">req</span><span style="color:#c792ea;"><i>, </i></span><span style="color:#d7dbe0;">next</span>
+                  <span
+                  style="color:#c792ea;"><i>) </i>
+                    </span><span style="color:#00bff9;"><i>=&gt;</i></span><span style="color:#c792ea;"><i> </i></span>
+                    <span
+                    style="color:#ffffff;"><i>{</i>
+                      </span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; </i></span><span style="color:#00bff9;"><i>const</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#92b6f4;"><i>_PLATFORM_ID</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#87aff4;"><i>inject</i></span>
+              <span
+              style="color:#c792ea;"><i>(</i>
+                </span><span style="color:#92b6f4;"><i>PLATFORM_ID</i></span><span style="color:#c792ea;"><i>);</i></span>
+        </p>
+        <p>&nbsp;</p>
+        <p><span style="color:#c792ea;"><i>&nbsp; </i></span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#c792ea;"><i> (</i>
+            </span><span style="color:#87aff4;"><i>isPlatformBrowser</i></span><span style="color:#c792ea;"><i>(</i></span>
+            <span
+            style="color:#d6deeb;"><i>_PLATFORM_ID</i>
+              </span><span style="color:#c792ea;"><i>)) </i></span><span style="color:#ffffff;"><i>{</i></span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp;&nbsp;</i></span><span style="color:#999999;"><i>// Req --- send header Req (SSR)</i></span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp;&nbsp;</i></span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#c792ea;"><i> (</i>
+            </span><span style="color:#d6deeb;"><i>localStorage</i></span><span style="color:#c792ea;"><i>.</i></span>
+            <span
+            style="color:#87aff4;"><i>getItem</i>
+              </span><span style="color:#c792ea;"><i>(</i></span><span style="color:#6bff81;">'</span>
+              <span
+              style="color:#bcf0c0;">socialToken</span><span style="color:#6bff81;">'</span><span style="color:#c792ea;"><i>) </i></span>
+                <span
+                style="color:#00bff9;"><i>!==</i>
+                  </span><span style="color:#c792ea;"><i> </i></span><span style="color:#92b6f4;"><i>null</i></span>
+                  <span
+                  style="color:#c792ea;"><i>) </i>
+                    </span><span style="color:#ffffff;"><i>{</i></span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp; &nbsp;&nbsp;</i></span>
+          <span
+          style="color:#d6deeb;"><i>req</i>
+            </span><span style="color:#c792ea;"><i> </i></span><span style="color:#00bff9;"><i>=</i></span>
+            <span
+            style="color:#c792ea;"><i> </i>
+              </span><span style="color:#d6deeb;"><i>req</i></span><span style="color:#c792ea;"><i>.</i></span>
+              <span
+              style="color:#87aff4;"><i>clone</i>
+                </span><span style="color:#c792ea;"><i>(</i></span><span style="color:#ffffff;"><i>{</i></span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp; &nbsp; &nbsp; setHeaders: </i></span>
+          <span
+          style="color:#ffffff;"><i>{</i>
+            </span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; token: </i></span>
+          <span
+          style="color:#d6deeb;"><i>localStorage</i>
+            </span><span style="color:#c792ea;"><i>.</i></span><span style="color:#87aff4;"><i>getItem</i></span>
+            <span
+            style="color:#c792ea;"><i>(</i>
+              </span><span style="color:#6bff81;">'</span><span style="color:#bcf0c0;">socialToken</span>
+              <span
+              style="color:#6bff81;">'</span><span style="color:#c792ea;"><i>)</i></span><span style="color:#00bff9;"><i>!</i></span>
+                <span
+                style="color:#c792ea;"><i>,</i>
+                  </span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</i></span>
+          <span
+          style="color:#ffffff;"><i>}</i>
+            </span><span style="color:#c792ea;"><i>,</i></span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp; &nbsp;&nbsp;</i></span>
+          <span
+          style="color:#ffffff;"><i>}</i>
+            </span><span style="color:#c792ea;"><i>);</i></span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp;&nbsp;</i></span><span style="color:#ffffff;"><i>}</i></span>
+        </p>
+        <p><span style="color:#c792ea;"><i>&nbsp; </i></span><span style="color:#ffffff;"><i>}</i></span>
+        </p>
+        <p>&nbsp;</p>
+        <p><span style="color:#c792ea;"><i>&nbsp; </i></span><span style="color:#00bff9;"><i>return</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#87aff4;"><i>next</i></span><span style="color:#c792ea;"><i>(</i></span>
+            <span
+            style="color:#d6deeb;"><i>req</i>
+              </span><span style="color:#c792ea;"><i>);</i></span>
+        </p>
+        <p><span style="color:#ffffff;"><i>}</i></span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">don't forget to add this to the app.config.ts&nbsp;<i> &nbsp; &nbsp;</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;"><i>provideHttpClient(withFetch(), withInterceptors([headerInterceptor]))</i></span>
+        </p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

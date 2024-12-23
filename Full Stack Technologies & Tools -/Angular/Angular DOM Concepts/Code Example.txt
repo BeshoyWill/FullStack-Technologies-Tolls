@@ -1,0 +1,136 @@
+// 1. Renderer2 instead of direct DOM manipulation
+import { Component, Renderer2, ElementRef } from '@angular/core';
+
+@Component({
+ selector: 'app-renderer-example',
+ template: `<div #myDiv>Hello</div>`
+})
+export class RendererExampleComponent {
+ constructor(
+   private renderer: Renderer2,
+   private el: ElementRef
+ ) {}
+
+ // Instead of element.style.color = 'red'
+ changeColor() {
+   const div = this.el.nativeElement.querySelector('div');
+   this.renderer.setStyle(div, 'color', 'red');
+ }
+
+ // Instead of element.classList.add('active')
+ addClass() {
+   const div = this.el.nativeElement.querySelector('div');
+   this.renderer.addClass(div, 'active');
+ }
+
+ // Instead of createElement
+ createNewElement() {
+   const newDiv = this.renderer.createElement('div');
+   const text = this.renderer.createText('New Element');
+   this.renderer.appendChild(newDiv, text);
+   this.renderer.appendChild(this.el.nativeElement, newDiv);
+ }
+}
+
+// 2. ViewChild and ElementRef instead of querySelector
+@Component({
+ selector: 'app-view-child',
+ template: `
+   <div #myElement>Target Element</div>
+   <button (click)="modifyElement()">Modify</button>
+ `
+})
+export class ViewChildComponent {
+ @ViewChild('myElement') myElement!: ElementRef;
+
+ modifyElement() {
+   // Safe DOM access through ElementRef
+   this.myElement.nativeElement.textContent = 'Modified';
+ }
+}
+
+// 3. HostListener for event handling
+@Component({
+ selector: 'app-host-listener',
+ template: `<div>Hover over me</div>`
+})
+export class HostListenerComponent {
+ @HostListener('mouseover')
+ onMouseOver() {
+   console.log('Mouse over detected');
+ }
+
+ @HostListener('window:resize', ['$event'])
+ onResize(event: Event) {
+   console.log('Window resized');
+ }
+}
+
+// 4. Template Reference Variables
+@Component({
+ selector: 'app-template-ref',
+ template: `
+   <input #myInput type="text">
+   <button (click)="logValue(myInput.value)">Log Value</button>
+ `
+})
+export class TemplateRefComponent {
+ logValue(value: string) {
+   console.log(value);
+ }
+}
+
+// 5. Content Projection (ng-content)
+@Component({
+ selector: 'app-content-projection',
+ template: `
+   <div class="card">
+     <ng-content select="[header]"></ng-content>
+     <ng-content></ng-content>
+     <ng-content select="[footer]"></ng-content>
+   </div>
+ `
+})
+export class ContentProjectionComponent {}
+
+// Usage:
+/* 
+<app-content-projection>
+ <h2 header>Card Title</h2>
+ <p>Main content</p>
+ <div footer>Footer content</div>
+</app-content-projection>
+*/
+
+// 6. ViewEncapsulation
+@Component({
+ selector: 'app-encapsulation',
+ template: `<div class="special">Encapsulated styles</div>`,
+ styles: ['.special { color: blue; }'],
+ encapsulation: ViewEncapsulation.Emulated // Default
+})
+export class EncapsulationComponent {}
+
+// 7. ChangeDetection Strategies
+@Component({
+ selector: 'app-performance',
+ template: `<div>{{ data }}</div>`,
+ changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class PerformanceComponent {
+ @Input() data: string;
+}
+
+// 8. Dynamic Components
+@Component({
+ selector: 'app-dynamic',
+ template: `<ng-template #container></ng-template>`
+})
+export class DynamicComponent {
+ @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
+
+ loadComponent() {
+   const componentRef = this.container.createComponent(DynamicChildComponent);
+   componentRef.instance.data = 'Dynamic Data';
+ }
+}

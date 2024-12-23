@@ -1,0 +1,129 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Git Architecture</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Git Architecture</h1>
+
+      <div class="ck-content">
+        <h3>Git Architecture (Brief Explanation)</h3>
+        <p>Git’s architecture is built around a distributed version control system
+          that efficiently tracks changes in code. It’s composed of several core
+          components and concepts:</p>
+        <h3>1. <strong>Repository (Repo)</strong></h3>
+        <p>The repository is the heart of Git, where all versions of your project
+          files are stored. It consists of two types:</p>
+        <ul>
+          <li><strong>Local repository</strong>: Stored on your local machine, where
+            you make changes, commits, and manage versions.</li>
+          <li><strong>Remote repository</strong>: Hosted on a server (like GitHub or
+            GitLab) for collaboration with others.</li>
+        </ul>
+        <h3>2. <strong>Working Directory</strong></h3>
+        <p>This is the directory on your local machine where you actively work on
+          your project. It contains the actual files and folders you’re editing.</p>
+        <h3>3. <strong>Staging Area (Index)</strong></h3>
+        <p>The staging area is a temporary space where you gather changes before
+          committing them to the repository. When you use <code>git add</code>, changes
+          move from the working directory to the staging area, allowing you to prepare
+          a commit.</p>
+        <h3>4. <strong>Commit</strong></h3>
+        <p>A commit is a snapshot of your project at a particular point in time.
+          It includes the changes staged and a unique identifier (hash) to track
+          it. Commits are like save points that allow you to track and restore previous
+          versions.</p>
+        <h3>5. <strong>Branches</strong></h3>
+        <p>Git uses branches to manage different versions of the code. The default
+          branch is usually <code>main</code> or <code>master</code>, and you can create
+          other branches (e.g., for new features or bug fixes) and merge them later.</p>
+        <h3>6. <strong>Git Object Model</strong></h3>
+        <p>Git stores data as objects in three main types:</p>
+        <ul>
+          <li><strong>Blob</strong>: Stores file contents.</li>
+          <li><strong>Tree</strong>: Represents a directory and links to blobs and other
+            trees.</li>
+          <li><strong>Commit</strong>: Contains metadata (author, date, message) and
+            links to trees, representing the project state at a specific time.</li>
+        </ul>
+        <h3>7. <strong>HEAD</strong></h3>
+        <p>The <code>HEAD</code> is a reference that points to the current commit or
+          branch you’re working on. It helps Git know what version of the project
+          is active in the working directory.</p>
+        <h3>Git Workflow:</h3>
+        <ol>
+          <li><strong>Modify files</strong> in the working directory.</li>
+          <li><strong>Stage changes</strong> with <code>git add</code>, moving them to
+            the staging area.</li>
+          <li><strong>Commit the changes</strong> with <code>git commit</code>, creating
+            a snapshot in the local repository.</li>
+          <li><strong>Push</strong> the changes to the remote repository with <code>git push</code> to
+            share them with others.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <p>Explaining in Arabic :-</p>
+        <p>&nbsp;</p>
+        <h3>شرح معمارية Git</h3>
+        <p>معمارية Git مبنية حول نظام تحكم بالإصدارات الموزعة (Distributed Version
+          Control System) الذي يتابع التغييرات في الشيفرة البرمجية بشكل فعال. وتتكون
+          من عدة مكونات أساسية ومفاهيم:</p>
+        <h3>1. <strong>المستودع (Repository)</strong></h3>
+        <p>المستودع هو الأساس في Git، حيث يتم تخزين جميع إصدارات ملفات المشروع. يتكون
+          من نوعين:</p>
+        <ul>
+          <li><strong>المستودع المحلي (Local Repository)</strong>: يتم تخزينه على جهازك
+            المحلي، حيث تقوم بإجراء التعديلات، الالتزامات (commits)، وإدارة الإصدارات.</li>
+          <li><strong>المستودع البعيد (Remote Repository)</strong>: يتم استضافته على
+            خادم (مثل GitHub أو GitLab) لتسهيل التعاون مع الآخرين.</li>
+        </ul>
+        <h3>2. <strong>الدليل العامل (Working Directory)</strong></h3>
+        <p>هذا هو المجلد الموجود على جهازك المحلي الذي تعمل فيه على المشروع. يحتوي
+          على الملفات والمجلدات التي تقوم بتحريرها وتعديلها بشكل مباشر.</p>
+        <h3>3. <strong>منطقة التحضير (Staging Area)</strong></h3>
+        <p>منطقة التحضير هي مساحة مؤقتة يتم فيها جمع التعديلات قبل الالتزام بها في
+          المستودع. عندما تستخدم الأمر <code>git add</code>، تنتقل التعديلات من الدليل
+          العامل إلى منطقة التحضير، مما يسمح لك بتجهيز التعديلات قبل الالتزام بها.</p>
+        <h3>4. <strong>الالتزام (Commit)</strong></h3>
+        <p>الالتزام هو لقطة لحالة المشروع في نقطة زمنية معينة. يتضمن التعديلات التي
+          تم إعدادها في منطقة التحضير ومعرفًا فريدًا (hash) لتتبع التعديل. يُعتبر
+          الالتزام كـ "نقطة حفظ" يمكن العودة إليها لاحقًا.</p>
+        <h3>5. <strong>الفروع (Branches)</strong></h3>
+        <p>Git يستخدم الفروع لإدارة النسخ المختلفة من الشيفرة. الفرع الافتراضي يكون
+          عادةً <code>main</code> أو <code>master</code>، ويمكنك إنشاء فروع أخرى (مثلًا
+          للعمل على ميزات جديدة أو لإصلاح الأخطاء) ثم دمجها لاحقًا.</p>
+        <h3>6. <strong>نموذج الكائنات في Git (Git Object Model)</strong></h3>
+        <p>Git يخزن البيانات ككائنات بثلاثة أنواع رئيسية:</p>
+        <ul>
+          <li><strong>Blob</strong>: يخزن محتوى الملفات.</li>
+          <li><strong>Tree</strong>: يمثل المجلدات ويربطها بـ blobs وأشجار أخرى.</li>
+          <li><strong>Commit</strong>: يحتوي على البيانات الوصفية (مثل المؤلف، التاريخ،
+            الرسالة) ويرتبط بالأشجار التي تمثل حالة المشروع في وقت معين.</li>
+        </ul>
+        <h3>7. <strong>الرأس (HEAD)</strong></h3>
+        <p><code>HEAD</code> هو مرجع يشير إلى الالتزام أو الفرع الحالي الذي تعمل عليه.
+          يساعد Git في معرفة أي نسخة من المشروع نشطة في الدليل العامل.</p>
+        <h3>سير العمل في Git:</h3>
+        <ol>
+          <li><strong>تعديل الملفات</strong> في الدليل العامل.</li>
+          <li><strong>تحضير التعديلات</strong> باستخدام <code>git add</code>، لنقلها إلى
+            منطقة التحضير.</li>
+          <li><strong>الالتزام بالتعديلات</strong> باستخدام <code>git commit</code>، لإنشاء
+            لقطة في المستودع المحلي.</li>
+          <li><strong>دفع التعديلات</strong> إلى المستودع البعيد باستخدام <code>git push</code> لمشاركتها
+            مع الآخرين.</li>
+        </ol>
+        <p>باختصار، تعتمد معمارية Git على المستودع المحلي، الدليل العامل، منطقة التحضير،
+          والالتزامات، وكلها تعمل معًا لمساعدتك على إدارة إصدارات المشروع بشكل فعال.
+          نظام Git الموزع يسمح لعدة مطورين بالعمل في نفس الوقت، حيث يمتلك كل مطور
+          نسخة كاملة من تاريخ المشروع.</p>
+      </div>
+    </div>
+  </body>
+
+</html>

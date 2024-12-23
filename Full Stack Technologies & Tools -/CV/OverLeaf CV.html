@@ -1,0 +1,281 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>OverLeaf CV</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>OverLeaf CV</h1>
+
+      <div class="ck-content">
+        <p>%%%%
+          <br>% MTecknology's Resume
+          <br>%%%%
+          <br>% Author: Michael Lustfield
+          <br>% License: CC-BY-4
+          <br>% - https://creativecommons.org/licenses/by/4.0/legalcode.txt
+          <br>%%%%</p>
+        <p>\documentclass[letterpaper,10pt]{article}
+          <br>%%%%%%%%%%%%%%%%%%%%%%%
+          <br>%% BEGIN_FILE: mteck.sty
+          <br>%% NOTE: Everything between here and END_FILE can
+          <br>%% be relocated to "mteck.sty" and then included with:
+          <br>%\usepackage{mteck}</p>
+        <p>% Dependencies
+          <br>% NOTE: Some packages (lastpage, hyperref) require second build!
+          <br>\usepackage[empty]{fullpage}
+          <br>\usepackage{titlesec}
+          <br>\usepackage{enumitem}
+          <br>\usepackage[hidelinks]{hyperref}
+          <br>\usepackage{fancyhdr}
+          <br>\usepackage{fontawesome5}
+          <br>\usepackage{multicol}
+          <br>\usepackage{bookmark}
+          <br>\usepackage{lastpage}</p>
+        <p>% Sans-Serif
+          <br>%\usepackage[sfdefault]{FiraSans}
+          <br>%\usepackage[sfdefault]{roboto}
+          <br>%\usepackage[sfdefault]{noto-sans}
+          <br>%\usepackage[default]{sourcesanspro}</p>
+        <p>% Serif
+          <br>\usepackage{CormorantGaramond}
+          <br>\usepackage{charter}</p>
+        <p>% Colors
+          <br>% Use with \color{Name}
+          <br>% Can wrap entire heading with {\color{accent} [...] }
+          <br>\usepackage{xcolor}
+          <br>\definecolor{accentTitle}{HTML}{0e6e55}
+          <br>\definecolor{accentText}{HTML}{0e6e55}
+          <br>\definecolor{accentLine}{HTML}{a16f0b}</p>
+        <p>% Misc. Options
+          <br>\pagestyle{fancy}
+          <br>\fancyhf{}
+          <br>\fancyfoot{}
+          <br>\renewcommand{\headrulewidth}{0pt}
+          <br>\renewcommand{\footrulewidth}{0pt}
+          <br>\urlstyle{same}</p>
+        <p>% Adjust Margins
+          <br>\addtolength{\oddsidemargin}{-0.7in}
+          <br>\addtolength{\evensidemargin}{-0.5in}
+          <br>\addtolength{\textwidth}{1.19in}
+          <br>\addtolength{\topmargin}{-0.7in}
+          <br>\addtolength{\textheight}{1.4in}</p>
+        <p>\setlength{\multicolsep}{-3.0pt}
+          <br>\setlength{\columnsep}{-1pt}
+          <br>\setlength{\tabcolsep}{0pt}
+          <br>\setlength{\footskip}{3.7pt}
+          <br>\raggedbottom
+          <br>\raggedright</p>
+        <p>% ATS Readability
+          <br>\input{glyphtounicode}
+          <br>\pdfgentounicode=1</p>
+        <p>%-----------------%
+          <br>% Custom Commands %
+          <br>%-----------------%</p>
+        <p>% Centered title along with subtitle between HR
+          <br>% Usage: \documentTitle{Name}{Details}
+          <br>\newcommand{\documentTitle}[2]{
+          <br>&nbsp;\begin{center}
+          <br>&nbsp; &nbsp;{\Huge\color{accentTitle} #1}
+          <br>&nbsp; &nbsp;\vspace{10pt}
+          <br>&nbsp; &nbsp;{\color{accentLine} \hrule}
+          <br>&nbsp; &nbsp;\vspace{2pt}
+          <br>&nbsp; &nbsp;%{\footnotesize\color{accentTitle} #2}
+          <br>&nbsp; &nbsp;\footnotesize{#2}
+          <br>&nbsp; &nbsp;\vspace{2pt}
+          <br>&nbsp; &nbsp;{\color{accentLine} \hrule}
+          <br>&nbsp;\end{center}
+          <br>}</p>
+        <p>% Create a footer with correct padding
+          <br>% Usage: \documentFooter{\thepage of X}
+          <br>\newcommand{\documentFooter}[1]{
+          <br>&nbsp;\setlength{\footskip}{10.25pt}
+          <br>&nbsp;\fancyfoot[C]{\footnotesize #1}
+          <br>}</p>
+        <p>% Simple wrapper to set up page numbering
+          <br>% Usage: \numberedPages
+          <br>% WARNING: Must run pdflatex twice!
+          <br>\newcommand{\numberedPages}{
+          <br>&nbsp;\documentFooter{\thepage/\pageref{LastPage}}
+          <br>}</p>
+        <p>% Section heading with horizontal rule
+          <br>% Usage: \section{Title}
+          <br>\titleformat{\section}{
+          <br>&nbsp;\vspace{-5pt}
+          <br>&nbsp;\color{accentText}
+          <br>&nbsp;\raggedright\large\bfseries
+          <br>}{}{0em}{}[\color{accentLine}\titlerule]</p>
+        <p>% Section heading with separator and content on same line
+          <br>% Usage: \tinysection{Title}
+          <br>\newcommand{\tinysection}[1]{
+          <br>&nbsp;\phantomsection
+          <br>&nbsp;\addcontentsline{toc}{section}{#1}
+          <br>&nbsp;{\large{\bfseries\color{accentText}#1} {\color{accentLine} |}}
+          <br>}</p>
+        <p>% Indented line with arguments left/right aligned in document
+          <br>% Usage: \heading{Left}{Right}
+          <br>\newcommand{\heading}[2]{
+          <br>&nbsp;\hspace{10pt}#1\hfill#2\\
+          <br>}</p>
+        <p>% Adds \textbf to \heading
+          <br>\newcommand{\headingBf}[2]{
+          <br>&nbsp;\heading{\textbf{#1}}{\textbf{#2}}
+          <br>}</p>
+        <p>% Adds \textit to \heading
+          <br>\newcommand{\headingIt}[2]{
+          <br>&nbsp;\heading{\textit{#1}}{\textit{#2}}
+          <br>}</p>
+        <p>% Template for itemized lists
+          <br>% Usage: \begin{resume_list} [items] \end{resume_list}
+          <br>\newenvironment{resume_list}{
+          <br>&nbsp;\vspace{-7pt}
+          <br>&nbsp;\begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
+          <br>}{
+          <br>&nbsp;\end{itemize}
+          <br>&nbsp;%\vspace{-2pt}
+          <br>}</p>
+        <p>% Formats an item to use as an itemized title
+          <br>% Usage: \itemTitle{Title}
+          <br>\newcommand{\itemTitle}[1]{
+          <br>&nbsp;\item[] \underline{#1}\vspace{4pt}
+          <br>}</p>
+        <p>% Bullets used in itemized lists
+          <br>\renewcommand\labelitemi{--}</p>
+        <p>%% END_FILE: mteck.sty
+          <br>%%%%%%%%%%%%%%%%%%%%%%</p>
+        <p>
+          <br>%===================%
+          <br>% John Doe's Resume %
+          <br>%===================%</p>
+        <p>%\numberedPages % NOTE: lastpage requires a second build
+          <br>%\documentFooter{\thepage of 2} % Does similar without using lastpage
+          <br>\begin{document}</p>
+        <p>&nbsp;%---------%
+          <br>&nbsp;% Heading %
+          <br>&nbsp;%---------%</p>
+        <p>&nbsp;\documentTitle{Beshoy William}{
+          <br>&nbsp; &nbsp;% Web Version
+          <br>&nbsp; &nbsp;%\raisebox{-0.05\height} \faPhone\ [redacted - web copy]
+          ~
+          <br>&nbsp; &nbsp;%\raisebox{-0.15\height} \faEnvelope\ [redacted - web copy]
+          ~
+          <br>&nbsp; &nbsp;%%
+          <br>&nbsp; &nbsp;\href{https://api.whatsapp.com/send/?phone=201280201069&amp;text&amp;type=phone_number&amp;app_absent=0}{
+          <br>&nbsp; &nbsp; &nbsp;\raisebox{-0.05\height} \faPhone\ +20 128-020-1096}
+          ~ | ~
+          <br>&nbsp; &nbsp;\href{mailto:beshoy.eins@gmail.com }{
+          <br>&nbsp; &nbsp; &nbsp;\raisebox{-0.15\height} \faEnvelope\ \href{mailto:beshoy.eins@gmail.com}{beshoy.eins@gmail.com
+          } } ~ | ~
+          <br>&nbsp; &nbsp;\href{https://www.linkedin.com/in/beshoy-william-94775730a/}{
+          <br>&nbsp; &nbsp; &nbsp;\raisebox{-0.15\height} \faLinkedin\ linkedin} ~ |
+          ~
+          <br>&nbsp; &nbsp;\href{https://github.com/USER}{
+          <br>&nbsp; &nbsp; &nbsp;\raisebox{-0.15\height} \faGithub\ \href{https://github.com/BeshoyWill}{Github}
+          }
+          <br>&nbsp;}</p>
+        <p>&nbsp;%---------%
+          <br>&nbsp;% Summary %
+          <br>&nbsp;%---------%</p>
+        <p>&nbsp;\tinysection{Summary}
+          <br>&nbsp;Passionate about building interactive web applications using HTML5,
+          JavaScript, and Angular, with a focus on responsive design and smooth client-side
+          functionality.</p>
+        <p>&nbsp;%--------%
+          <br>&nbsp;% Skills %
+          <br>&nbsp;%--------%</p>
+        <p>&nbsp;\section{Skills}</p>
+        <p>&nbsp;\noindent\textbf{Proficient in:} HTML, CSS, Sass, JavaScript, Angular,
+          TypeScript, Git, GitHub</p>
+        <p>\vspace{2px}
+          <br>\noindent\textbf{Familiar With:} Bootstrap, Tailwind CSS, HTML5 Canvas,
+          jQuery, Gulp, Jest</p>
+        <p>\vspace{2px}
+          <br>\noindent\textbf{Currently Learning:} C\#, .NET, SQL Server, MySQL, Docker</p>
+        <p>\vspace{2px}
+          <br>\noindent\textbf{Languages:} Arabic (Native), English (B2), German (A2)</p>
+        <p>
+          <br>&nbsp;%------------%
+          <br>&nbsp;% Experience %
+          <br>&nbsp;%------------%</p>
+        <p>&nbsp;\section{Experience}</p>
+        <p>&nbsp;\headingBf{Interactive Portfolio Website for Photographer, Freelance
+          }{July. . 2024 }
+          <br>&nbsp;\begin{resume_list}
+          <br>&nbsp;\item Created an interactive portfolio website for a photographer,
+          utilizing HTML, CSS, Bootstrap, and JavaScript. Designed and implemented
+          a visually appealing and responsive layout to showcase the photographer's
+          work effectively. Integrated interactive features, such as image sliders
+          and lightbox galleries, to enhance user engagement and provide a seamless
+          browsing experience.&nbsp;
+          <br>\end{resume_list}
+          <br>&nbsp;\headingBf{Interactive E-Commerce Website\href{https://beshoywill.github.io/angular-ecommerce/}{}}{Nov.
+          2021 &nbsp;-- May. 2022}
+          <br>&nbsp;\headingIt{Faculty Graduation Project}{}
+          <br>&nbsp;\begin{resume_list}
+          <br>&nbsp; &nbsp;\item Developed an interactive e-commerce website using C\#
+          with ASP.NET Core for the backend. Implemented secure authentication and
+          authorization systems to manage user accounts. Designed and built a dynamic,
+          responsive front-end with HTML, CSS, and Bootstrap, integrating JavaScript
+          for interactive features. Included functionalities such as product management,
+          shopping cart, and checkout processes, ensuring a seamless and engaging
+          shopping experience.&nbsp;
+          <br>&nbsp;\end{resume_list}</p>
+        <p>&nbsp;%-----------%
+          <br>&nbsp;% Education %
+          <br>&nbsp;%-----------%</p>
+        <p>&nbsp;\section{Education}</p>
+        <p>&nbsp;\headingBf{Beni-Suef University}{Sep 2018 -- May 2022} % Note: Adding
+          year(s) exposes an implied age
+          <br>&nbsp;\headingIt{Bachelor of Computers and artificial intelligence}{}
+          <br>&nbsp;\headingIt{· Major in IT}{}
+          <br>&nbsp;\headingIt{· Grade: very good}{}</p>
+        <p>&nbsp;\vspace{5pt}
+          <br>&nbsp;\headingBf{Front-End Web Development - Route &nbsp;}{Mar 2024 --
+          Sep 2024}
+          <br>&nbsp;\headingIt{· Learned Front-End Web Development with a focus on building
+          dynamic and interactive client-side applications.&nbsp;
+          <br>}{}</p>
+        <p>&nbsp;%----------------------------%
+          <br>&nbsp;% Extracurricular Activities %
+          <br>&nbsp;%----------------------------%</p>
+        <p>&nbsp;\section{Projects}</p>
+        <p>&nbsp;\headingBf{FREETOGAME}{Aug 2024 }
+          <br>&nbsp;\begin{resume_list}
+          <br>&nbsp; &nbsp;\item Designed and Developed platform for accessing free
+          games \href{https://beshoywill.github.io/FreeToGame/}{"FreeToGame"}\textbf{.
+          }The design focuses on simplicity and user-friendliness. (05/2024)
+          <br>&nbsp;\end{resume_list}
+          <br>&nbsp;
+          <br>&nbsp;\headingBf{YUMMY}{May 2024 }
+          <br>&nbsp;\begin{resume_list}
+          <br>&nbsp; &nbsp;\item Designed and Developed to offer an easy-to-use interface
+          \href{https://beshoywill.github.io/Yummy/}{"Yummy"} for exploring meals,
+          with search options by categories, areas, and ingredients. (05/2024)
+          <br>&nbsp;\end{resume_list}</p>
+        <p>&nbsp;\headingBf{FRESHCART}{Sep 2024}
+          <br>&nbsp;\begin{resume_list}
+          <br>&nbsp; &nbsp;\item Designed and developed a robust eCommerce website \href{https://beshoywill.github.io/angular-ecommerce/}{"FreshCart"}
+          using Angular, delivering a seamless and responsive user experience. (07/2024)</p>
+        <p>&nbsp;\end{resume_list}
+          <br>&nbsp;
+          <br>&nbsp;\headingBf{SLIDER}{Sep 2024 }
+          <br>&nbsp;\begin{resume_list}
+          <br>&nbsp; &nbsp;\item Developed an interactive website \href{https://beshoywill.github.io/particles-slider/}{"SLIDER"}
+          featuring a Three.js slider with slides represented by particles. Utilized
+          Three.js to create a dynamic and engaging experience, incorporating particle
+          systems and animations to enhance visual appeal. Implemented smooth transitions
+          and interactive controls for navigating between particle-based slides,
+          elevating user engagement with a unique 3D interface.
+          <br>&nbsp;\end{resume_list}
+          <br>&nbsp;</p>
+        <p>\end{document}</p>
+      </div>
+    </div>
+  </body>
+
+</html>

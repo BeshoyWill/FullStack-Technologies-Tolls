@@ -1,0 +1,203 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Interpreter Pattern</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Interpreter Pattern</h1>
+
+      <div class="ck-content">
+        <p>The <strong>Interpreter Pattern</strong> is a behavioral design pattern
+          used to evaluate or process sentences in a specific language or grammar.
+          It defines a grammar for a language and uses an interpreter to interpret
+          sentences written in that language.</p>
+        <p>&nbsp;</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Grammar Representation</strong>: Encodes the grammar as a series
+            of rules.</li>
+          <li><strong>Interpreter</strong>: Processes sentences based on the grammar
+            rules.</li>
+          <li><strong>Flexibility</strong>: Allows complex expressions to be evaluated
+            dynamically.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Simple Mathematical Expression Interpreter</strong>
+        </p>
+        <p>Imagine a calculator app that needs to interpret and evaluate mathematical
+          expressions (e.g., <code>"2 + 3 - 1"</code>). Instead of hardcoding logic
+          for every possible expression, you can use the Interpreter Pattern.</p>
+        <p>&nbsp;</p>
+        <h3>Implementation Steps:</h3>
+        <ol>
+          <li>Define a grammar for the language (e.g., numbers and operators like <code>+</code> and <code>-</code>).</li>
+          <li>Create classes to represent each grammar rule (e.g., terminal expressions
+            for numbers, non-terminal expressions for operations).</li>
+          <li>Use an interpreter to process and evaluate the expressions.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Pitfalls :</h3>
+        <ol>
+          <li>Complexity of grammar -→ not easy to maintain.</li>
+          <li>Used in specific situations.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Angular Example Code:</h3>
+        <h4>1. <strong>Expression Interface</strong>:</h4>
+        <p>Define an interface for all expressions.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export interface Expression {
+ &nbsp;interpret(): number;
+}
+</code>
+        </p>
+        <hr>
+        <h4>2. <strong>Terminal Expressions</strong>:</h4>
+        <p>Represent simple grammar rules (e.g., numbers).</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export class NumberExpression implements Expression {
+ &nbsp;constructor(private value: number) {}
+
+ &nbsp;interpret(): number {
+ &nbsp; &nbsp;return this.value;
+ &nbsp;}
+}
+</code>
+        </p>
+        <hr>
+        <h4>3. <strong>Non-Terminal Expressions</strong>:</h4>
+        <p>Represent composite grammar rules (e.g., addition, subtraction).</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export class AddExpression implements Expression {
+ &nbsp;constructor(private left: Expression, private right: Expression) {}
+
+ &nbsp;interpret(): number {
+ &nbsp; &nbsp;return this.left.interpret() + this.right.interpret();
+ &nbsp;}
+}
+
+export class SubtractExpression implements Expression {
+ &nbsp;constructor(private left: Expression, private right: Expression) {}
+
+ &nbsp;interpret(): number {
+ &nbsp; &nbsp;return this.left.interpret() - this.right.interpret();
+ &nbsp;}
+}
+</code>
+        </p>
+        <hr>
+        <h4>4. <strong>Interpreter Service</strong>:</h4>
+        <p>Parses and evaluates expressions.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { Injectable } from '@angular/core';
+import { Expression, NumberExpression, AddExpression, SubtractExpression } from './expressions';
+
+@Injectable({
+ &nbsp;providedIn: 'root',
+})
+export class InterpreterService {
+ &nbsp;interpret(expression: string): number {
+ &nbsp; &nbsp;const tokens = expression.split(' ');
+ &nbsp; &nbsp;const stack: Expression[] = [];
+
+ &nbsp; &nbsp;for (const token of tokens) {
+ &nbsp; &nbsp; &nbsp;if (!isNaN(Number(token))) {
+ &nbsp; &nbsp; &nbsp; &nbsp;// Push numbers onto the stack
+ &nbsp; &nbsp; &nbsp; &nbsp;stack.push(new NumberExpression(Number(token)));
+ &nbsp; &nbsp; &nbsp;} else if (token === '+') {
+ &nbsp; &nbsp; &nbsp; &nbsp;// Pop last two expressions and push the result of addition
+ &nbsp; &nbsp; &nbsp; &nbsp;const right = stack.pop();
+ &nbsp; &nbsp; &nbsp; &nbsp;const left = stack.pop();
+ &nbsp; &nbsp; &nbsp; &nbsp;stack.push(new AddExpression(left!, right!));
+ &nbsp; &nbsp; &nbsp;} else if (token === '-') {
+ &nbsp; &nbsp; &nbsp; &nbsp;// Pop last two expressions and push the result of subtraction
+ &nbsp; &nbsp; &nbsp; &nbsp;const right = stack.pop();
+ &nbsp; &nbsp; &nbsp; &nbsp;const left = stack.pop();
+ &nbsp; &nbsp; &nbsp; &nbsp;stack.push(new SubtractExpression(left!, right!));
+ &nbsp; &nbsp; &nbsp;}
+ &nbsp; &nbsp;}
+
+ &nbsp; &nbsp;// Final result is the remaining expression
+ &nbsp; &nbsp;return stack.pop()!.interpret();
+ &nbsp;}
+}
+</code>
+        </p>
+        <hr>
+        <h4>5. <strong>AppComponent</strong>:</h4>
+        <p>Use the interpreter service in an Angular component.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { Component } from '@angular/core';
+import { InterpreterService } from './interpreter.service';
+
+@Component({
+ &nbsp;selector: 'app-root',
+ &nbsp;template: `
+ &nbsp; &nbsp;&lt;div&gt;
+ &nbsp; &nbsp; &nbsp;&lt;h3&gt;Expression Interpreter&lt;/h3&gt;
+ &nbsp; &nbsp; &nbsp;&lt;input [(ngModel)]="expression" placeholder="Enter expression (e.g., 2 + 3 - 1)" /&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="evaluateExpression()"&gt;Evaluate&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;p&gt;Result: {{ result }}&lt;/p&gt;
+ &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp;`,
+})
+export class AppComponent {
+ &nbsp;expression = '';
+ &nbsp;result = 0;
+
+ &nbsp;constructor(private interpreterService: InterpreterService) {}
+
+ &nbsp;evaluateExpression(): void {
+ &nbsp; &nbsp;this.result = this.interpreterService.interpret(this.expression);
+ &nbsp;}
+}
+</code>
+        </p>
+        <hr>
+        <h3>Explanation:</h3>
+        <p><strong>Terminal Expressions</strong>:</p>
+        <ul>
+          <li><code>NumberExpression</code> interprets numbers directly.</li>
+        </ul>
+        <p><strong>Non-Terminal Expressions</strong>:</p>
+        <ul>
+          <li><code>AddExpression</code> and <code>SubtractExpression</code> interpret
+            operations between expressions.</li>
+        </ul>
+        <p><strong>Interpreter Logic</strong>:</p>
+        <ul>
+          <li>The <code>InterpreterService</code> parses the input string into tokens
+            and evaluates the expression using a stack-based approach.</li>
+        </ul>
+        <p><strong>Dynamic Evaluation</strong>:</p>
+        <ul>
+          <li>Users can enter expressions dynamically, and the service evaluates them
+            without hardcoding logic for each case.</li>
+        </ul>
+        <hr>
+        <h3>Real-World Applications:</h3>
+        <ol>
+          <li><strong>Query Parsers</strong>: SQL-like query interpreters.</li>
+          <li><strong>Math Engines</strong>: Calculators or formula evaluators.</li>
+          <li><strong>Configuration Files</strong>: Interpreting DSLs (Domain-Specific
+            Languages).</li>
+          <li><strong>Scripting Engines</strong>: Interpreting small, custom scripting
+            languages.</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+
+</html>

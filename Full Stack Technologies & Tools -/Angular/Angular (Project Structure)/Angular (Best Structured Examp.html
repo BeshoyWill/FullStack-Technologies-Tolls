@@ -1,0 +1,321 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Angular (Best Structured Examples)</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Angular (Best Structured Examples)</h1>
+
+      <div class="ck-content">
+        <h3>1. <strong>Core Project Structure Example</strong></h3>
+        <p>The structure reflects where each type of file should reside in a typical
+          Angular application:</p>
+        <p>/src
+          <br>&nbsp;/app
+          <br>&nbsp; &nbsp;/core
+          <br>&nbsp; &nbsp; &nbsp;/guards
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;auth.guard.ts
+          <br>&nbsp; &nbsp; &nbsp;/interceptors
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;http-error.interceptor.ts
+          <br>&nbsp; &nbsp; &nbsp;/services
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;auth.service.ts
+          <br>&nbsp; &nbsp;/shared
+          <br>&nbsp; &nbsp; &nbsp;/components
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;button
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;button.component.ts
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;button.component.html
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;button.component.scss
+          <br>&nbsp; &nbsp; &nbsp;/directives
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;highlight.directive.ts
+          <br>&nbsp; &nbsp; &nbsp;/pipes
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;date-format.pipe.ts
+          <br>&nbsp; &nbsp; &nbsp;/models
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;user.model.ts
+          <br>&nbsp; &nbsp;/features
+          <br>&nbsp; &nbsp; &nbsp;/user
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/components
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;user-list
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;user-list.component.ts
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;user-list.component.html
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;user-list.component.scss
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/services
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;user.service.ts
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/models
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;user.model.ts
+          <br>&nbsp; &nbsp;app-routing.module.ts
+          <br>&nbsp; &nbsp;app.module.ts
+          <br>&nbsp;/assets
+          <br>&nbsp; &nbsp;/images
+          <br>&nbsp;/environments
+          <br>&nbsp; &nbsp;environment.ts
+          <br>&nbsp; &nbsp;environment.prod.ts
+          <br>&nbsp;index.html
+          <br>&nbsp;main.ts
+          <br>&nbsp;styles.scss</p>
+        <p><code>
+</code>
+        </p>
+        <h3>2. <strong>Core Module Example</strong></h3>
+        <p>The <code>core.module.ts</code> might look like this:</p>
+        <p>// core.module.ts
+          <br>import { NgModule, Optional, SkipSelf } from '@angular/core';
+          <br>import { CommonModule } from '@angular/common';
+          <br>import { HTTP_INTERCEPTORS } from '@angular/common/http';
+          <br>import { AuthService } from './services/auth.service';
+          <br>import { AuthGuard } from './guards/auth.guard';
+          <br>import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';</p>
+        <p>@NgModule({
+          <br>&nbsp;imports: [CommonModule],
+          <br>&nbsp;providers: [
+          <br>&nbsp; &nbsp;AuthService,
+          <br>&nbsp; &nbsp;AuthGuard,
+          <br>&nbsp; &nbsp;{ provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor,
+          multi: true }
+          <br>&nbsp;]
+          <br>})
+          <br>export class CoreModule {
+          <br>&nbsp;constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+          <br>&nbsp; &nbsp;if (parentModule) {
+          <br>&nbsp; &nbsp; &nbsp;throw new Error('CoreModule is already loaded. Import
+          it in the AppModule only.');
+          <br>&nbsp; &nbsp;}
+          <br>&nbsp;}
+          <br>}</p>
+        <p>&nbsp;</p>
+        <h3>3. <strong>Shared Module Example</strong></h3>
+        <p>The <code>shared.module.ts</code> might look like this:</p>
+        <p>// shared.module.ts
+          <br>import { NgModule } from '@angular/core';
+          <br>import { CommonModule } from '@angular/common';
+          <br>import { FormsModule } from '@angular/forms';
+          <br>import { ButtonComponent } from './components/button/button.component';
+          <br>import { HighlightDirective } from './directives/highlight.directive';
+          <br>import { DateFormatPipe } from './pipes/date-format.pipe';</p>
+        <p>@NgModule({
+          <br>&nbsp;declarations: [
+          <br>&nbsp; &nbsp;ButtonComponent,
+          <br>&nbsp; &nbsp;HighlightDirective,
+          <br>&nbsp; &nbsp;DateFormatPipe
+          <br>&nbsp;],
+          <br>&nbsp;imports: [
+          <br>&nbsp; &nbsp;CommonModule,
+          <br>&nbsp; &nbsp;FormsModule
+          <br>&nbsp;],
+          <br>&nbsp;exports: [
+          <br>&nbsp; &nbsp;ButtonComponent,
+          <br>&nbsp; &nbsp;HighlightDirective,
+          <br>&nbsp; &nbsp;DateFormatPipe,
+          <br>&nbsp; &nbsp;CommonModule,
+          <br>&nbsp; &nbsp;FormsModule
+          <br>&nbsp;]
+          <br>})
+          <br>export class SharedModule { }
+          <br>
+          <br>4. <strong>Feature Module Example</strong>
+        </p>
+        <p>A typical feature module (<code>user.module.ts</code>) might look like:</p>
+        <p>// user.module.ts
+          <br>import { NgModule } from '@angular/core';
+          <br>import { CommonModule } from '@angular/common';
+          <br>import { UserListComponent } from './components/user-list/user-list.component';
+          <br>import { UserService } from './services/user.service';
+          <br>import { SharedModule } from '../../shared/shared.module';
+          <br>import { UserRoutingModule } from './user-routing.module';</p>
+        <p>@NgModule({
+          <br>&nbsp;declarations: [UserListComponent],
+          <br>&nbsp;imports: [
+          <br>&nbsp; &nbsp;CommonModule,
+          <br>&nbsp; &nbsp;SharedModule,
+          <br>&nbsp; &nbsp;UserRoutingModule
+          <br>&nbsp;],
+          <br>&nbsp;providers: [UserService]
+          <br>})
+          <br>export class UserModule { }</p>
+        <p>&nbsp;</p>
+        <h3>5. <strong>Small and Focused Components Example</strong></h3>
+        <p>A simple and focused component (<code>user-list.component.ts</code>):</p>
+        <p>&nbsp;</p>
+        <p>// user-list.component.ts
+          <br>import { Component, OnInit } from '@angular/core';
+          <br>import { UserService } from '../services/user.service';
+          <br>import { User } from '../models/user.model';</p>
+        <p>@Component({
+          <br>&nbsp;selector: 'app-user-list',
+          <br>&nbsp;templateUrl: './user-list.component.html',
+          <br>&nbsp;styleUrls: ['./user-list.component.scss']
+          <br>})
+          <br>export class UserListComponent implements OnInit {
+          <br>&nbsp;users: User[] = [];</p>
+        <p>&nbsp;constructor(private userService: UserService) {}</p>
+        <p>&nbsp;ngOnInit(): void {
+          <br>&nbsp; &nbsp;this.userService.getUsers().subscribe((data: User[]) =&gt;
+          this.users = data);
+          <br>&nbsp;}
+          <br>}
+          <br>&nbsp;</p>
+        <h3>6. <strong>Consistent Naming Convention Example</strong></h3>
+        <p>Use consistent naming across your files and classes:</p>
+        <ul>
+          <li><strong>Files:</strong>  <code>user-list.component.ts</code>, <code>auth.guard.ts</code>, <code>user.service.ts</code>.</li>
+          <li><strong>Classes:</strong>  <code>UserListComponent</code>, <code>AuthGuard</code>, <code>UserService</code>.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>7. <strong>Angular Coding Standards Example</strong></h3>
+        <p>Keep component logic simple and adhere to coding standards:
+          <br>&nbsp;</p>
+        <p>
+          <br>// highlight.directive.ts
+          <br>import { Directive, ElementRef, HostListener } from '@angular/core';</p>
+        <p>@Directive({
+          <br>&nbsp;selector: '[appHighlight]'
+          <br>})
+          <br>export class HighlightDirective {
+          <br>&nbsp;constructor(private el: ElementRef) {}</p>
+        <p>&nbsp;@HostListener('mouseenter') onMouseEnter() {
+          <br>&nbsp; &nbsp;this.highlight('yellow');
+          <br>&nbsp;}</p>
+        <p>&nbsp;@HostListener('mouseleave') onMouseLeave() {
+          <br>&nbsp; &nbsp;this.highlight(null);
+          <br>&nbsp;}</p>
+        <p>&nbsp;private highlight(color: string | null) {
+          <br>&nbsp; &nbsp;this.el.nativeElement.style.backgroundColor = color;
+          <br>&nbsp;}
+          <br>}</p>
+        <p>&nbsp;</p>
+        <h3>8. <strong>Environment-Specific Files Example</strong></h3>
+        <p><code>environment.ts</code> and <code>environment.prod.ts</code> are files
+          for environment configurations:</p>
+        <p>
+          <br>// environment.ts
+          <br>export const environment = {
+          <br>&nbsp;production: false,
+          <br>&nbsp;apiUrl: 'http://localhost:3000/api'
+          <br>};</p>
+        <p>// environment.prod.ts
+          <br>export const environment = {
+          <br>&nbsp;production: true,
+          <br>&nbsp;apiUrl: 'https://api.myapp.com'
+          <br>};
+          <br>&nbsp;</p>
+        <h3>9. <strong>Lazy Load Modules Example</strong></h3>
+        <p>Configuring lazy loading in <code>app-routing.module.ts</code>:</p>
+        <p>// app-routing.module.ts
+          <br>import { NgModule } from '@angular/core';
+          <br>import { RouterModule, Routes } from '@angular/router';</p>
+        <p>const routes: Routes = [
+          <br>&nbsp;{
+          <br>&nbsp; &nbsp;path: 'user',
+          <br>&nbsp; &nbsp;loadChildren: () =&gt; import('./features/user/user.module').then(m
+          =&gt; m.UserModule)
+          <br>&nbsp;},
+          <br>&nbsp;{ path: '', redirectTo: '/home', pathMatch: 'full' }
+          <br>];</p>
+        <p>@NgModule({
+          <br>&nbsp;imports: [RouterModule.forRoot(routes)],
+          <br>&nbsp;exports: [RouterModule]
+          <br>})
+          <br>export class AppRoutingModule { }</p>
+        <p>&nbsp;</p>
+        <h3>10. <strong>State Management Example</strong></h3>
+        <p>If using NgRx for state management:</p>
+        <p>// user.actions.ts
+          <br>import { createAction, props } from '@ngrx/store';
+          <br>import { User } from '../models/user.model';</p>
+        <p>export const loadUsers = createAction('[User] Load Users');
+          <br>export const loadUsersSuccess = createAction('[User] Load Users Success',
+          props&lt;{ users: User[] }&gt;());
+          <br>export const loadUsersFailure = createAction('[User] Load Users Failure',
+          props&lt;{ error: any }&gt;());</p>
+        <p>&nbsp;</p>
+        <h3>11. <strong>DRY Principle Example</strong></h3>
+        <p>Reuse components, services, and directives to avoid repetition:</p>
+        <p>&nbsp;</p>
+        <p>// In a shared component like `button.component.ts`
+          <br>@Component({
+          <br>&nbsp;selector: 'app-button',
+          <br>&nbsp;template: `&lt;button [ngClass]="type"&gt;{{label}}&lt;/button&gt;`,
+          <br>&nbsp;styleUrls: ['./button.component.scss']
+          <br>})
+          <br>export class ButtonComponent {
+          <br>&nbsp;@Input() label: string = '';
+          <br>&nbsp;@Input() type: string = 'primary';
+          <br>}
+          <br>&nbsp;</p>
+        <p>
+          <br>12. <strong>Organize Assets and Styles Example</strong>
+        </p>
+        <p>Keep all assets organized under the <code>/assets</code> directory:</p>
+        <p>/assets
+          <br>&nbsp;/images
+          <br>&nbsp; &nbsp;logo.png
+          <br>&nbsp;/fonts
+          <br>&nbsp; &nbsp;custom-font.woff
+          <br>&nbsp;</p>
+        <h3>13. <strong>Use Angular CLI Example</strong></h3>
+        <p>Generate files using Angular CLI to maintain consistency:
+          <br>&nbsp;</p>
+        <p>ng generate component features/user/user-list
+          <br>ng generate service features/user/user
+          <br>&nbsp;</p>
+        <h3>14. <strong>Unit Testing Example</strong></h3>
+        <p>A unit test for <code>user-list.component.spec.ts</code>:</p>
+        <p>import { ComponentFixture, TestBed } from '@angular/core/testing';
+          <br>import { UserListComponent } from './user-list.component';
+          <br>import { UserService } from '../services/user.service';
+          <br>import { of } from 'rxjs';</p>
+        <p>describe('UserListComponent', () =&gt; {
+          <br>&nbsp;let component: UserListComponent;
+          <br>&nbsp;let fixture: ComponentFixture&lt;UserListComponent&gt;;
+          <br>&nbsp;let mockUserService = jasmine.createSpyObj('UserService', ['getUsers']);</p>
+        <p>&nbsp;beforeEach(async () =&gt; {
+          <br>&nbsp; &nbsp;await TestBed.configureTestingModule({
+          <br>&nbsp; &nbsp; &nbsp;declarations: [ UserListComponent ],
+          <br>&nbsp; &nbsp; &nbsp;providers: [
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;{ provide: UserService, useValue: mockUserService
+          }
+          <br>&nbsp; &nbsp; &nbsp;]
+          <br>&nbsp; &nbsp;}).compileComponents();</p>
+        <p>&nbsp; &nbsp;fixture = TestBed.createComponent(UserListComponent);
+          <br>&nbsp; &nbsp;component = fixture.componentInstance;
+          <br>&nbsp;});</p>
+        <p>&nbsp;it('should create', () =&gt; {
+          <br>&nbsp; &nbsp;expect(component).toBeTruthy();
+          <br>&nbsp;});</p>
+        <p>&nbsp;it('should fetch users on initialization', () =&gt; {
+          <br>&nbsp; &nbsp;const mockUsers = [{ id: 1, name: 'John' }];
+          <br>&nbsp; &nbsp;mockUserService.getUsers.and.returnValue(of(mockUsers));</p>
+        <p>&nbsp; &nbsp;fixture.detectChanges();</p>
+        <p>&nbsp; &nbsp;expect(component.users).toEqual(mockUsers);
+          <br>&nbsp;});
+          <br>});
+          <br>&nbsp;</p>
+        <h3>15. <strong>Documentation and Readability Example</strong></h3>
+        <p>Use comments and consistent code styling to improve readability:</p>
+        <p>// auth.service.ts
+          <br>/**
+          <br>* AuthService is responsible for user authentication.
+          <br>*/
+          <br>@Injectable({
+          <br>&nbsp;providedIn: 'root'
+          <br>})
+          <br>export class AuthService {
+          <br>&nbsp;constructor(private http: HttpClient) {}</p>
+        <p>&nbsp;// Method to authenticate user
+          <br>&nbsp;login(credentials: any): Observable&lt;User&gt; {
+          <br>&nbsp; &nbsp;return this.http.post&lt;User&gt;('/api/auth/login', credentials);
+          <br>&nbsp;}
+          <br>}
+          <br>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

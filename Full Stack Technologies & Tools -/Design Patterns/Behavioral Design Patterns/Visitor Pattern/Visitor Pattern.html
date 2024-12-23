@@ -1,0 +1,190 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Visitor Pattern</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Visitor Pattern</h1>
+
+      <div class="ck-content">
+        <p>The <strong>Visitor Pattern</strong> is a behavioral design pattern that
+          allows adding new operations to existing object structures without modifying
+          their classes. It achieves this by separating the operation from the object
+          structure and placing it in a separate class called a <strong>Visitor</strong>.</p>
+        <p>&nbsp;</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Separation of Concerns</strong>: Operations are defined in visitor
+            classes rather than the object structure.</li>
+          <li><strong>Double Dispatch</strong>: The pattern relies on two method calls:
+            one to accept the visitor and another to execute the visitor's operation
+            on the object.</li>
+          <li><strong>Extensibility</strong>: New operations can be added without changing
+            the existing object hierarchy.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Employee Evaluation System</strong>
+        </p>
+        <p>An HR system manages different types of employees (e.g., Developers, Managers).
+          To evaluate their performance:</p>
+        <ul>
+          <li>Developers are evaluated based on code quality and feature delivery.</li>
+          <li>Managers are evaluated based on team performance.</li>
+        </ul>
+        <p>Using the Visitor Pattern, we can add evaluation logic without altering
+          the employee classes.</p>
+        <p>&nbsp;</p>
+        <h3>Implementation in Angular (TypeScript):</h3>
+        <h4>1. <strong>Element Interface</strong>:</h4>
+        <p>Defines the <code>accept</code> method for visitor classes.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export interface Employee {
+ &nbsp;accept(visitor: EmployeeVisitor): void;
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>2. <strong>Concrete Elements</strong>:</h4>
+        <p>Implement the <code>accept</code> method to allow a visitor to operate on
+          them.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { Employee } from './employee';
+import { EmployeeVisitor } from './employee-visitor';
+
+export class Developer implements Employee {
+ &nbsp;constructor(public name: string, public linesOfCode: number) {}
+
+ &nbsp;accept(visitor: EmployeeVisitor): void {
+ &nbsp; &nbsp;visitor.visitDeveloper(this);
+ &nbsp;}
+}
+
+export class Manager implements Employee {
+ &nbsp;constructor(public name: string, public teamPerformance: number) {}
+
+ &nbsp;accept(visitor: EmployeeVisitor): void {
+ &nbsp; &nbsp;visitor.visitManager(this);
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>3. <strong>Visitor Interface</strong>:</h4>
+        <p>Defines operations for each element type.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export interface EmployeeVisitor {
+ &nbsp;visitDeveloper(developer: Developer): void;
+ &nbsp;visitManager(manager: Manager): void;
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>4. <strong>Concrete Visitor</strong>:</h4>
+        <p>Implements specific operations for the elements.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { EmployeeVisitor } from './employee-visitor';
+import { Developer } from './developer';
+import { Manager } from './manager';
+
+export class PerformanceEvaluator implements EmployeeVisitor {
+ &nbsp;visitDeveloper(developer: Developer): void {
+ &nbsp; &nbsp;console.log(
+ &nbsp; &nbsp; &nbsp;`Evaluating Developer ${developer.name}: Lines of code - ${developer.linesOfCode}`
+ &nbsp; &nbsp;);
+ &nbsp;}
+
+ &nbsp;visitManager(manager: Manager): void {
+ &nbsp; &nbsp;console.log(
+ &nbsp; &nbsp; &nbsp;`Evaluating Manager ${manager.name}: Team performance - ${manager.teamPerformance}`
+ &nbsp; &nbsp;);
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>5. <strong>AppComponent</strong>:</h4>
+        <p>Demonstrates the Visitor Pattern in action.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { Component } from '@angular/core';
+import { Developer } from './developer';
+import { Manager } from './manager';
+import { PerformanceEvaluator } from './performance-evaluator';
+
+@Component({
+ &nbsp;selector: 'app-root',
+ &nbsp;template: `
+ &nbsp; &nbsp;&lt;div&gt;
+ &nbsp; &nbsp; &nbsp;&lt;h3&gt;Employee Evaluation&lt;/h3&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="evaluate()"&gt;Evaluate Employees&lt;/button&gt;
+ &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp;`,
+})
+export class AppComponent {
+ &nbsp;employees = [
+ &nbsp; &nbsp;new Developer('Alice', 1500),
+ &nbsp; &nbsp;new Manager('Bob', 85),
+ &nbsp;];
+
+ &nbsp;evaluate(): void {
+ &nbsp; &nbsp;const evaluator = new PerformanceEvaluator();
+ &nbsp; &nbsp;this.employees.forEach((employee) =&gt; employee.accept(evaluator));
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h3>Explanation:</h3>
+        <p><strong>Element Interface</strong>:</p>
+        <ul>
+          <li><code>Employee</code> defines the <code>accept</code> method, ensuring that
+            all elements can accept a visitor.</li>
+        </ul>
+        <p><strong>Concrete Elements</strong>:</p>
+        <ul>
+          <li><code>Developer</code> and <code>Manager</code> implement the <code>accept</code> method
+            and call the corresponding method on the visitor.</li>
+        </ul>
+        <p><strong>Visitor Interface</strong>:</p>
+        <ul>
+          <li><code>EmployeeVisitor</code> defines operations for each concrete element
+            type.</li>
+        </ul>
+        <p><strong>Concrete Visitor</strong>:</p>
+        <ul>
+          <li><code>PerformanceEvaluator</code> contains specific logic for evaluating
+            each employee type.</li>
+        </ul>
+        <p><strong>Dynamic Behavior</strong>:</p>
+        <ul>
+          <li>The evaluation logic can be changed or extended by introducing new visitor
+            classes without altering the <code>Developer</code> or <code>Manager</code> classes.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>Real-World Applications:</h3>
+        <ol>
+          <li><strong>Compilers</strong>: Traversing and processing abstract syntax
+            trees (ASTs) with different visitors (e.g., type checking, code generation).</li>
+          <li><strong>Document Processing</strong>: Applying operations like formatting
+            or spell-checking to different document elements (e.g., paragraphs, images).</li>
+          <li><strong>Tax Calculations</strong>: Applying tax rules based on the type
+            of entities (individual, corporation).</li>
+          <li><strong>Game Development</strong>: Applying effects (e.g., buffs, debuffs)
+            to different game entities.</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+
+</html>

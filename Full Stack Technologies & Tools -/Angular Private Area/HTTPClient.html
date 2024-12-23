@@ -1,0 +1,36 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>HTTPClient</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>HTTPClient</h1>
+
+      <div class="ck-content">
+        <p>Add this to add app.config.ts :</p>
+        <p><span style="color:#c792ea;"><i>&nbsp; &nbsp;&nbsp;</i></span><span style="color:#87aff4;"><i>provideHttpClient</i></span>
+          <span
+          style="color:#c792ea;"><i>(</i>
+            </span><span style="color:#87aff4;"><i>withFetch</i></span><span style="color:#c792ea;"><i>())</i></span>
+        </p>
+        <p><span style="color:#c792ea;"><i>To inject this :</i></span>
+        </p>
+        <p>&nbsp;</p>
+        <p><span style="color:hsl(0,0%,100%);">constructor (private readonly _HttpClient : HttpClient)</span>
+        </p>
+        <p><span class="text-huge" style="color:hsl(0,0%,100%);"><strong>→</strong></span>
+          <span
+          style="color:hsl(0,0%,100%);">&nbsp;return this._HttpClient.get(`url`);</span>
+        </p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

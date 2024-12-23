@@ -1,0 +1,133 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>flowbite.service.js</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>flowbite.service.js</h1>
+
+      <div class="ck-content">
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>isPlatformBrowser</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#00bff9;"><i>from</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#bcf0c0;">@angular/common</span><span style="color:#6bff81;">'</span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>Inject</i></span>
+            <span
+            style="color:#a7dbf7;">,</span><span style="color:#d6deeb;"><i>Injectable</i></span><span style="color:#a7dbf7;">, </span>
+              <span
+              style="color:#d6deeb;"><i>PLATFORM_ID</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#ffffff;">}</span>
+                <span
+                style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>from</i></span><span style="color:#a7dbf7;"> </span>
+                  <span
+                  style="color:#6bff81;">'</span><span style="color:#bcf0c0;">@angular/core</span><span style="color:#6bff81;">'</span>
+                    <span
+                    style="color:#a7dbf7;">;</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#f7ecb5;"><i>@</i></span><span style="color:#87aff4;"><i>Injectable</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; providedIn: </span><span style="color:#6bff81;">'</span>
+          <span
+          style="color:#bcf0c0;">root</span><span style="color:#6bff81;">'</span><span style="color:#a7dbf7;">,</span>
+        </p>
+        <p><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;">)</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>export</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#00bff9;"><i>class</i>
+            </span><span style="color:#a7dbf7;"> </span><span style="color:#d29ffc;">FlowbiteService</span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#a1bde6;"><i>constructor</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#f7ecb5;"><i>@</i></span><span style="color:#87aff4;"><i>Inject</i></span>
+            <span
+            style="color:#a7dbf7;">(</span><span style="color:#92b6f4;"><i>PLATFORM_ID</i></span><span style="color:#a7dbf7;">) </span>
+              <span
+              style="color:#00bff9;"><i>private</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#d7dbe0;">_PLATFORM_ID</span>
+                <span
+                style="color:#00bff9;"><i>:</i>
+                  </span><span style="color:#a7dbf7;"> </span><span style="color:#7fdbca;">any</span>
+                  <span
+                  style="color:#a7dbf7;">)</span><span style="color:#ffffff;">{}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>loadFlowbite</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#87aff4;"><i>callback</i></span><span style="color:#00bff9;"><i>:</i></span>
+            <span
+            style="color:#a7dbf7;">(</span><span style="color:#d7dbe0;">flowbite</span><span style="color:#00bff9;"><i>:</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#7fdbca;">any</span><span style="color:#a7dbf7;">) </span>
+                <span
+                style="color:#00bff9;"><i>=&gt;</i>
+                  </span><span style="color:#a7dbf7;"> </span><span style="color:#7fdbca;">void</span>
+                  <span
+                  style="color:#a7dbf7;">)</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#87aff4;"><i>isPlatformBrowser</i></span>
+            <span
+            style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+              <span
+              style="color:#7fdbca;"><i>_PLATFORM_ID</i>
+                </span><span style="color:#a7dbf7;">)) </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>import</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#6bff81;">'</span><span style="color:#bcf0c0;">flowbite</span>
+            <span
+            style="color:#6bff81;">'</span><span style="color:#a7dbf7;">).</span><span style="color:#87aff4;"><i>then</i></span>
+              <span
+              style="color:#a7dbf7;">((</span><span style="color:#d7dbe0;">flowbite</span><span style="color:#a7dbf7;">) </span>
+                <span
+                style="color:#00bff9;"><i>=&gt;</i>
+                  </span><span style="color:#a7dbf7;"> </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#87aff4;"><i>callback</i>
+            </span><span style="color:#a7dbf7;">(</span><span style="color:#d6deeb;"><i>flowbite</i></span>
+            <span
+            style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+          <span
+          style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,870 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>app.component.ts</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>app.component.ts</h1>
+
+      <div class="ck-content">
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>ChangeDetectorRef</i></span>
+            <span
+            style="color:#a7dbf7;">,</span><span style="color:#d6deeb;"><i>Component</i></span><span style="color:#a7dbf7;">, </span>
+              <span
+              style="color:#d6deeb;"><i>OnInit</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#ffffff;">}</span>
+                <span
+                style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>from</i></span><span style="color:#a7dbf7;"> </span>
+                  <span
+                  style="color:#6bff81;">'</span><span style="color:#bcf0c0;">@angular/core</span><span style="color:#6bff81;">'</span>
+                    <span
+                    style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>RouterOutlet</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#00bff9;"><i>from</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#bcf0c0;">@angular/router</span><span style="color:#6bff81;">'</span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>initFlowbite</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#00bff9;"><i>from</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#bcf0c0;">flowbite</span><span style="color:#6bff81;">'</span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>FlowbiteService</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#00bff9;"><i>from</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#bcf0c0;">./services/flowbite/flowbite.service</span><span style="color:#6bff81;">'</span>
+                  <span
+                  style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>NgClass</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#00bff9;"><i>from</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#bcf0c0;">@angular/common</span><span style="color:#6bff81;">'</span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>LocalStorageService</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#00bff9;"><i>from</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#bcf0c0;">./services/localStorage/local-storage.service</span><span style="color:#6bff81;">'</span>
+                  <span
+                  style="color:#a7dbf7;">;</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#f7ecb5;"><i>@</i></span><span style="color:#87aff4;"><i>Component</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; selector: </span><span style="color:#6bff81;">'</span>
+          <span
+          style="color:#bcf0c0;">app-root</span><span style="color:#6bff81;">'</span><span style="color:#a7dbf7;">,</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; standalone: </span><span style="color:#8dec95;">true</span>
+          <span
+          style="color:#a7dbf7;">,</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; imports: [</span><span style="color:#d6deeb;"><i>RouterOutlet</i></span>
+          <span
+          style="color:#a7dbf7;">,</span><span style="color:#d6deeb;"><i>NgClass</i></span><span style="color:#a7dbf7;">],</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; templateUrl: </span><span style="color:#6bff81;">'</span>
+          <span
+          style="color:#bcf0c0;">./app.component.html</span><span style="color:#6bff81;">'</span>
+            <span
+            style="color:#a7dbf7;">,</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; styleUrls: [</span><span style="color:#6bff81;">'</span>
+          <span
+          style="color:#bcf0c0;">./app.component.scss</span><span style="color:#6bff81;">'</span>
+            <span
+            style="color:#a7dbf7;">],</span><span style="color:#999999;"><i>// Fixed styleUrls</i></span>
+        </p>
+        <p><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;">)</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>export</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#00bff9;"><i>class</i>
+            </span><span style="color:#a7dbf7;"> </span><span style="color:#d29ffc;">AppComponent</span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>implements</i></span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#4fb4d8;">OnInit</span><span style="color:#a7dbf7;"> </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#d6deeb;"><i>title</i></span>
+          <span
+          style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>=</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#6bff81;">'</span><span style="color:#bcf0c0;">Dynamic Slider</span><span style="color:#6bff81;">'</span>
+              <span
+              style="color:#a7dbf7;">;</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#d6deeb;"><i>images</i></span>
+          <span
+          style="color:#00bff9;"><i>:</i>
+            </span><span style="color:#a7dbf7;"> </span><span style="color:#7fdbca;">any</span>
+            <span
+            style="color:#a7dbf7;">[]</span><span style="color:#00bff9;"><i>=</i></span><span style="color:#a7dbf7;"> [];</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#d6deeb;"><i>preview</i></span>
+          <span
+          style="color:#00bff9;"><i>:</i>
+            </span><span style="color:#a7dbf7;"> </span><span style="color:#7fdbca;">any</span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>=</i></span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#6bff81;">''</span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#d6deeb;"><i>imageIndex</i></span>
+          <span
+          style="color:#00bff9;"><i>!:</i>
+            </span><span style="color:#a7dbf7;"> </span><span style="color:#7fdbca;">number</span>
+            <span
+            style="color:#a7dbf7;">;</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#a1bde6;"><i>constructor</i></span>
+          <span
+          style="color:#a7dbf7;">(</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>private</i></span>
+          <span
+          style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>readonly</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#d7dbe0;">_FlowbiteService</span><span style="color:#00bff9;"><i>:</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#d29ffc;">FlowbiteService</span><span style="color:#a7dbf7;">,</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>private</i></span>
+          <span
+          style="color:#a7dbf7;"></span><span style="color:#d7dbe0;">_LocalStorageService</span><span style="color:#00bff9;"><i>:</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#d29ffc;">LocalStorageService</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; ) </span><span style="color:#ffffff;">{}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>ngOnInit</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#00bff9;"><i>:</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#7fdbca;">void</span><span style="color:#a7dbf7;"> </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>_FlowbiteService</i></span>
+            <span
+            style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>loadFlowbite</i></span><span style="color:#a7dbf7;">((</span>
+              <span
+              style="color:#d7dbe0;">flowbite</span><span style="color:#a7dbf7;">) </span><span style="color:#00bff9;"><i>=&gt;</i></span>
+                <span
+                style="color:#a7dbf7;"></span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#d6deeb;"><i>console</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>log</i></span><span style="color:#a7dbf7;">(</span>
+            <span
+            style="color:#6bff81;">'</span><span style="color:#bcf0c0;">FLOWBITE loaded</span><span style="color:#6bff81;">'</span>
+              <span
+              style="color:#a7dbf7;">,</span><span style="color:#d6deeb;"><i>flowbite</i></span><span style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+          <span
+          style="color:#a7dbf7;">);</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#a1bde6;"><i>const</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#92b6f4;"><i>storedImages</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#00bff9;"><i>this</i></span>
+              <span
+              style="color:#c792ea;"><i>.</i>
+                </span><span style="color:#f7ecb5;"><i>_LocalStorageService</i></span><span style="color:#c792ea;"><i>.</i></span>
+                <span
+                style="color:#87aff4;"><i>getItem</i>
+                  </span><span style="color:#c792ea;"><i>(</i></span><span style="color:#6bff81;">'</span>
+                  <span
+                  style="color:#bcf0c0;">images</span><span style="color:#6bff81;">'</span><span style="color:#c792ea;"><i>)</i></span>
+                    <span
+                    style="color:#a7dbf7;">;</span><span style="color:#999999;"><i>// Fixed key</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#d6deeb;"><i>storedImages</i></span><span style="color:#a7dbf7;">) </span>
+            <span
+            style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>images</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>storedImages</i></span>
+              <span
+              style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#a1bde6;"><i>const</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#92b6f4;"><i>storedIndex</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#00bff9;"><i>this</i></span>
+              <span
+              style="color:#c792ea;"><i>.</i>
+                </span><span style="color:#f7ecb5;"><i>_LocalStorageService</i></span><span style="color:#c792ea;"><i>.</i></span>
+                <span
+                style="color:#87aff4;"><i>getItem</i>
+                  </span><span style="color:#c792ea;"><i>(</i></span><span style="color:#6bff81;">'</span>
+                  <span
+                  style="color:#bcf0c0;">imageIndex</span><span style="color:#6bff81;">'</span><span style="color:#c792ea;"><i>)</i></span>
+                    <span
+                    style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>storedIndex</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>!==</i></span><span style="color:#a7dbf7;"> </span>
+                <span
+                style="color:#92b6f4;">undefined</span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>?</i></span>
+                  <span
+                  style="color:#a7dbf7;"></span><span style="color:#d6deeb;"><i>storedIndex</i></span><span style="color:#a7dbf7;"> </span>
+                    <span
+                    style="color:#00bff9;"><i>:</i>
+                      </span><span style="color:#a7dbf7;"> </span><span style="color:#8dec95;">0</span>
+                      <span
+                      style="color:#a7dbf7;">;</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>showDefaultImage</i></span>
+            <span
+            style="color:#a7dbf7;">();</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>getImages</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#d7dbe0;">event</span><span style="color:#00bff9;"><i>:</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#7fdbca;">any</span><span style="color:#a7dbf7;">) </span>
+              <span
+              style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#a1bde6;"><i>let</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#d6deeb;"><i>files</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#d6deeb;"><i>event</i></span>
+              <span
+              style="color:#c792ea;"><i>.</i>
+                </span><span style="color:#f7ecb5;"><i>target</i></span><span style="color:#c792ea;"><i>.</i></span>
+                <span
+                style="color:#7fdbca;"><i>files</i>
+                  </span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#a1bde6;"><i>let</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#d6deeb;"><i>limit</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#ec9cd2;">Math</span>
+              <span
+              style="color:#c792ea;"><i>.</i>
+                </span><span style="color:#f7ecb5;">min</span><span style="color:#c792ea;"><i>(</i></span>
+                <span
+                style="color:#8dec95;"><i>7</i>
+                  </span><span style="color:#c792ea;"><i> </i></span><span style="color:#00bff9;"><i>-</i></span>
+                  <span
+                  style="color:#c792ea;"><i> </i>
+                    </span><span style="color:#00bff9;"><i>this</i></span><span style="color:#c792ea;"><i>.</i></span>
+                    <span
+                    style="color:#f7ecb5;"><i>images</i>
+                      </span><span style="color:#c792ea;"><i>.</i></span><span style="color:#7fdbca;"><i>length</i></span>
+                      <span
+                      style="color:#c792ea;"><i>, </i>
+                        </span><span style="color:#d6deeb;"><i>files</i></span><span style="color:#c792ea;"><i>.</i></span>
+                        <span
+                        style="color:#7fdbca;"><i>length</i>
+                          </span><span style="color:#c792ea;"><i>)</i></span><span style="color:#a7dbf7;">; </span>
+                          <span
+                          style="color:#999999;"><i>// Fixed logic</i>
+                            </span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>for</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#a1bde6;"><i>let</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#d6deeb;"><i>i</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#00bff9;"><i>=</i></span>
+              <span
+              style="color:#c792ea;"><i> </i>
+                </span><span style="color:#8dec95;"><i>0</i></span><span style="color:#a7dbf7;">; </span>
+                <span
+                style="color:#d6deeb;"><i>i</i>
+                  </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>&lt;</i></span>
+                  <span
+                  style="color:#a7dbf7;"></span><span style="color:#d6deeb;"><i>limit</i></span><span style="color:#a7dbf7;">; </span>
+                    <span
+                    style="color:#d6deeb;"><i>i</i>
+                      </span><span style="color:#00bff9;"><i>++</i></span><span style="color:#a7dbf7;">) </span>
+                      <span
+                      style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#a1bde6;"><i>let</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#d6deeb;"><i>file</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#d6deeb;"><i>files</i></span>
+              <span
+              style="color:#c792ea;"><i>[</i>
+                </span><span style="color:#d6deeb;"><i>i</i></span><span style="color:#c792ea;"><i>]</i></span>
+                <span
+                style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#a1bde6;"><i>let</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#d6deeb;"><i>fileReader</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#00bff9;"><i>new</i></span>
+              <span
+              style="color:#c792ea;"><i> </i>
+                </span><span style="color:#87aff4;"><i>FileReader</i></span><span style="color:#c792ea;"><i>()</i></span>
+                <span
+                style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#d6deeb;"><i>fileReader</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>readAsDataURL</i></span>
+            <span
+            style="color:#a7dbf7;">(</span><span style="color:#d6deeb;"><i>file</i></span><span style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#d6deeb;"><i>fileReader</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>onload</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> () </span><span style="color:#00bff9;"><i>=&gt;</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#a1bde6;"><i>let</i>
+            </span><span style="color:#c792ea;"><i> </i></span><span style="color:#d6deeb;"><i>result</i></span>
+            <span
+            style="color:#c792ea;"><i> </i>
+              </span><span style="color:#00bff9;"><i>=</i></span><span style="color:#c792ea;"><i> </i></span>
+              <span
+              style="color:#d6deeb;"><i>fileReader</i>
+                </span><span style="color:#c792ea;"><i>.</i></span><span style="color:#7fdbca;"><i>result</i></span>
+                <span
+                style="color:#a7dbf7;">;</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#00bff9;"><i>if</i>
+            </span><span style="color:#a7dbf7;"> (</span><span style="color:#00bff9;"><i>!this</i></span>
+            <span
+            style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>images</i></span><span style="color:#a7dbf7;">.</span>
+              <span
+              style="color:#87aff4;"><i>includes</i>
+                </span><span style="color:#a7dbf7;">(</span><span style="color:#d6deeb;"><i>result</i></span>
+                <span
+                style="color:#a7dbf7;">))</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#00bff9;"><i>this</i>
+            </span><span style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>images</i></span>
+            <span
+            style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>push</i></span><span style="color:#a7dbf7;">(</span>
+              <span
+              style="color:#d6deeb;"><i>result</i>
+                </span><span style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#00bff9;"><i>this</i>
+            </span><span style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>updateLocalStorage</i></span>
+            <span
+            style="color:#a7dbf7;">();</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#00bff9;"><i>this</i>
+            </span><span style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>showDefaultImage</i></span>
+            <span
+            style="color:#a7dbf7;">();</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+          <span
+          style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>updateLocalStorage</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>_LocalStorageService</i></span>
+            <span
+            style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>setItem</i></span><span style="color:#a7dbf7;">(</span>
+              <span
+              style="color:#6bff81;">'</span><span style="color:#bcf0c0;">images</span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#a7dbf7;">,</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+                  <span
+                  style="color:#7fdbca;"><i>images</i>
+                    </span><span style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>_LocalStorageService</i></span>
+            <span
+            style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>setItem</i></span><span style="color:#a7dbf7;">(</span>
+              <span
+              style="color:#6bff81;">'</span><span style="color:#bcf0c0;">imageIndex</span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#a7dbf7;">,</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+                  <span
+                  style="color:#7fdbca;"><i>imageIndex</i>
+                    </span><span style="color:#a7dbf7;">); </span><span style="color:#999999;"><i>// Save imageIndex</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>clearImages</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>_LocalStorageService</i></span>
+            <span
+            style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>clear</i></span><span style="color:#a7dbf7;">();</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>images</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#7fdbca;">length</span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>=</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#8dec95;">0</span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>preview</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">''</span>
+              <span
+              style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>displayImage</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#d7dbe0;">index</span><span style="color:#00bff9;"><i>:</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#7fdbca;">number</span><span style="color:#a7dbf7;">) </span>
+              <span
+              style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>index</i></span>
+              <span
+              style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>preview</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>this</i></span>
+              <span
+              style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>images</i></span><span style="color:#a7dbf7;">[</span>
+                <span
+                style="color:#d6deeb;"><i>index</i>
+                  </span><span style="color:#a7dbf7;">];</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>updateLocalStorage</i></span>
+            <span
+            style="color:#a7dbf7;">();</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>deleteImage</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#f7ecb5;"><i>images</i>
+              </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;">length</span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>&gt;</i></span><span style="color:#a7dbf7;"> </span>
+                <span
+                style="color:#8dec95;">0</span><span style="color:#a7dbf7;">) </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>images</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#87aff4;"><i>splice</i>
+              </span><span style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>this</i></span>
+              <span
+              style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span><span style="color:#a7dbf7;">, </span>
+                <span
+                style="color:#8dec95;">1</span><span style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>updateLocalStorage</i></span>
+            <span
+            style="color:#a7dbf7;">();</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#f7ecb5;"><i>images</i>
+              </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;">length</span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>===</i></span><span style="color:#a7dbf7;"> </span>
+                <span
+                style="color:#8dec95;">0</span><span style="color:#a7dbf7;">) </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#00bff9;"><i>this</i>
+            </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>preview</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>=</i></span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#6bff81;">''</span><span style="color:#a7dbf7;">; </span><span style="color:#999999;"><i>// Reset preview if no images are left</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+          <span
+          style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>else</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#00bff9;"><i>this</i>
+            </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>=</i></span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#ec9cd2;">Math</span><span style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;">min</span>
+                <span
+                style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+                  <span
+                  style="color:#7fdbca;"><i>imageIndex</i>
+                    </span><span style="color:#a7dbf7;">, </span><span style="color:#00bff9;"><i>this</i></span>
+                    <span
+                    style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>images</i></span><span style="color:#a7dbf7;">.</span>
+                      <span
+                      style="color:#7fdbca;">length</span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>-</i></span>
+                        <span
+                        style="color:#a7dbf7;"></span><span style="color:#8dec95;">1</span><span style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>
+          <span
+          style="color:#00bff9;"><i>this</i>
+            </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>preview</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>=</i></span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#00bff9;"><i>this</i>
+                </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>images</i></span>
+                <span
+                style="color:#a7dbf7;">[</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+                  <span
+                  style="color:#7fdbca;"><i>imageIndex</i>
+                    </span><span style="color:#a7dbf7;">];</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>backImage</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#7fdbca;"><i>imageIndex</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>&gt;</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#8dec95;">0</span><span style="color:#a7dbf7;">) </span>
+                <span
+                style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span><span style="color:#00bff9;"><i>--</i></span>
+            <span
+            style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+          <span
+          style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>else</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>this</i></span>
+              <span
+              style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>images</i></span><span style="color:#a7dbf7;">.</span>
+                <span
+                style="color:#7fdbca;">length</span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>-</i></span>
+                  <span
+                  style="color:#a7dbf7;"></span><span style="color:#8dec95;">1</span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>preview</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>this</i></span>
+              <span
+              style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>images</i></span><span style="color:#a7dbf7;">[</span>
+                <span
+                style="color:#00bff9;"><i>this</i>
+                  </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span>
+                  <span
+                  style="color:#a7dbf7;">];</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>updateLocalStorage</i></span>
+            <span
+            style="color:#a7dbf7;">();</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>forwardImage</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span><span style="color:#00bff9;"><i>++</i></span>
+            <span
+            style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#7fdbca;"><i>imageIndex</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>&gt;=</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+                <span
+                style="color:#f7ecb5;"><i>images</i>
+                  </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;">length</span>
+                  <span
+                  style="color:#a7dbf7;">)</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#8dec95;">0</span>
+              <span
+              style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>preview</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>this</i></span>
+              <span
+              style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>images</i></span><span style="color:#a7dbf7;">[</span>
+                <span
+                style="color:#00bff9;"><i>this</i>
+                  </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span>
+                  <span
+                  style="color:#a7dbf7;">];</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>updateLocalStorage</i></span>
+            <span
+            style="color:#a7dbf7;">();</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>showDefaultImage</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>this</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#f7ecb5;"><i>images</i>
+              </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;">length</span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>&gt;</i></span><span style="color:#a7dbf7;"> </span>
+                <span
+                style="color:#8dec95;">0</span><span style="color:#a7dbf7;">) </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>preview</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>this</i></span>
+              <span
+              style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>images</i></span><span style="color:#a7dbf7;">[</span>
+                <span
+                style="color:#00bff9;"><i>this</i>
+                  </span><span style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>imageIndex</i></span>
+                  <span
+                  style="color:#a7dbf7;">];</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+          <span
+          style="color:#a7dbf7;"></span><span style="color:#00bff9;"><i>else</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>this</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#7fdbca;"><i>preview</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">''</span>
+              <span
+              style="color:#a7dbf7;">;</span><span style="color:#999999;"><i>// Reset if no images available</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

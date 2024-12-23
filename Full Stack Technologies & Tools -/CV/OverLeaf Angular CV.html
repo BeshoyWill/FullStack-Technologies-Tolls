@@ -1,0 +1,346 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>OverLeaf Angular CV</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>OverLeaf Angular CV</h1>
+
+      <div class="ck-content">
+        <p>\documentclass[10pt, letterpaper]{article}</p>
+        <p>% Packages:
+          <br>\usepackage[
+          <br>&nbsp; &nbsp;ignoreheadfoot, % set margins without considering header
+          and footer
+          <br>&nbsp; &nbsp;top=2 cm, % seperation between body and page edge from the
+          top
+          <br>&nbsp; &nbsp;bottom=2 cm, % seperation between body and page edge from
+          the bottom
+          <br>&nbsp; &nbsp;left=2 cm, % seperation between body and page edge from the
+          left
+          <br>&nbsp; &nbsp;right=2 cm, % seperation between body and page edge from
+          the right
+          <br>&nbsp; &nbsp;footskip=1.0 cm, % seperation between body and footer
+          <br>&nbsp; &nbsp;% showframe % for debugging&nbsp;
+          <br>]{geometry} % for adjusting page geometry
+          <br>\usepackage{titlesec} % for customizing section titles
+          <br>\usepackage{tabularx} % for making tables with fixed width columns
+          <br>\usepackage{array} % tabularx requires this
+          <br>\usepackage[dvipsnames]{xcolor} % for coloring text
+          <br>\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+          <br>\usepackage{enumitem} % for customizing lists
+          <br>\usepackage{fontawesome5} % for using icons
+          <br>\usepackage{amsmath} % for math
+          <br>\usepackage[
+          <br>&nbsp; &nbsp;pdftitle={John Doe's CV},
+          <br>&nbsp; &nbsp;pdfauthor={John Doe},
+          <br>&nbsp; &nbsp;pdfcreator={LaTeX with RenderCV},
+          <br>&nbsp; &nbsp;colorlinks=true,
+          <br>&nbsp; &nbsp;urlcolor=primaryColor
+          <br>]{hyperref} % for links, metadata and bookmarks
+          <br>\usepackage[pscoord]{eso-pic} % for floating text on the page
+          <br>\usepackage{calc} % for calculating lengths
+          <br>\usepackage{bookmark} % for bookmarks
+          <br>\usepackage{lastpage} % for getting the total number of pages
+          <br>\usepackage{changepage} % for one column entries (adjustwidth environment)
+          <br>\usepackage{paracol} % for two and three column entries
+          <br>\usepackage{ifthen} % for conditional statements
+          <br>\usepackage{needspace} % for avoiding page brake right after the section
+          title
+          <br>\usepackage{iftex} % check if engine is pdflatex, xetex or luatex</p>
+        <p>% Ensure that generate pdf is machine readable/ATS parsable:
+          <br>\ifPDFTeX
+          <br>&nbsp; &nbsp;\input{glyphtounicode}
+          <br>&nbsp; &nbsp;\pdfgentounicode=1
+          <br>&nbsp; &nbsp;% \usepackage[T1]{fontenc} % this breaks sb2nov
+          <br>&nbsp; &nbsp;\usepackage[utf8]{inputenc}
+          <br>&nbsp; &nbsp;\usepackage{lmodern}
+          <br>\fi</p>
+        <p>&nbsp;</p>
+        <p>% Some settings:
+          <br>\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before
+          adjustwidth environment
+          <br>\pagestyle{empty} % no header or footer
+          <br>\setcounter{secnumdepth}{0} % no section numbering
+          <br>\setlength{\parindent}{0pt} % no indentation
+          <br>\setlength{\topskip}{0pt} % no top skip
+          <br>\setlength{\columnsep}{0cm} % set column seperation
+          <br>\makeatletter
+          <br>\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+          <br>\patchcmd{\ps@customFooterStyle}{\thepage}{
+          <br>&nbsp; &nbsp;\color{gray}\textit{\small John Doe - Page \thepage{} of
+          \pageref*{LastPage}}
+          <br>}{}{} % replace number by desired string
+          <br>\makeatother
+          <br>\pagestyle{customFooterStyle}</p>
+        <p>\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]</p>
+        <p>\titlespacing{\section}{
+          <br>&nbsp; &nbsp;% left space:
+          <br>&nbsp; &nbsp;-1pt
+          <br>}{
+          <br>&nbsp; &nbsp;% top space:
+          <br>&nbsp; &nbsp;0.3 cm
+          <br>}{
+          <br>&nbsp; &nbsp;% bottom space:
+          <br>&nbsp; &nbsp;0.2 cm
+          <br>} % section title spacing</p>
+        <p>\renewcommand\labelitemi{$\circ$} % custom bullet points
+          <br>\newenvironment{highlights}{
+          <br>&nbsp; &nbsp;\begin{itemize}[
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;topsep=0.10 cm,
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;parsep=0.10 cm,
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;partopsep=0pt,
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;itemsep=0pt,
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;leftmargin=0.4 cm + 10pt
+          <br>&nbsp; &nbsp;]
+          <br>}{
+          <br>&nbsp; &nbsp;\end{itemize}
+          <br>} % new environment for highlights</p>
+        <p>\newenvironment{highlightsforbulletentries}{
+          <br>&nbsp; &nbsp;\begin{itemize}[
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;topsep=0.10 cm,
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;parsep=0.10 cm,
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;partopsep=0pt,
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;itemsep=0pt,
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;leftmargin=10pt
+          <br>&nbsp; &nbsp;]
+          <br>}{
+          <br>&nbsp; &nbsp;\end{itemize}
+          <br>} % new environment for highlights for bullet entries</p>
+        <p>
+          <br>\newenvironment{onecolentry}{
+          <br>&nbsp; &nbsp;\begin{adjustwidth}{
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;0.2 cm + 0.00001 cm
+          <br>&nbsp; &nbsp;}{
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;0.2 cm + 0.00001 cm
+          <br>&nbsp; &nbsp;}
+          <br>}{
+          <br>&nbsp; &nbsp;\end{adjustwidth}
+          <br>} % new environment for one column entries</p>
+        <p>\newenvironment{twocolentry}[2][]{
+          <br>&nbsp; &nbsp;\onecolentry
+          <br>&nbsp; &nbsp;\def\secondColumn{#2}
+          <br>&nbsp; &nbsp;\setcolumnwidth{\fill, 4.5 cm}
+          <br>&nbsp; &nbsp;\begin{paracol}{2}
+          <br>}{
+          <br>&nbsp; &nbsp;\switchcolumn \raggedleft \secondColumn
+          <br>&nbsp; &nbsp;\end{paracol}
+          <br>&nbsp; &nbsp;\endonecolentry
+          <br>} % new environment for two column entries</p>
+        <p>\newenvironment{header}{
+          <br>&nbsp; &nbsp;\setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+          <br>}{
+          <br>&nbsp; &nbsp;\par\kern\topsep
+          <br>} % new environment for the header</p>
+        <p>\newcommand{\placelastupdatedtext}{% \placetextbox{&lt;horizontal pos&gt;}{&lt;vertical
+          pos&gt;}{&lt;stuff&gt;}
+          <br>&nbsp;\AddToShipoutPictureFG*{% Add &lt;stuff&gt; to current page foreground
+          <br>&nbsp; &nbsp;\put(
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\LenToUnit{\paperheight-1.0 cm}
+          <br>&nbsp; &nbsp;){\vtop{{\null}\makebox[0pt][c]{
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\small\color{gray}\textit{Last updated in September
+          2024}\hspace{\widthof{Last updated in September 2024}}
+          <br>&nbsp; &nbsp;}}}%
+          <br>&nbsp;}%
+          <br>}%</p>
+        <p>% save the original href command in a new command:
+          <br>\let\hrefWithoutArrow\href</p>
+        <p>% new command for external links:
+          <br>\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{
+          }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}</p>
+        <p>
+          <br>\begin{document}
+          <br>&nbsp; &nbsp;\newcommand{\AND}{\unskip
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\cleaders\copy\ANDbox\hskip\wd\ANDbox
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\ignorespaces
+          <br>&nbsp; &nbsp;}
+          <br>&nbsp; &nbsp;\newsavebox\ANDbox
+          <br>&nbsp; &nbsp;\sbox\ANDbox{}</p>
+        <p>&nbsp; &nbsp;\placelastupdatedtext
+          <br>&nbsp; &nbsp;\begin{header}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\textbf{\fontsize{24 pt}{24 pt}\selectfont
+          Behsoy Youssef}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.3 cm}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\normalsize
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\mbox{\hrefWithoutArrow{mailto:beshoy.job@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}beshoy.job@gmail.com}}%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\AND%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\mbox{\hrefWithoutArrow{tel:+20-128-020-10-69}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}0128
+          020 10 69}}%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\AND%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\mbox{\hrefWithoutArrow{https://yourwebsite.com/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}yourwebsite.com}}%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\AND%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\mbox{\hrefWithoutArrow{https://www.linkedin.com/in/beshoy-william-94775730a/}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}BeshoyWilliam}}%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\AND%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\mbox{\hrefWithoutArrow{https://github.com/BeshoyWill}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}BeshoyWill}}%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\AND%
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\kern 0.25 cm%
+          <br>\mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Egypt,
+          Beni Suef}%
+          <br>&nbsp; &nbsp;\end{header}</p>
+        <p>&nbsp; &nbsp;\vspace{0.3 cm - 0.3 cm}</p>
+        <p>
+          <br>&nbsp; &nbsp;\section{Summary}</p>
+        <p>&nbsp;</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; An Experienced Front-End Developer
+          who loves open-source contributions. Has an eagle eye on both sides of
+          a fantastic user interface and clean code with performance.&nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{onecolentry}</p>
+        <p>&nbsp;</p>
+        <p>&nbsp; &nbsp;\section{Experience}</p>
+        <p>&nbsp;</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{twocolentry}{
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\textit{Nov 2023 – Present}}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textbf{Front End Developer -
+          Freelance}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{twocolentry}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.10 cm}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\begin{highlights}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Convert PSD
+          to HTML
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Make responsive
+          websites
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Restful API
+          with Angular +2
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Todo list
+          App with Angular +2
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Countries
+          API with Angular +2
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item IP tracker
+          app with vanilla js
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item solve many
+          challenges of frontend.mentor
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\end{highlights}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{onecolentry}</p>
+        <p>
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.2 cm}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\begin{twocolentry}{
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\textit{May 2022 – Nov 2023}}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textbf{Front End Developer -
+          \textit{Glyceria}}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textit{Microsoft}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{twocolentry}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.10 cm}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\begin{highlights}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Works on
+          ERP system based on the Angular framework.
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Restful APIs
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item design and
+          develop susbsystems (ticketing system) to handle tasks of company projects.
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item have worked
+          on the HR system (design and integrate endpoints to make the employee the
+          ability to know his vacations, contracts, and communications with other
+          people).
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item working on
+          an accounts system to make accounts handle a lot of transactions easily.
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item handle and
+          fix errors &amp; bugs.
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item works with
+          version control system (Git - Gitlab).
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\end{highlights}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{onecolentry}</p>
+        <p>&nbsp; &nbsp;\section{Education}</p>
+        <p>&nbsp;</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{twocolentry}{
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\textit{Jan 2018 – Jan 2022}}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textbf{Beni Suef University}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textit{Bachelor of IT of Faculty
+          of computers and Artificial Intelligence.}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{twocolentry}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.10 cm}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\begin{highlights}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Grade: Very
+          Good
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item \textbf{Coursework:}
+          Computer Architecture, Comparison of Learning Algorithms, Computational
+          Theory
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\end{highlights}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.20 cm}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{twocolentry}{
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\textit{Mar 2020 - Juni 2020}}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textbf{Udemy}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textit{Angular - The Complete
+          Guide - Maximilian Schwarzmüller.}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{twocolentry}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.10 cm}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.20 cm}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{twocolentry}{
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\textit{Okt 2024 - Present}}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textbf{Route}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textit{ Back End (ASP.NET) -
+          The Complete Guide - Route Academy.}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{twocolentry}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.10 cm}
+          <br>&nbsp; &nbsp;
+          <br>&nbsp; &nbsp;
+          <br>&nbsp; &nbsp;\section{Technologies}</p>
+        <p>&nbsp;</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textbf{Languages:} C++, C, Java,
+          Objective-C, C\#, SQL, JavaScript
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{onecolentry}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.2 cm}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\begin{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textbf{Technologies:} .NET,
+          Microsoft SQL Server, XCode, Interface Builder
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{onecolentry}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\textbf{Languages:}&nbsp;
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.10 cm}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\begin{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\begin{highlights}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item Arabic: Native
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item English:
+          B2
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\item German: B1
+          <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\end{highlights}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{onecolentry}
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;\end{onecolentry}</p>
+        <p>&nbsp; &nbsp; &nbsp; &nbsp;\vspace{0.2 cm}</p>
+        <p>
+          <br>&nbsp; &nbsp;</p>
+        <p>\end{document}</p>
+      </div>
+    </div>
+  </body>
+
+</html>

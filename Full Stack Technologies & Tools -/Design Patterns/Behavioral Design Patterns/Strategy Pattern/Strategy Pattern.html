@@ -1,0 +1,210 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Strategy Pattern</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Strategy Pattern</h1>
+
+      <div class="ck-content">
+        <p>The <strong>Strategy Pattern</strong> is a behavioral design pattern that
+          enables selecting an algorithm's behavior at runtime. Instead of implementing
+          multiple versions of the same logic, the pattern encapsulates algorithms
+          into separate classes, allowing the client to choose which one to use dynamically.</p>
+        <p>&nbsp;</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Encapsulation of Algorithms</strong>: Different algorithms or
+            strategies are encapsulated in their own classes.</li>
+          <li><strong>Interchangeable Strategies</strong>: Strategies can be selected
+            or swapped without altering the context.</li>
+          <li><strong>Open/Closed Principle</strong>: Easy to extend by adding new strategies
+            without modifying existing code.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Payment Processing System</strong>
+        </p>
+        <p>An e-commerce platform supports multiple payment methods:</p>
+        <ul>
+          <li><strong>Credit Card</strong>
+          </li>
+          <li><strong>PayPal</strong>
+          </li>
+          <li><strong>Bank Transfer</strong>
+          </li>
+          <li><strong>Games</strong>
+          </li>
+          <li><strong>Sorting</strong>
+          </li>
+        </ul>
+        <p>Each payment method has its own processing logic. The system dynamically
+          chooses the appropriate payment method based on the user's selection.</p>
+        <p>&nbsp;</p>
+        <h3>Pitfalls:</h3>
+        <ol>
+          <li><strong>Client has to know about strategies.</strong>
+          </li>
+          <li><strong>Increased Number of Classes.</strong>
+          </li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Implementation in Angular:</h3>
+        <h4>1. <strong>Strategy Interface</strong>:</h4>
+        <p>Defines a common interface for all payment strategies.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export interface PaymentStrategy {
+ &nbsp;pay(amount: number): void;
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>2. <strong>Concrete Strategies</strong>:</h4>
+        <p>Implement specific payment logic.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { PaymentStrategy } from './payment-strategy';
+
+export class CreditCardPayment implements PaymentStrategy {
+ &nbsp;pay(amount: number): void {
+ &nbsp; &nbsp;console.log(`Paid ${amount} using Credit Card.`);
+ &nbsp;}
+}
+
+export class PayPalPayment implements PaymentStrategy {
+ &nbsp;pay(amount: number): void {
+ &nbsp; &nbsp;console.log(`Paid ${amount} using PayPal.`);
+ &nbsp;}
+}
+
+export class BankTransferPayment implements PaymentStrategy {
+ &nbsp;pay(amount: number): void {
+ &nbsp; &nbsp;console.log(`Paid ${amount} using Bank Transfer.`);
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>3. <strong>Context Class</strong>:</h4>
+        <p>Uses a strategy to perform payment.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { PaymentStrategy } from './payment-strategy';
+
+export class PaymentContext {
+ &nbsp;private strategy: PaymentStrategy;
+
+ &nbsp;setStrategy(strategy: PaymentStrategy): void {
+ &nbsp; &nbsp;this.strategy = strategy;
+ &nbsp;}
+
+ &nbsp;executePayment(amount: number): void {
+ &nbsp; &nbsp;if (!this.strategy) {
+ &nbsp; &nbsp; &nbsp;throw new Error('Payment strategy not set.');
+ &nbsp; &nbsp;}
+ &nbsp; &nbsp;this.strategy.pay(amount);
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>4. <strong>AppComponent</strong>:</h4>
+        <p>Demonstrates selecting and executing different strategies.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { Component } from '@angular/core';
+import { PaymentContext } from './payment-context';
+import { CreditCardPayment } from './credit-card-payment';
+import { PayPalPayment } from './paypal-payment';
+import { BankTransferPayment } from './bank-transfer-payment';
+
+@Component({
+ &nbsp;selector: 'app-root',
+ &nbsp;template: `
+ &nbsp; &nbsp;&lt;div&gt;
+ &nbsp; &nbsp; &nbsp;&lt;h3&gt;Payment System&lt;/h3&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="selectPaymentMethod('creditCard')"&gt;Pay with Credit Card&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="selectPaymentMethod('paypal')"&gt;Pay with PayPal&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="selectPaymentMethod('bankTransfer')"&gt;Pay with Bank Transfer&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;br /&gt;&lt;br /&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="makePayment()"&gt;Make Payment&lt;/button&gt;
+ &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp;`,
+})
+export class AppComponent {
+ &nbsp;paymentContext = new PaymentContext();
+ &nbsp;selectedStrategy: string = '';
+
+ &nbsp;selectPaymentMethod(method: string): void {
+ &nbsp; &nbsp;this.selectedStrategy = method;
+
+ &nbsp; &nbsp;switch (method) {
+ &nbsp; &nbsp; &nbsp;case 'creditCard':
+ &nbsp; &nbsp; &nbsp; &nbsp;this.paymentContext.setStrategy(new CreditCardPayment());
+ &nbsp; &nbsp; &nbsp; &nbsp;break;
+ &nbsp; &nbsp; &nbsp;case 'paypal':
+ &nbsp; &nbsp; &nbsp; &nbsp;this.paymentContext.setStrategy(new PayPalPayment());
+ &nbsp; &nbsp; &nbsp; &nbsp;break;
+ &nbsp; &nbsp; &nbsp;case 'bankTransfer':
+ &nbsp; &nbsp; &nbsp; &nbsp;this.paymentContext.setStrategy(new BankTransferPayment());
+ &nbsp; &nbsp; &nbsp; &nbsp;break;
+ &nbsp; &nbsp; &nbsp;default:
+ &nbsp; &nbsp; &nbsp; &nbsp;console.log('Invalid payment method.');
+ &nbsp; &nbsp;}
+ &nbsp;}
+
+ &nbsp;makePayment(): void {
+ &nbsp; &nbsp;try {
+ &nbsp; &nbsp; &nbsp;this.paymentContext.executePayment(100); // Example amount
+ &nbsp; &nbsp;} catch (error) {
+ &nbsp; &nbsp; &nbsp;console.error(error.message);
+ &nbsp; &nbsp;}
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h3>Explanation:</h3>
+        <p><strong>Strategy Interface</strong>:</p>
+        <ul>
+          <li><code>PaymentStrategy</code> defines the common method <code>pay</code> for
+            all payment strategies.</li>
+        </ul>
+        <p><strong>Concrete Strategies</strong>:</p>
+        <ul>
+          <li><code>CreditCardPayment</code>, <code>PayPalPayment</code>, and <code>BankTransferPayment</code> implement
+            the specific logic for each payment method.</li>
+        </ul>
+        <p><strong>Context Class</strong>:</p>
+        <ul>
+          <li><code>PaymentContext</code> holds a reference to the strategy and delegates
+            the execution of the algorithm.</li>
+        </ul>
+        <p><strong>Client Code</strong>:</p>
+        <ul>
+          <li>The Angular component allows users to select a payment method and executes
+            the payment with the chosen strategy.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>Real-World Applications:</h3>
+        <ol>
+          <li><strong>Payment Gateways</strong>: Switching between payment providers.</li>
+          <li><strong>Sorting Algorithms</strong>: Selecting different sorting strategies
+            dynamically.</li>
+          <li><strong>Compression Tools</strong>: Applying various compression algorithms
+            (e.g., ZIP, RAR).</li>
+          <li><strong>Travel Booking</strong>: Choosing different transportation methods
+            (flight, train, car).</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+
+</html>

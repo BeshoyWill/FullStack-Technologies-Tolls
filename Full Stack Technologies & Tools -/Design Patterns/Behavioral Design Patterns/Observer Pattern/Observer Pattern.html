@@ -1,0 +1,226 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Observer Pattern</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Observer Pattern</h1>
+
+      <div class="ck-content">
+        <p>The <strong>Observer Pattern</strong> is a behavioral design pattern that
+          defines a one-to-many dependency between objects. When one object (called
+          the <strong>Subject</strong>) changes its state, all its dependent objects
+          (<strong>Observers</strong>) are notified and updated automatically. This
+          pattern is useful for implementing distributed event-handling systems.</p>
+        <hr>
+        <p>&nbsp;</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Decoupling</strong>: Observers are decoupled from the Subject,
+            promoting loose coupling.</li>
+          <li><strong>Dynamic Updates</strong>: Observers are notified of changes in
+            real-time.</li>
+          <li><strong>Flexibility</strong>: Observers can be added or removed dynamically.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Weather Monitoring System</strong>
+        </p>
+        <p>Imagine a weather station system where multiple devices (e.g., a phone
+          app, a web dashboard, and a weather display) need real-time updates when
+          the weather changes:</p>
+        <ol>
+          <li><strong>Subject</strong>: The Weather Station collects and maintains weather
+            data (temperature, humidity, etc.).</li>
+          <li><strong>Observers</strong>: Devices like apps or displays that subscribe
+            to the Weather Station and update themselves when new weather data is available.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h4>Implementation Flow:</h4>
+        <ul>
+          <li>The Weather Station (Subject) tracks weather data.</li>
+          <li>Devices (Observers) register themselves to the Weather Station to receive
+            updates.</li>
+          <li>When the Weather Station updates its data, it notifies all registered
+            Observers.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>Benefits of the Observer Pattern:</h3>
+        <ol>
+          <li><strong>Loose Coupling</strong>: Observers and Subjects are independent.</li>
+          <li><strong>Real-Time Updates</strong>: Observers get notified of changes
+            instantly.</li>
+          <li><strong>Dynamic Subscription</strong>: Observers can be added or removed
+            without affecting the Subject.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>Here’s how the <strong>Observer Pattern</strong> can be implemented in <strong>Angular</strong> using
+          TypeScript. In this example, we'll simulate a <strong>Weather Monitoring System</strong> where
+          components subscribe to weather updates.</p>
+        <hr>
+        <p>&nbsp;</p>
+        <p><span class="text-big"><strong>Angular Example Code:-</strong></span>
+        </p>
+        <p>&nbsp;</p>
+        <h4><code>1. <strong>WeatherService (Subject):</strong></code></h4>
+        <p><code>This service acts as the Subject and notifies subscribers (Observers) of any updates.</code>
+        </p>
+        <p><code>import { Injectable } from '@angular/core';</code>
+          <br><code>import { BehaviorSubject, Observable } from 'rxjs';</code>
+        </p>
+        <p><code>@Injectable({</code>
+          <br><code>&nbsp;providedIn: 'root',</code>
+          <br><code>})</code>
+          <br><code>export class WeatherService {</code>
+          <br><code>&nbsp;private weatherDataSubject = new BehaviorSubject&lt;{ temperature: number; humidity: number }&gt;({</code>
+          <br><code>&nbsp; &nbsp;temperature: 0,</code>
+          <br><code>&nbsp; &nbsp;humidity: 0,</code>
+          <br><code>&nbsp;});</code>
+        </p>
+        <p><code>&nbsp;// Observable to be subscribed to by Observers</code>
+          <br><code>&nbsp;weatherData$: Observable&lt;{ temperature: number; humidity: number }&gt; =</code>
+          <br><code>&nbsp; &nbsp;this.weatherDataSubject.asObservable();</code>
+        </p>
+        <p><code>&nbsp;// Update weather data and notify observers</code>
+          <br><code>&nbsp;updateWeatherData(data: { temperature: number; humidity: number }): void {</code>
+          <br><code>&nbsp; &nbsp;this.weatherDataSubject.next(data);</code>
+          <br><code>&nbsp;}</code>
+          <br><code>}</code>
+          <br>&nbsp;</p>
+        <h4>2. <strong>WeatherDashboardComponent (Observer):</strong></h4>
+        <p>This component observes changes to the weather data.</p>
+        <p><code>import { Component, OnDestroy, OnInit } from '@angular/core';</code>
+          <br><code>import { Subscription } from 'rxjs';</code>
+          <br><code>import { WeatherService } from './weather.service';</code>
+        </p>
+        <p><code>@Component({</code>
+          <br><code>&nbsp;selector: 'app-weather-dashboard',</code>
+          <br><code>&nbsp;template: `</code>
+          <br><code>&nbsp; &nbsp;&lt;div&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;h3&gt;Weather Dashboard&lt;/h3&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;p&gt;Temperature: {{ weatherData.temperature }}°C&lt;/p&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;p&gt;Humidity: {{ weatherData.humidity }}%&lt;/p&gt;</code>
+          <br><code>&nbsp; &nbsp;&lt;/div&gt;</code>
+          <br><code>&nbsp;`,</code>
+          <br><code>})</code>
+          <br><code>export class WeatherDashboardComponent implements OnInit, OnDestroy {</code>
+          <br><code>&nbsp;weatherData = { temperature: 0, humidity: 0 };</code>
+          <br><code>&nbsp;private subscription: Subscription;</code>
+        </p>
+        <p><code>&nbsp;constructor(private weatherService: WeatherService) {}</code>
+        </p>
+        <p><code>&nbsp;ngOnInit(): void {</code>
+          <br><code>&nbsp; &nbsp;// Subscribe to weather updates</code>
+          <br><code>&nbsp; &nbsp;this.subscription = this.weatherService.weatherData$.subscribe((data) =&gt; {</code>
+          <br><code>&nbsp; &nbsp; &nbsp;this.weatherData = data;</code>
+          <br><code>&nbsp; &nbsp;});</code>
+          <br><code>&nbsp;}</code>
+        </p>
+        <p><code>&nbsp;ngOnDestroy(): void {</code>
+          <br><code>&nbsp; &nbsp;// Unsubscribe to prevent memory leaks</code>
+          <br><code>&nbsp; &nbsp;this.subscription.unsubscribe();</code>
+          <br><code>&nbsp;}</code>
+          <br><code>}</code>
+          <br>&nbsp;</p>
+        <h4>3. <strong>WeatherDisplayComponent (Observer):</strong></h4>
+        <p>Another component observing the same weather updates.</p>
+        <p><code>import { Component, OnDestroy, OnInit } from '@angular/core';</code>
+          <br><code>import { Subscription } from 'rxjs';</code>
+          <br><code>import { WeatherService } from './weather.service';</code>
+        </p>
+        <p><code>@Component({</code>
+          <br><code>&nbsp;selector: 'app-weather-display',</code>
+          <br><code>&nbsp;template: `</code>
+          <br><code>&nbsp; &nbsp;&lt;div&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;h3&gt;Weather Display&lt;/h3&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;p&gt;Temperature: {{ weatherData.temperature }}°C&lt;/p&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;p&gt;Humidity: {{ weatherData.humidity }}%&lt;/p&gt;</code>
+          <br><code>&nbsp; &nbsp;&lt;/div&gt;</code>
+          <br><code>&nbsp;`,</code>
+          <br><code>})</code>
+          <br><code>export class WeatherDisplayComponent implements OnInit, OnDestroy {</code>
+          <br><code>&nbsp;weatherData = { temperature: 0, humidity: 0 };</code>
+          <br><code>&nbsp;private subscription: Subscription;</code>
+        </p>
+        <p><code>&nbsp;constructor(private weatherService: WeatherService) {}</code>
+        </p>
+        <p><code>&nbsp;ngOnInit(): void {</code>
+          <br><code>&nbsp; &nbsp;// Subscribe to weather updates</code>
+          <br><code>&nbsp; &nbsp;this.subscription = this.weatherService.weatherData$.subscribe((data) =&gt; {</code>
+          <br><code>&nbsp; &nbsp; &nbsp;this.weatherData = data;</code>
+          <br><code>&nbsp; &nbsp;});</code>
+          <br><code>&nbsp;}</code>
+        </p>
+        <p><code>&nbsp;ngOnDestroy(): void {</code>
+          <br><code>&nbsp; &nbsp;// Unsubscribe to prevent memory leaks</code>
+          <br><code>&nbsp; &nbsp;this.subscription.unsubscribe();</code>
+          <br><code>&nbsp;}</code>
+          <br><code>}</code>
+          <br>&nbsp;</p>
+        <h4>4. <strong>AppComponent (Simulating Updates):</strong></h4>
+        <p>Simulates updates to the weather data.</p>
+        <p><code>import { Component } from '@angular/core';</code>
+          <br><code>import { WeatherService } from './weather.service';</code>
+        </p>
+        <p><code>@Component({</code>
+          <br><code>&nbsp;selector: 'app-root',</code>
+          <br><code>&nbsp;template: `</code>
+          <br><code>&nbsp; &nbsp;&lt;div&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;button (click)="updateWeather()"&gt;Update Weather&lt;/button&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;app-weather-dashboard&gt;&lt;/app-weather-dashboard&gt;</code>
+          <br><code>&nbsp; &nbsp; &nbsp;&lt;app-weather-display&gt;&lt;/app-weather-display&gt;</code>
+          <br><code>&nbsp; &nbsp;&lt;/div&gt;</code>
+          <br><code>&nbsp;`,</code>
+          <br><code>})</code>
+          <br><code>export class AppComponent {</code>
+          <br><code>&nbsp;constructor(private weatherService: WeatherService) {}</code>
+        </p>
+        <p><code>&nbsp;updateWeather(): void {</code>
+          <br><code>&nbsp; &nbsp;// Simulating a weather data update</code>
+          <br><code>&nbsp; &nbsp;const newWeatherData = {</code>
+          <br><code>&nbsp; &nbsp; &nbsp;temperature: Math.floor(Math.random() * 35), // Random temperature</code>
+          <br><code>&nbsp; &nbsp; &nbsp;humidity: Math.floor(Math.random() * 100), // Random humidity</code>
+          <br><code>&nbsp; &nbsp;};</code>
+          <br><code>&nbsp; &nbsp;this.weatherService.updateWeatherData(newWeatherData);</code>
+          <br><code>&nbsp;}</code>
+          <br><code>}</code>
+          <br>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h3>Explanation:</h3>
+        <p><code><strong>WeatherService</strong></code>:</p>
+        <ul>
+          <li>Acts as the Subject using <code>BehaviorSubject</code> to hold and emit
+            weather data.</li>
+          <li>Exposes <code>weatherData$</code> as an observable for components to subscribe.</li>
+        </ul>
+        <p><strong>Observers (Components)</strong>:</p>
+        <ul>
+          <li><code>WeatherDashboardComponent</code> and <code>WeatherDisplayComponent</code> subscribe
+            to <code>weatherData$</code> to receive updates.</li>
+          <li>When <code>updateWeatherData</code> is called in the service, all subscribers
+            are notified.</li>
+        </ul>
+        <p><strong>Simulation</strong>:</p>
+        <ul>
+          <li>Clicking the button in <code>AppComponent</code> triggers an update, and
+            all subscribers get the new weather data in real-time.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <hr>
+        <p>This implementation uses Angular's <strong>RxJS</strong> library to handle
+          the observable pattern efficiently. Let me know if you'd like to add more
+          features or need further clarification!</p>
+      </div>
+    </div>
+  </body>
+
+</html>

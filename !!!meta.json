@@ -1,0 +1,2653 @@
+{
+	"formatVersion": 2,
+	"appVersion": "0.60.4",
+	"files": [
+		{
+			"isClone": false,
+			"noteId": "root",
+			"notePath": [
+				"root"
+			],
+			"title": "Full Stack Technologies & Tools :-",
+			"notePosition": 10,
+			"prefix": null,
+			"isExpanded": true,
+			"type": "text",
+			"mime": "text/html",
+			"attributes": [
+				{
+					"type": "label",
+					"name": "iconClass",
+					"value": "bx bx-laptop",
+					"isInheritable": false,
+					"position": 1
+				}
+			],
+			"format": "html",
+			"dirFileName": "Full Stack Technologies & Tools -",
+			"children": [
+				{
+					"isClone": false,
+					"noteId": "Cr0Re4tT98DM",
+					"notePath": [
+						"root",
+						"Cr0Re4tT98DM"
+					],
+					"title": "CV",
+					"notePosition": 40,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "CV",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "DtlHwcSByAij",
+							"notePath": [
+								"root",
+								"Cr0Re4tT98DM",
+								"DtlHwcSByAij"
+							],
+							"title": "OverLeaf CV",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "OverLeaf CV.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "636HLZz8pSib",
+							"notePath": [
+								"root",
+								"Cr0Re4tT98DM",
+								"636HLZz8pSib"
+							],
+							"title": "OverLeaf Angular CV",
+							"notePosition": 20,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "OverLeaf Angular CV.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "uCtw9YQJTh5h",
+							"notePath": [
+								"root",
+								"Cr0Re4tT98DM",
+								"uCtw9YQJTh5h"
+							],
+							"title": "OverLeaf ReactJS CV",
+							"notePosition": 30,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "OverLeaf ReactJS CV.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "l1oPhWzhXze1",
+					"notePath": [
+						"root",
+						"l1oPhWzhXze1"
+					],
+					"title": "Git & Github",
+					"notePosition": 50,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "Git & Github",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "yBf9Jo1Bw6ST",
+							"notePath": [
+								"root",
+								"l1oPhWzhXze1",
+								"yBf9Jo1Bw6ST"
+							],
+							"title": "Version Control Systems - VCS",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Version Control Systems - VCS.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "kqLYHAUEw4mg",
+							"notePath": [
+								"root",
+								"l1oPhWzhXze1",
+								"kqLYHAUEw4mg"
+							],
+							"title": "Git Architecture",
+							"notePosition": 20,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Git Architecture.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "ZF1Nl5YJlbGm",
+							"notePath": [
+								"root",
+								"l1oPhWzhXze1",
+								"ZF1Nl5YJlbGm"
+							],
+							"title": " Git File Statuses",
+							"notePosition": 30,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": " Git File Statuses.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "hN5ff5FZdPIb",
+							"notePath": [
+								"root",
+								"l1oPhWzhXze1",
+								"hN5ff5FZdPIb"
+							],
+							"title": "Initialize a Git Repository",
+							"notePosition": 40,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Initialize a Git Repository.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "FO0EMjDNrRul",
+							"notePath": [
+								"root",
+								"l1oPhWzhXze1",
+								"FO0EMjDNrRul"
+							],
+							"title": "Common Git Commands",
+							"notePosition": 50,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Common Git Commands.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "ea0KBjznVII4",
+					"notePath": [
+						"root",
+						"ea0KBjznVII4"
+					],
+					"title": "Angular",
+					"notePosition": 60,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "Angular",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "aWZ6ZV4VgWOQ",
+							"notePath": [
+								"root",
+								"ea0KBjznVII4",
+								"aWZ6ZV4VgWOQ"
+							],
+							"title": "Angular (Project Structure)",
+							"notePosition": 0,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Angular (Project Structure)",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "hrUhMKC48EEF",
+									"notePath": [
+										"root",
+										"ea0KBjznVII4",
+										"aWZ6ZV4VgWOQ",
+										"hrUhMKC48EEF"
+									],
+									"title": "Angular (Best Structured Project)",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dataFileName": "Angular (Best Structured Proje.html"
+								},
+								{
+									"isClone": false,
+									"noteId": "K2dUFOsJHK9M",
+									"notePath": [
+										"root",
+										"ea0KBjznVII4",
+										"aWZ6ZV4VgWOQ",
+										"K2dUFOsJHK9M"
+									],
+									"title": "Angular (Best Structured Examples)",
+									"notePosition": 20,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dataFileName": "Angular (Best Structured Examp.html"
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "pg5mfwGOZ0lE",
+							"notePath": [
+								"root",
+								"ea0KBjznVII4",
+								"pg5mfwGOZ0lE"
+							],
+							"title": "Angular Packages (Most Used)",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Angular Packages (Most Used)",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "wqvTWXkrXFyp",
+									"notePath": [
+										"root",
+										"ea0KBjznVII4",
+										"pg5mfwGOZ0lE",
+										"wqvTWXkrXFyp"
+									],
+									"title": "most commonly used packages in Angular development",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dataFileName": "most commonly used packages in.html"
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "O90kVw39HgNl",
+							"notePath": [
+								"root",
+								"ea0KBjznVII4",
+								"O90kVw39HgNl"
+							],
+							"title": "Main Topics",
+							"notePosition": 20,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Main Topics.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "kgiFK88wSFbm",
+							"notePath": [
+								"root",
+								"ea0KBjznVII4",
+								"kgiFK88wSFbm"
+							],
+							"title": "Angular Projects",
+							"notePosition": 30,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Angular Projects",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "lRkjrYf6XBRf",
+									"notePath": [
+										"root",
+										"ea0KBjznVII4",
+										"kgiFK88wSFbm",
+										"lRkjrYf6XBRf"
+									],
+									"title": "SRC",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "SRC",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "pyxKs3vWUjDD",
+											"notePath": [
+												"root",
+												"ea0KBjznVII4",
+												"kgiFK88wSFbm",
+												"lRkjrYf6XBRf",
+												"pyxKs3vWUjDD"
+											],
+											"title": "app",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dirFileName": "app",
+											"children": [
+												{
+													"isClone": false,
+													"noteId": "nV4UkcN2kmRk",
+													"notePath": [
+														"root",
+														"ea0KBjznVII4",
+														"kgiFK88wSFbm",
+														"lRkjrYf6XBRf",
+														"pyxKs3vWUjDD",
+														"nV4UkcN2kmRk"
+													],
+													"title": "app.component.html",
+													"notePosition": 10,
+													"prefix": null,
+													"isExpanded": false,
+													"type": "text",
+													"mime": "text/html",
+													"attributes": [],
+													"format": "html",
+													"dataFileName": "app.component.html"
+												},
+												{
+													"isClone": false,
+													"noteId": "0dm8bx2H1x9F",
+													"notePath": [
+														"root",
+														"ea0KBjznVII4",
+														"kgiFK88wSFbm",
+														"lRkjrYf6XBRf",
+														"pyxKs3vWUjDD",
+														"0dm8bx2H1x9F"
+													],
+													"title": "app.component.ts",
+													"notePosition": 20,
+													"prefix": null,
+													"isExpanded": false,
+													"type": "text",
+													"mime": "text/html",
+													"attributes": [],
+													"format": "html",
+													"dataFileName": "app.component.ts.html"
+												}
+											]
+										},
+										{
+											"isClone": false,
+											"noteId": "5cjjcnlIp9Mc",
+											"notePath": [
+												"root",
+												"ea0KBjznVII4",
+												"kgiFK88wSFbm",
+												"lRkjrYf6XBRf",
+												"5cjjcnlIp9Mc"
+											],
+											"title": "Services",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dirFileName": "Services",
+											"children": [
+												{
+													"isClone": false,
+													"noteId": "7sgfhvos7HoY",
+													"notePath": [
+														"root",
+														"ea0KBjznVII4",
+														"kgiFK88wSFbm",
+														"lRkjrYf6XBRf",
+														"5cjjcnlIp9Mc",
+														"7sgfhvos7HoY"
+													],
+													"title": "local-storage.service.js",
+													"notePosition": 10,
+													"prefix": null,
+													"isExpanded": false,
+													"type": "text",
+													"mime": "text/html",
+													"attributes": [],
+													"format": "html",
+													"dataFileName": "local-storage.service.js.html"
+												},
+												{
+													"isClone": false,
+													"noteId": "Hn6bk1Kzrrbx",
+													"notePath": [
+														"root",
+														"ea0KBjznVII4",
+														"kgiFK88wSFbm",
+														"lRkjrYf6XBRf",
+														"5cjjcnlIp9Mc",
+														"Hn6bk1Kzrrbx"
+													],
+													"title": "flowbite.service.js",
+													"notePosition": 20,
+													"prefix": null,
+													"isExpanded": false,
+													"type": "text",
+													"mime": "text/html",
+													"attributes": [],
+													"format": "html",
+													"dataFileName": "flowbite.service.js.html"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "KuuTEjdrcbjD",
+							"notePath": [
+								"root",
+								"ea0KBjznVII4",
+								"KuuTEjdrcbjD"
+							],
+							"title": "Angular DOM Concepts",
+							"notePosition": 40,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Angular DOM Concepts",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "im36KZQkIphs",
+									"notePath": [
+										"root",
+										"ea0KBjznVII4",
+										"KuuTEjdrcbjD",
+										"im36KZQkIphs"
+									],
+									"title": "Angular DOM",
+									"notePosition": 30,
+									"prefix": null,
+									"isExpanded": true,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dataFileName": "Angular DOM.html"
+								},
+								{
+									"isClone": false,
+									"noteId": "YpbJ2CPT1tpp",
+									"notePath": [
+										"root",
+										"ea0KBjznVII4",
+										"KuuTEjdrcbjD",
+										"YpbJ2CPT1tpp"
+									],
+									"title": "Code Example",
+									"notePosition": 40,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "code",
+									"mime": "text/plain",
+									"attributes": [],
+									"dataFileName": "Code Example.txt"
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "MjLrMgCibBzG",
+							"notePath": [
+								"root",
+								"ea0KBjznVII4",
+								"MjLrMgCibBzG"
+							],
+							"title": "Angular One Day Plan Revision",
+							"notePosition": 70,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Angular One Day Plan Revision.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "XJdll9dEyRh9",
+							"notePath": [
+								"root",
+								"ea0KBjznVII4",
+								"XJdll9dEyRh9"
+							],
+							"title": "Angular Interview Questions and Answers",
+							"notePosition": 80,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Angular Interview Questions and Answers",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "57wo0dEDriMB",
+									"notePath": [
+										"root",
+										"ea0KBjznVII4",
+										"XJdll9dEyRh9",
+										"57wo0dEDriMB"
+									],
+									"title": "First 10 Questions",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dataFileName": "First 10 Questions.html"
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "K8KpJbNWMMLn",
+							"notePath": [
+								"root",
+								"ea0KBjznVII4",
+								"K8KpJbNWMMLn"
+							],
+							"title": "Angular Code",
+							"notePosition": 90,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Angular Code",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "GlsCKTxfkLla",
+									"notePath": [
+										"root",
+										"ea0KBjznVII4",
+										"K8KpJbNWMMLn",
+										"GlsCKTxfkLla"
+									],
+									"title": "new note",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "code",
+									"mime": "text/plain",
+									"attributes": [],
+									"dataFileName": "new note.txt"
+								}
+							]
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "aHUB5C0swmED",
+					"notePath": [
+						"root",
+						"aHUB5C0swmED"
+					],
+					"title": "Angular Private Area",
+					"notePosition": 80,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "Angular Private Area",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "jxS7HreEdGLv",
+							"notePath": [
+								"root",
+								"aHUB5C0swmED",
+								"jxS7HreEdGLv"
+							],
+							"title": "Steps that you need to begin with in every project",
+							"notePosition": 20,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Steps that you need to begin w.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "AYIsFXi4ocxU",
+							"notePath": [
+								"root",
+								"aHUB5C0swmED",
+								"AYIsFXi4ocxU"
+							],
+							"title": "Interceptors",
+							"notePosition": 30,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Interceptors.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "9T10UOX5kOEV",
+							"notePath": [
+								"root",
+								"aHUB5C0swmED",
+								"9T10UOX5kOEV"
+							],
+							"title": "HTTPClient",
+							"notePosition": 40,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "HTTPClient.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "JLCmqWeoaImx",
+							"notePath": [
+								"root",
+								"aHUB5C0swmED",
+								"JLCmqWeoaImx"
+							],
+							"title": "Local Storage",
+							"notePosition": 50,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Local Storage.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "x6iPCOWvJfq4",
+							"notePath": [
+								"root",
+								"aHUB5C0swmED",
+								"x6iPCOWvJfq4"
+							],
+							"title": "NGX Libraries",
+							"notePosition": 60,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "NGX Libraries.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "GZtvgwGcE3Ba",
+					"notePath": [
+						"root",
+						"GZtvgwGcE3Ba"
+					],
+					"title": "Angular Agenda For Projects",
+					"notePosition": 90,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "Angular Agenda For Projects",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "2dJO7MbbfHru",
+							"notePath": [
+								"root",
+								"GZtvgwGcE3Ba",
+								"2dJO7MbbfHru"
+							],
+							"title": " 3D Circular Charts",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": " 3D Circular Charts.html"
+						},
+						{
+							"isClone": false,
+							"noteId": "cLonyEhjAhdK",
+							"notePath": [
+								"root",
+								"GZtvgwGcE3Ba",
+								"cLonyEhjAhdK"
+							],
+							"title": "new note",
+							"notePosition": 20,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "new note.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "4urmaxrvCr0y",
+					"notePath": [
+						"root",
+						"4urmaxrvCr0y"
+					],
+					"title": "Three.js",
+					"notePosition": 110,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "Three.js",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "bzbxexQRHkT1",
+							"notePath": [
+								"root",
+								"4urmaxrvCr0y",
+								"bzbxexQRHkT1"
+							],
+							"title": "new note",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "new note.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "CwPlslZQDPUi",
+					"notePath": [
+						"root",
+						"CwPlslZQDPUi"
+					],
+					"title": "React.js",
+					"notePosition": 120,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "React.js",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "WYDUwBAoZJBv",
+							"notePath": [
+								"root",
+								"CwPlslZQDPUi",
+								"WYDUwBAoZJBv"
+							],
+							"title": "new note",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "new note.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "F3BablSmUg8i",
+					"notePath": [
+						"root",
+						"F3BablSmUg8i"
+					],
+					"title": "Next.js",
+					"notePosition": 140,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "Next.js",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "UoLEsq3f5PH6",
+							"notePath": [
+								"root",
+								"F3BablSmUg8i",
+								"UoLEsq3f5PH6"
+							],
+							"title": "new note",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "new note.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "yYsB85uCPiHY",
+					"notePath": [
+						"root",
+						"yYsB85uCPiHY"
+					],
+					"title": "Docker",
+					"notePosition": 150,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "Docker",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "JIHbg5NTXENU",
+							"notePath": [
+								"root",
+								"yYsB85uCPiHY",
+								"JIHbg5NTXENU"
+							],
+							"title": "new note",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "new note.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "UjXRcJdB8zZ2",
+					"notePath": [
+						"root",
+						"UjXRcJdB8zZ2"
+					],
+					"title": "ASP.NET Core",
+					"notePosition": 160,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "ASP.NET Core",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "8ymUVrK2QiXd",
+							"notePath": [
+								"root",
+								"UjXRcJdB8zZ2",
+								"8ymUVrK2QiXd"
+							],
+							"title": "ASP.NET (Structure)",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "ASP.NET (Structure)",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "IRpBde5k9Qv4",
+									"notePath": [
+										"root",
+										"UjXRcJdB8zZ2",
+										"8ymUVrK2QiXd",
+										"IRpBde5k9Qv4"
+									],
+									"title": "appsettings.json",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dataFileName": "appsettings.json.html"
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "HmIqTrA71jTO",
+							"notePath": [
+								"root",
+								"UjXRcJdB8zZ2",
+								"HmIqTrA71jTO"
+							],
+							"title": "ASP.NET (Package Manager Console from Tools NuGet Package)",
+							"notePosition": 20,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "ASP.NET (Package Manager Conso.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "Dl8xp5MELlSG",
+					"notePath": [
+						"root",
+						"Dl8xp5MELlSG"
+					],
+					"title": "C#",
+					"notePosition": 170,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "C#",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "T95Xu1oVJzai",
+							"notePath": [
+								"root",
+								"Dl8xp5MELlSG",
+								"T95Xu1oVJzai"
+							],
+							"title": "Session 03",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Session 03.html"
+						}
+					]
+				},
+				{
+					"isClone": false,
+					"noteId": "V9qkrgGpaidW",
+					"notePath": [
+						"root",
+						"V9qkrgGpaidW"
+					],
+					"title": "Design Patterns",
+					"notePosition": 180,
+					"prefix": null,
+					"isExpanded": false,
+					"type": "text",
+					"mime": "text/html",
+					"attributes": [],
+					"format": "html",
+					"dirFileName": "Design Patterns",
+					"children": [
+						{
+							"isClone": false,
+							"noteId": "rbuVxujDqEFJ",
+							"notePath": [
+								"root",
+								"V9qkrgGpaidW",
+								"rbuVxujDqEFJ"
+							],
+							"title": "Types Of Design Patterns",
+							"notePosition": 10,
+							"prefix": null,
+							"isExpanded": true,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Types Of Design Patterns",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "i5rMxUPzJmL6",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"rbuVxujDqEFJ",
+										"i5rMxUPzJmL6"
+									],
+									"title": "Types-of-design-patterns.png",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "image",
+									"mime": "image/png",
+									"attributes": [
+										{
+											"type": "label",
+											"name": "originalFileName",
+											"value": "Types-of-design-patterns.png",
+											"isInheritable": false,
+											"position": 10
+										}
+									],
+									"dataFileName": "Types-of-design-patterns.png"
+								},
+								{
+									"isClone": false,
+									"noteId": "vhrTru4RKhZg",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"rbuVxujDqEFJ",
+										"vhrTru4RKhZg"
+									],
+									"title": "Types Of Design Patterns",
+									"notePosition": 20,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dataFileName": "Types Of Design Patterns.html"
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "SsczO7hGYoU9",
+							"notePath": [
+								"root",
+								"V9qkrgGpaidW",
+								"SsczO7hGYoU9"
+							],
+							"title": "Behavioral Design Patterns",
+							"notePosition": 20,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dataFileName": "Behavioral Design Patterns.html",
+							"dirFileName": "Behavioral Design Patterns",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "A9QQTSOjHkjx",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"A9QQTSOjHkjx"
+									],
+									"title": "Chain Of Responsibility",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Chain Of Responsibility",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "a3EM8FpiMmgD",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"A9QQTSOjHkjx",
+												"a3EM8FpiMmgD"
+											],
+											"title": "ChainOfResponsibility.webp",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/webp",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "ChainOfResponsibility.webp",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "ChainOfResponsibility.webp"
+										},
+										{
+											"isClone": false,
+											"noteId": "Ft0i6eshj0sm",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"A9QQTSOjHkjx",
+												"Ft0i6eshj0sm"
+											],
+											"title": "ChainOfResponsibility",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "ChainOfResponsibility.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "fhTsIQzIGmRs",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"fhTsIQzIGmRs"
+									],
+									"title": "Command Pattern",
+									"notePosition": 20,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Command Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "Ie1zXR876lwD",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"fhTsIQzIGmRs",
+												"Ie1zXR876lwD"
+											],
+											"title": "Screenshot 2024-12-23 022833.png",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 022833.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 022833.p"
+										},
+										{
+											"isClone": false,
+											"noteId": "IzYdWB0h4ckE",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"fhTsIQzIGmRs",
+												"IzYdWB0h4ckE"
+											],
+											"title": "Command Pattern",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Command Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "Ovu2HnRCX0zW",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"Ovu2HnRCX0zW"
+									],
+									"title": "Observer Pattern",
+									"notePosition": 30,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Observer Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "kvorJeF1R7db",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"Ovu2HnRCX0zW",
+												"kvorJeF1R7db"
+											],
+											"title": "observer-3x.png",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/png",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "observer-3x.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "observer-3x.png"
+										},
+										{
+											"isClone": false,
+											"noteId": "OTKNS4RdtmrH",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"Ovu2HnRCX0zW",
+												"OTKNS4RdtmrH"
+											],
+											"title": "Observer_example1.png",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/png",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Observer_example1.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Observer_example1.png"
+										},
+										{
+											"isClone": false,
+											"noteId": "6PqpLfQ6n0b5",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"Ovu2HnRCX0zW",
+												"6PqpLfQ6n0b5"
+											],
+											"title": "Observer Pattern",
+											"notePosition": 30,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Observer Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "eKCDsDofb1up",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"eKCDsDofb1up"
+									],
+									"title": "Interpreter Pattern",
+									"notePosition": 40,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Interpreter Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "IQQ3qHvLzfXB",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"eKCDsDofb1up",
+												"IQQ3qHvLzfXB"
+											],
+											"title": "Screenshot 2024-12-23 031423.png",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 031423.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 031423.p"
+										},
+										{
+											"isClone": false,
+											"noteId": "47FiGVPlhuDk",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"eKCDsDofb1up",
+												"47FiGVPlhuDk"
+											],
+											"title": "Interpreter Pattern",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Interpreter Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "v1lcjnMvQANR",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"v1lcjnMvQANR"
+									],
+									"title": "Iterator Pattern",
+									"notePosition": 50,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Iterator Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "xk3GtjxdqRYj",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"v1lcjnMvQANR",
+												"xk3GtjxdqRYj"
+											],
+											"title": "Screenshot 2024-12-23 042434.png",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 042434.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 042434.p"
+										},
+										{
+											"isClone": false,
+											"noteId": "GqBMLt8e3gZF",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"v1lcjnMvQANR",
+												"GqBMLt8e3gZF"
+											],
+											"title": "Iterator Pattern",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Iterator Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "PjKTQEbuZScN",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"PjKTQEbuZScN"
+									],
+									"title": "Mediator Pattern",
+									"notePosition": 60,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Mediator Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "mwHlxmRM5WMV",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"PjKTQEbuZScN",
+												"mwHlxmRM5WMV"
+											],
+											"title": "Mediator Pattern",
+											"notePosition": 30,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Mediator Pattern.html"
+										},
+										{
+											"isClone": false,
+											"noteId": "cq2o0Smh7JE6",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"PjKTQEbuZScN",
+												"cq2o0Smh7JE6"
+											],
+											"title": "Screenshot 2024-12-23 044239.png",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 044239.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 044239.p"
+										},
+										{
+											"isClone": false,
+											"noteId": "8BIAdkNMDBwk",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"PjKTQEbuZScN",
+												"8BIAdkNMDBwk"
+											],
+											"title": "Screenshot 2024-12-23 051025.png",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 051025.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 051025.p"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "wzHd2vWsAPVm",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"wzHd2vWsAPVm"
+									],
+									"title": "Memento Patten",
+									"notePosition": 70,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Memento Patten",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "CoNW7sKrCMHV",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"wzHd2vWsAPVm",
+												"CoNW7sKrCMHV"
+											],
+											"title": "Memento Patten",
+											"notePosition": 40,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Memento Patten.html"
+										},
+										{
+											"isClone": false,
+											"noteId": "Avh4OH8PbAua",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"wzHd2vWsAPVm",
+												"Avh4OH8PbAua"
+											],
+											"title": "Screenshot 2024-12-23 051719.png",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 051719.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 051719.p"
+										},
+										{
+											"isClone": false,
+											"noteId": "X1ObqYBUMY2C",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"wzHd2vWsAPVm",
+												"X1ObqYBUMY2C"
+											],
+											"title": "Screenshot 2024-12-23 051727.png",
+											"notePosition": 30,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 051727.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 051727.p"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "c6vrRQBLe3ia",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"c6vrRQBLe3ia"
+									],
+									"title": "State Pattern",
+									"notePosition": 80,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "State Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "lOAIhnglvzzo",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"c6vrRQBLe3ia",
+												"lOAIhnglvzzo"
+											],
+											"title": "State Pattern",
+											"notePosition": 40,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "State Pattern.html"
+										},
+										{
+											"isClone": false,
+											"noteId": "z02lfM0lNE1K",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"c6vrRQBLe3ia",
+												"z02lfM0lNE1K"
+											],
+											"title": "Screenshot 2024-12-23 053046.png",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 053046.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 053046.p"
+										},
+										{
+											"isClone": false,
+											"noteId": "dJnnPFGTVyDO",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"c6vrRQBLe3ia",
+												"dJnnPFGTVyDO"
+											],
+											"title": "Screenshot 2024-12-23 053224.png",
+											"notePosition": 30,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 053224.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 053224.p"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "OVHAAl3LZNOQ",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"OVHAAl3LZNOQ"
+									],
+									"title": "Strategy Pattern",
+									"notePosition": 90,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Strategy Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "7k8vrEZkfSFK",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"OVHAAl3LZNOQ",
+												"7k8vrEZkfSFK"
+											],
+											"title": "Strategy Pattern",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Strategy Pattern.html"
+										},
+										{
+											"isClone": false,
+											"noteId": "uX1Ng2QcO5UW",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"OVHAAl3LZNOQ",
+												"uX1Ng2QcO5UW"
+											],
+											"title": "Screenshot 2024-12-23 055526.png",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 055526.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 055526.p"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "3GHPZHO89xGw",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"3GHPZHO89xGw"
+									],
+									"title": "Template Method Pattern",
+									"notePosition": 100,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Template Method Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "CqsAOllgzvFP",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"3GHPZHO89xGw",
+												"CqsAOllgzvFP"
+											],
+											"title": "Template Method Pattern",
+											"notePosition": 40,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Template Method Pattern.html"
+										},
+										{
+											"isClone": false,
+											"noteId": "uXQCussW48tO",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"3GHPZHO89xGw",
+												"uXQCussW48tO"
+											],
+											"title": "Screenshot 2024-12-23 060547.png",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 060547.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 060547.p"
+										},
+										{
+											"isClone": false,
+											"noteId": "dO6w1Xw21aSz",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"3GHPZHO89xGw",
+												"dO6w1Xw21aSz"
+											],
+											"title": "Screenshot 2024-12-23 060601.png",
+											"notePosition": 30,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 060601.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 060601.p"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "wfBrGHgebpAO",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"SsczO7hGYoU9",
+										"wfBrGHgebpAO"
+									],
+									"title": "Visitor Pattern",
+									"notePosition": 110,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Visitor Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "mQozO18GzMcF",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"wfBrGHgebpAO",
+												"mQozO18GzMcF"
+											],
+											"title": "Visitor Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Visitor Pattern.html"
+										},
+										{
+											"isClone": false,
+											"noteId": "1qv7s93aItFX",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"wfBrGHgebpAO",
+												"1qv7s93aItFX"
+											],
+											"title": "Screenshot 2024-12-23 063118.png",
+											"notePosition": 20,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 063118.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 063118.p"
+										},
+										{
+											"isClone": false,
+											"noteId": "hwjZEjFGFWdm",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"SsczO7hGYoU9",
+												"wfBrGHgebpAO",
+												"hwjZEjFGFWdm"
+											],
+											"title": "Screenshot 2024-12-23 063126.png",
+											"notePosition": 30,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "image",
+											"mime": "image/jpg",
+											"attributes": [
+												{
+													"type": "label",
+													"name": "originalFileName",
+													"value": "Screenshot 2024-12-23 063126.png",
+													"isInheritable": false,
+													"position": 1000
+												}
+											],
+											"dataFileName": "Screenshot 2024-12-23 063126.p"
+										}
+									]
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "i6CtUa7Oamxu",
+							"notePath": [
+								"root",
+								"V9qkrgGpaidW",
+								"i6CtUa7Oamxu"
+							],
+							"title": "Creational Design Patterns",
+							"notePosition": 30,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Creational Design Patterns",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "YmcUJAoZW9qy",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"i6CtUa7Oamxu",
+										"YmcUJAoZW9qy"
+									],
+									"title": "Singleton Pattern",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Singleton Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "uC6GS7Sf4P5E",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"i6CtUa7Oamxu",
+												"YmcUJAoZW9qy",
+												"uC6GS7Sf4P5E"
+											],
+											"title": "Singleton Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Singleton Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "MuHM1Xc8CLMl",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"i6CtUa7Oamxu",
+										"MuHM1Xc8CLMl"
+									],
+									"title": "Factory Pattern",
+									"notePosition": 20,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Factory Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "jxCitUKyKAW3",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"i6CtUa7Oamxu",
+												"MuHM1Xc8CLMl",
+												"jxCitUKyKAW3"
+											],
+											"title": "Factory Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Factory Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "wqpEF7KGR61z",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"i6CtUa7Oamxu",
+										"wqpEF7KGR61z"
+									],
+									"title": "Abstract Factory Pattern",
+									"notePosition": 30,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Abstract Factory Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "Mt3paymsm6J4",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"i6CtUa7Oamxu",
+												"wqpEF7KGR61z",
+												"Mt3paymsm6J4"
+											],
+											"title": "Abstract Factory Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Abstract Factory Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "KA9PFSwhKxCi",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"i6CtUa7Oamxu",
+										"KA9PFSwhKxCi"
+									],
+									"title": "Builder Pattern",
+									"notePosition": 40,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Builder Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "fpQ1mvWKhore",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"i6CtUa7Oamxu",
+												"KA9PFSwhKxCi",
+												"fpQ1mvWKhore"
+											],
+											"title": "Builder Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Builder Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "bhN02HAv2miT",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"i6CtUa7Oamxu",
+										"bhN02HAv2miT"
+									],
+									"title": "Prototype Pattern",
+									"notePosition": 50,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Prototype Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "lmDQm1FeugwZ",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"i6CtUa7Oamxu",
+												"bhN02HAv2miT",
+												"lmDQm1FeugwZ"
+											],
+											"title": "Prototype Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Prototype Pattern.html"
+										}
+									]
+								}
+							]
+						},
+						{
+							"isClone": false,
+							"noteId": "xxhmoeTs0tgE",
+							"notePath": [
+								"root",
+								"V9qkrgGpaidW",
+								"xxhmoeTs0tgE"
+							],
+							"title": "Structural Design Patterns",
+							"notePosition": 40,
+							"prefix": null,
+							"isExpanded": false,
+							"type": "text",
+							"mime": "text/html",
+							"attributes": [],
+							"format": "html",
+							"dirFileName": "Structural Design Patterns",
+							"children": [
+								{
+									"isClone": false,
+									"noteId": "3yUi76QLfCJV",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"xxhmoeTs0tgE",
+										"3yUi76QLfCJV"
+									],
+									"title": "Adapter Pattern",
+									"notePosition": 10,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Adapter Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "gqISfvoShTbX",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"xxhmoeTs0tgE",
+												"3yUi76QLfCJV",
+												"gqISfvoShTbX"
+											],
+											"title": "Adapter Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Adapter Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "N8USfo5DVcjM",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"xxhmoeTs0tgE",
+										"N8USfo5DVcjM"
+									],
+									"title": "Bridge Pattern",
+									"notePosition": 20,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Bridge Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "QOGht96eNEsP",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"xxhmoeTs0tgE",
+												"N8USfo5DVcjM",
+												"QOGht96eNEsP"
+											],
+											"title": "Bridge Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Bridge Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "mstD3OqjbYCz",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"xxhmoeTs0tgE",
+										"mstD3OqjbYCz"
+									],
+									"title": "Composite Pattern",
+									"notePosition": 30,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Composite Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "6LvSSG2E6m8R",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"xxhmoeTs0tgE",
+												"mstD3OqjbYCz",
+												"6LvSSG2E6m8R"
+											],
+											"title": "Composite Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Composite Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "eAee3bLxJbMO",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"xxhmoeTs0tgE",
+										"eAee3bLxJbMO"
+									],
+									"title": "Decorator Pattern",
+									"notePosition": 40,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Decorator Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "u76nC848vLwJ",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"xxhmoeTs0tgE",
+												"eAee3bLxJbMO",
+												"u76nC848vLwJ"
+											],
+											"title": "Decorator Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Decorator Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "SUEvttm3wQqz",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"xxhmoeTs0tgE",
+										"SUEvttm3wQqz"
+									],
+									"title": "Facade Pattern",
+									"notePosition": 50,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Facade Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "Kbbvxh8VFsK7",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"xxhmoeTs0tgE",
+												"SUEvttm3wQqz",
+												"Kbbvxh8VFsK7"
+											],
+											"title": "Facade Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Facade Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "cj8yArsfykYn",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"xxhmoeTs0tgE",
+										"cj8yArsfykYn"
+									],
+									"title": "Flyweight Pattern",
+									"notePosition": 60,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Flyweight Pattern",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "XFTDT0UbzG3a",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"xxhmoeTs0tgE",
+												"cj8yArsfykYn",
+												"XFTDT0UbzG3a"
+											],
+											"title": "Flyweight Pattern",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Flyweight Pattern.html"
+										}
+									]
+								},
+								{
+									"isClone": false,
+									"noteId": "6tnBSCPz2NRU",
+									"notePath": [
+										"root",
+										"V9qkrgGpaidW",
+										"xxhmoeTs0tgE",
+										"6tnBSCPz2NRU"
+									],
+									"title": "Proxy",
+									"notePosition": 70,
+									"prefix": null,
+									"isExpanded": false,
+									"type": "text",
+									"mime": "text/html",
+									"attributes": [],
+									"format": "html",
+									"dirFileName": "Proxy",
+									"children": [
+										{
+											"isClone": false,
+											"noteId": "kvIBzFmGIh0u",
+											"notePath": [
+												"root",
+												"V9qkrgGpaidW",
+												"xxhmoeTs0tgE",
+												"6tnBSCPz2NRU",
+												"kvIBzFmGIh0u"
+											],
+											"title": "Proxy",
+											"notePosition": 10,
+											"prefix": null,
+											"isExpanded": false,
+											"type": "text",
+											"mime": "text/html",
+											"attributes": [],
+											"format": "html",
+											"dataFileName": "Proxy.html"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"noImport": true,
+			"dataFileName": "navigation.html"
+		},
+		{
+			"noImport": true,
+			"dataFileName": "index.html"
+		},
+		{
+			"noImport": true,
+			"dataFileName": "style.css"
+		}
+	]
+}

@@ -1,0 +1,113 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>ChainOfResponsibility</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>ChainOfResponsibility</h1>
+
+      <div class="ck-content">
+        <p>&nbsp;</p>
+        <p>The <strong>Chain of Responsibility</strong> is a behavioral design pattern
+          that allows multiple objects to process a request without coupling the
+          sender of the request to its receiver. In this pattern, a request passes
+          through a chain of potential handlers, where each handler decides whether
+          to process the request or pass it to the next handler in the chain.</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Decoupling</strong>: The sender and receiver are decoupled.</li>
+          <li><strong>Flexibility</strong>: The chain can be dynamically modified to
+            include or exclude handlers.</li>
+          <li><strong>Scalability</strong>: It supports adding new handlers without
+            altering existing code.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Support Ticket System</strong>
+        </p>
+        <p>Imagine a technical support system where customer queries need to be handled
+          by different levels of support staff:</p>
+        <ol>
+          <li><strong>Level 1 Support</strong>: Handles basic inquiries (e.g., password
+            reset).</li>
+          <li><strong>Level 2 Support</strong>: Handles intermediate issues (e.g., application
+            crashes).</li>
+          <li><strong>Level 3 Support</strong>: Handles complex technical problems (e.g.,
+            server issues).</li>
+        </ol>
+        <h4>Implementation Flow:</h4>
+        <ul>
+          <li>A customer submits a ticket with a problem.</li>
+          <li>The request is first sent to <strong>Level 1 Support</strong>.
+            <ul>
+              <li>If <strong>Level 1 Support</strong> can resolve it, the process stops.</li>
+              <li>Otherwise, the ticket is forwarded to <strong>Level 2 Support</strong>.</li>
+            </ul>
+          </li>
+          <li>If <strong>Level 2 Support</strong> cannot resolve the issue, it escalates
+            the ticket to <strong>Level 3 Support</strong>.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>JavaScript Code Example :-</p>
+        <p><code>class SupportHandler {</code>
+          <br><code>&nbsp;constructor(nextHandler = null) {</code>
+          <br><code>&nbsp; &nbsp;this.nextHandler = nextHandler;</code>
+          <br><code>&nbsp;}</code>
+        </p>
+        <p><code>&nbsp;handleRequest(issue) {</code>
+          <br><code>&nbsp; &nbsp;if (this.nextHandler) {</code>
+          <br><code>&nbsp; &nbsp; &nbsp;return this.nextHandler.handleRequest(issue);</code>
+          <br><code>&nbsp; &nbsp;} else {</code>
+          <br><code>&nbsp; &nbsp; &nbsp;return "Issue unresolved!";</code>
+          <br><code>&nbsp; &nbsp;}</code>
+          <br><code>&nbsp;}</code>
+          <br><code>}</code>
+        </p>
+        <p><code>class Level1Support extends SupportHandler {</code>
+          <br><code>&nbsp;handleRequest(issue) {</code>
+          <br><code>&nbsp; &nbsp;if (issue.type === "basic") {</code>
+          <br><code>&nbsp; &nbsp; &nbsp;return "Level 1 Support: Resolved basic issue.";</code>
+          <br><code>&nbsp; &nbsp;}</code>
+          <br><code>&nbsp; &nbsp;return super.handleRequest(issue);</code>
+          <br><code>&nbsp;}</code>
+          <br><code>}</code>
+        </p>
+        <p><code>class Level2Support extends SupportHandler {</code>
+          <br><code>&nbsp;handleRequest(issue) {</code>
+          <br><code>&nbsp; &nbsp;if (issue.type === "intermediate") {</code>
+          <br><code>&nbsp; &nbsp; &nbsp;return "Level 2 Support: Resolved intermediate issue.";</code>
+          <br><code>&nbsp; &nbsp;}</code>
+          <br><code>&nbsp; &nbsp;return super.handleRequest(issue);</code>
+          <br><code>&nbsp;}</code>
+          <br><code>}</code>
+        </p>
+        <p><code>class Level3Support extends SupportHandler {</code>
+          <br><code>&nbsp;handleRequest(issue) {</code>
+          <br><code>&nbsp; &nbsp;if (issue.type === "complex") {</code>
+          <br><code>&nbsp; &nbsp; &nbsp;return "Level 3 Support: Resolved complex issue.";</code>
+          <br><code>&nbsp; &nbsp;}</code>
+          <br><code>&nbsp; &nbsp;return super.handleRequest(issue);</code>
+          <br><code>&nbsp;}</code>
+          <br><code>}</code>
+        </p>
+        <p><code>// Setting up the chain</code>
+          <br><code>const chain = new Level1Support(new Level2Support(new Level3Support()));</code>
+        </p>
+        <p><code>// Test cases</code>
+          <br><code>console.log(chain.handleRequest({ type: "basic" })); // Level 1 Support: Resolved basic issue.</code>
+          <br><code>console.log(chain.handleRequest({ type: "intermediate" })); // Level 2 Support: Resolved intermediate issue.</code>
+          <br><code>console.log(chain.handleRequest({ type: "complex" })); // Level 3 Support: Resolved complex issue.</code>
+          <br><code>console.log(chain.handleRequest({ type: "unknown" })); // Issue unresolved!</code>
+          <br>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

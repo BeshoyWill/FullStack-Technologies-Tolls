@@ -1,0 +1,273 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Command Pattern</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Command Pattern</h1>
+
+      <div class="ck-content">
+        <p>The <strong>Command Pattern</strong> is a behavioral design pattern used
+          to encapsulate requests or operations as objects. This allows you to parameterize
+          methods with requests, delay their execution, queue them, and support undoable
+          operations.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h3>When To Use:</h3>
+        <ol>
+          <li><strong>Encapsulating a request in an object</strong>
+          </li>
+          <li><strong>Decouple sender from processor or receiver</strong>
+          </li>
+          <li><strong>Undo/Redo operation</strong>
+          </li>
+          <li><strong>When we have too much functionality within a class</strong>
+          </li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Encapsulation</strong>: Commands encapsulate all details of the
+            request.</li>
+          <li><strong>Decoupling</strong>: The invoker (who triggers the command) is
+            decoupled from the receiver (who performs the action).</li>
+          <li><strong>Undo/Redo</strong>: Supports storing commands for undoable actions.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Remote Control for a Smart Home</strong>
+        </p>
+        <p>Imagine a smart home system with a remote control that can control multiple
+          devices (lights, fans, air conditioners, etc.). Each button on the remote
+          is programmed to execute a specific command.</p>
+        <p>&nbsp;</p>
+        <h4>Components:</h4>
+        <ol>
+          <li><strong>Command</strong>: Represents an action (e.g., turning on/off a
+            light).</li>
+          <li><strong>Invoker</strong>: The remote control that triggers the commands.</li>
+          <li><strong>Receiver</strong>: The actual device (e.g., the light or fan)
+            that performs the action.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Implementation Flow:</h3>
+        <ul>
+          <li>The user presses a button on the remote (Invoker).</li>
+          <li>The remote triggers the assigned Command.</li>
+          <li>The Command executes the corresponding action on the device (Receiver).</li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>Pitfalls :</h3>
+        <ul>
+          <li>Usually used in combination with other patterns.</li>
+          <li>High number of classes and objects to achieve the required goal.</li>
+          <li>Each command is an object and this goes against Object Oriented Design.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h3>Angular Example Code:</h3>
+        <h4>1. <strong>Command Interface</strong>:</h4>
+        <p>Define a common interface for all commands.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export interface Command {
+ &nbsp;execute(): void;
+ &nbsp;undo(): void; // Optional for undo functionality
+}</code>
+        </p>
+        <h4>2. <strong>Receiver (Devices)</strong>:</h4>
+        <p>The classes that perform the actual actions.</p>
+        <p>&nbsp;</p>
+        <p><code>export class Light {
+ &nbsp;on(): void {
+ &nbsp; &nbsp;console.log('The light is ON');
+ &nbsp;}
+
+ &nbsp;off(): void {
+ &nbsp; &nbsp;console.log('The light is OFF');
+ &nbsp;}
+}
+
+export class Fan {
+ &nbsp;start(): void {
+ &nbsp; &nbsp;console.log('The fan is spinning');
+ &nbsp;}
+
+ &nbsp;stop(): void {
+ &nbsp; &nbsp;console.log('The fan is stopped');
+ &nbsp;}
+}
+</code>
+        </p>
+        <hr>
+        <h4>3. <strong>Concrete Commands</strong>:</h4>
+        <p>Encapsulate the operations for each device.</p>
+        <p>&nbsp;</p>
+        <p><code>import { Command } from './command.interface';
+
+export class LightOnCommand implements Command {
+ &nbsp;constructor(private light: Light) {}
+
+ &nbsp;execute(): void {
+ &nbsp; &nbsp;this.light.on();
+ &nbsp;}
+
+ &nbsp;undo(): void {
+ &nbsp; &nbsp;this.light.off();
+ &nbsp;}
+}
+
+export class LightOffCommand implements Command {
+ &nbsp;constructor(private light: Light) {}
+
+ &nbsp;execute(): void {
+ &nbsp; &nbsp;this.light.off();
+ &nbsp;}
+
+ &nbsp;undo(): void {
+ &nbsp; &nbsp;this.light.on();
+ &nbsp;}
+}
+
+export class FanStartCommand implements Command {
+ &nbsp;constructor(private fan: Fan) {}
+
+ &nbsp;execute(): void {
+ &nbsp; &nbsp;this.fan.start();
+ &nbsp;}
+
+ &nbsp;undo(): void {
+ &nbsp; &nbsp;this.fan.stop();
+ &nbsp;}
+}
+
+export class FanStopCommand implements Command {
+ &nbsp;constructor(private fan: Fan) {}
+
+ &nbsp;execute(): void {
+ &nbsp; &nbsp;this.fan.stop();
+ &nbsp;}
+
+ &nbsp;undo(): void {
+ &nbsp; &nbsp;this.fan.start();
+ &nbsp;}
+}
+</code>
+        </p>
+        <hr>
+        <h4>4. <strong>Invoker (Remote Control)</strong>:</h4>
+        <p>Holds and triggers commands.</p>
+        <p>&nbsp;</p>
+        <p><code>export class RemoteControl {
+ &nbsp;private command: Command;
+
+ &nbsp;setCommand(command: Command): void {
+ &nbsp; &nbsp;this.command = command;
+ &nbsp;}
+
+ &nbsp;pressButton(): void {
+ &nbsp; &nbsp;if (this.command) {
+ &nbsp; &nbsp; &nbsp;this.command.execute();
+ &nbsp; &nbsp;}
+ &nbsp;}
+
+ &nbsp;pressUndo(): void {
+ &nbsp; &nbsp;if (this.command) {
+ &nbsp; &nbsp; &nbsp;this.command.undo();
+ &nbsp; &nbsp;}
+ &nbsp;}
+}
+</code>
+        </p>
+        <hr>
+        <h4>5. <strong>AppComponent (Using the Pattern):</strong></h4>
+        <p>Simulate using the remote control in an Angular app.</p>
+        <p>&nbsp;</p>
+        <p><code>import { Component } from '@angular/core';
+import { Light, Fan } from './devices';
+import { LightOnCommand, LightOffCommand, FanStartCommand, FanStopCommand } from './commands';
+import { RemoteControl } from './remote-control';
+
+@Component({
+ &nbsp;selector: 'app-root',
+ &nbsp;template: `
+ &nbsp; &nbsp;&lt;button (click)="turnOnLight()"&gt;Turn On Light&lt;/button&gt;
+ &nbsp; &nbsp;&lt;button (click)="turnOffLight()"&gt;Turn Off Light&lt;/button&gt;
+ &nbsp; &nbsp;&lt;button (click)="startFan()"&gt;Start Fan&lt;/button&gt;
+ &nbsp; &nbsp;&lt;button (click)="stopFan()"&gt;Stop Fan&lt;/button&gt;
+ &nbsp; &nbsp;&lt;button (click)="undoAction()"&gt;Undo Last Action&lt;/button&gt;
+ &nbsp;`,
+})
+export class AppComponent {
+ &nbsp;private remote = new RemoteControl();
+ &nbsp;private light = new Light();
+ &nbsp;private fan = new Fan();
+
+ &nbsp;turnOnLight(): void {
+ &nbsp; &nbsp;const command = new LightOnCommand(this.light);
+ &nbsp; &nbsp;this.remote.setCommand(command);
+ &nbsp; &nbsp;this.remote.pressButton();
+ &nbsp;}
+
+ &nbsp;turnOffLight(): void {
+ &nbsp; &nbsp;const command = new LightOffCommand(this.light);
+ &nbsp; &nbsp;this.remote.setCommand(command);
+ &nbsp; &nbsp;this.remote.pressButton();
+ &nbsp;}
+
+ &nbsp;startFan(): void {
+ &nbsp; &nbsp;const command = new FanStartCommand(this.fan);
+ &nbsp; &nbsp;this.remote.setCommand(command);
+ &nbsp; &nbsp;this.remote.pressButton();
+ &nbsp;}
+
+ &nbsp;stopFan(): void {
+ &nbsp; &nbsp;const command = new FanStopCommand(this.fan);
+ &nbsp; &nbsp;this.remote.setCommand(command);
+ &nbsp; &nbsp;this.remote.pressButton();
+ &nbsp;}
+
+ &nbsp;undoAction(): void {
+ &nbsp; &nbsp;this.remote.pressUndo();
+ &nbsp;}
+}
+</code>
+        </p>
+        <hr>
+        <p>&nbsp;</p>
+        <h3>Explanation:</h3>
+        <p><strong>Command Encapsulation</strong>:</p>
+        <ul>
+          <li>Each command encapsulates the action (e.g., <code>LightOnCommand</code> turns
+            the light on).</li>
+        </ul>
+        <p><strong>Invoker Role</strong>:</p>
+        <ul>
+          <li>The remote control (Invoker) triggers commands without knowing the details
+            of the device.</li>
+        </ul>
+        <p><strong>Undo Support</strong>:</p>
+        <ul>
+          <li>Undo functionality is implemented by reversing the command's action.</li>
+        </ul>
+        <p><strong>Scalability</strong>:</p>
+        <ul>
+          <li>New devices or commands can be added without changing existing code.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <hr>
+        <p>The <strong>Command Pattern</strong> is ideal for scenarios like home automation,
+          text editors (undo/redo actions), or transaction systems. Would you like
+          more clarification or a different example?</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,146 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Angular (Best Structured Project)</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Angular (Best Structured Project)</h1>
+
+      <div class="ck-content">
+        <p>Creating a well-structured Angular :-</p>
+        <p>&nbsp;</p>
+        <p>Creating a well-structured Angular project is crucial for scalability,
+          maintainability, and ease of collaboration. Here are some best practices
+          for organizing your Angular project:</p>
+        <h3>1. <strong>Core Project Structure</strong></h3>
+        <p>Organize your project files in a way that reflects their purpose. The
+          basic structure should look like this:</p>
+        <p>/src
+          <br>&nbsp;/app
+          <br>&nbsp; &nbsp;/core
+          <br>&nbsp; &nbsp; &nbsp;/guards
+          <br>&nbsp; &nbsp; &nbsp;/interceptors
+          <br>&nbsp; &nbsp; &nbsp;/services
+          <br>&nbsp; &nbsp;/shared
+          <br>&nbsp; &nbsp; &nbsp;/components
+          <br>&nbsp; &nbsp; &nbsp;/directives
+          <br>&nbsp; &nbsp; &nbsp;/pipes
+          <br>&nbsp; &nbsp; &nbsp;/models
+          <br>&nbsp; &nbsp;/features
+          <br>&nbsp; &nbsp; &nbsp;/feature1
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/components
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/services
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/models
+          <br>&nbsp; &nbsp; &nbsp;/feature2
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/components
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/services
+          <br>&nbsp; &nbsp; &nbsp; &nbsp;/models
+          <br>&nbsp;/assets
+          <br>&nbsp;/environments
+          <br>&nbsp;index.html
+          <br>&nbsp;main.ts
+          <br>&nbsp;styles.scss</p>
+        <p>&nbsp;</p>
+        <h3>2. <strong>Core Module</strong></h3>
+        <ul>
+          <li>The <code>core</code> module should contain services, guards, and interceptors
+            that are used across the entire application.</li>
+          <li>Import this module once in the root <code>AppModule</code> and prevent importing
+            it elsewhere.</li>
+        </ul>
+        <h3>3. <strong>Shared Module</strong></h3>
+        <ul>
+          <li>The <code>shared</code> module should contain reusable components, directives,
+            and pipes that will be used across multiple features.</li>
+          <li>Import this module wherever needed.</li>
+        </ul>
+        <h3>4. <strong>Feature Modules</strong></h3>
+        <ul>
+          <li>Divide your application into multiple feature modules. Each feature module
+            should encapsulate a specific part of your application (e.g., <code>user</code>, <code>admin</code>, <code>dashboard</code>).</li>
+          <li>Feature modules should have their own components, services, and routing.</li>
+        </ul>
+        <h3>5. <strong>Keep Components Small and Focused</strong></h3>
+        <ul>
+          <li>Each component should do one thing and do it well.</li>
+          <li>Avoid creating massive components; split them into smaller components
+            where appropriate.</li>
+        </ul>
+        <h3>6. <strong>Use a Consistent Naming Convention</strong></h3>
+        <ul>
+          <li>Use a consistent naming convention across the project. Common conventions
+            include:
+            <ul>
+              <li>Files: <code>feature-name.component.ts</code>, <code>feature-name.service.ts</code>, <code>feature-name.module.ts</code>.</li>
+              <li>Classes: <code>FeatureNameComponent</code>, <code>FeatureNameService</code>, <code>FeatureNameModule</code>.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>7. <strong>Follow Angular Coding Standards</strong></h3>
+        <ul>
+          <li>Adhere to Angular's style guide:
+            <ul>
+              <li>Use <code>@Input</code> and <code>@Output</code> decorators for component
+                communication.</li>
+              <li>Use TypeScript types and interfaces for type safety.</li>
+              <li>Keep the component logic in the component class and limit the template
+                to simple logic.</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>8. <strong>Use Environment-Specific Files</strong></h3>
+        <ul>
+          <li>Use the <code>environments</code> folder to manage environment-specific
+            settings (<code>environment.ts</code> for development, <code>environment.prod.ts</code> for
+            production).</li>
+        </ul>
+        <h3>9. <strong>Lazy Load Modules</strong></h3>
+        <ul>
+          <li>Lazy load feature modules to improve the initial load time of the application.</li>
+          <li>Use Angular's built-in lazy loading via route configuration.</li>
+        </ul>
+        <h3>10. <strong>Use State Management for Complex Applications</strong></h3>
+        <ul>
+          <li>Consider using state management libraries (e.g., NgRx, Akita) if your
+            application has complex state management requirements.</li>
+        </ul>
+        <h3>11. <strong>Keep Your Code DRY</strong></h3>
+        <ul>
+          <li>Don’t Repeat Yourself (DRY): extract duplicate code into services, directives,
+            or shared components.</li>
+        </ul>
+        <h3>12. <strong>Organize Assets and Styles</strong></h3>
+        <ul>
+          <li>Keep all global styles in <code>styles.scss</code> or a <code>global</code> folder
+            under <code>src/styles</code>.</li>
+          <li>Organize images, fonts, and other static assets in the <code>assets</code> directory.</li>
+        </ul>
+        <h3>13. <strong>Proper Use of Angular CLI</strong></h3>
+        <ul>
+          <li>Use Angular CLI commands to generate components, services, modules, etc.,
+            to maintain consistency in file and folder naming.</li>
+        </ul>
+        <h3>14. <strong>Unit Testing and E2E Testing</strong></h3>
+        <ul>
+          <li>Write unit tests for components, services, and other logic using tools
+            like Jasmine and Karma.</li>
+          <li>Use end-to-end (E2E) testing frameworks like Protractor or Cypress for
+            integration tests.</li>
+        </ul>
+        <h3>15. <strong>Documentation and Readability</strong></h3>
+        <ul>
+          <li>Use comments judiciously to explain complex logic or decisions.</li>
+          <li>Ensure all team members follow the agreed coding standards and conventions.
+            <br>&nbsp;</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

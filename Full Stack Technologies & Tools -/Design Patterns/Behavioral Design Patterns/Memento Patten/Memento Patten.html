@@ -1,0 +1,189 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Memento Patten</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Memento Patten</h1>
+
+      <div class="ck-content">
+        <p>The <strong>Memento Pattern</strong> is a behavioral design pattern used
+          to capture and restore the state of an object without violating its encapsulation.
+          It provides a way to save an object's state at a particular point in time
+          and restore it later, allowing undo or rollback functionality.</p>
+        <p>&nbsp;</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Encapsulation</strong>: The object's state is stored without exposing
+            its internal details.</li>
+          <li><strong>State Restoration</strong>: Enables undo/redo operations by reverting
+            to previous states.</li>
+          <li><strong>Separation of Concerns</strong>: The originator, memento, and
+            caretaker have distinct responsibilities.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Text Editor with Undo/Redo Functionality</strong>
+        </p>
+        <p>Imagine a text editor where users can type text and undo or redo their
+          changes. The editor's state (e.g., the typed text) needs to be saved at
+          different points and restored when required.</p>
+        <p>&nbsp;</p>
+        <h3>Implementation in Angular:</h3>
+        <h4>1. <strong>Memento Class</strong>:</h4>
+        <p>Stores the state of the originator.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export class Memento {
+ &nbsp;constructor(private state: string) {}
+
+ &nbsp;getState(): string {
+ &nbsp; &nbsp;return this.state;
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>2. <strong>Originator Class</strong>:</h4>
+        <p>Creates and restores states using the memento.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export class TextEditor {
+ &nbsp;private state: string = '';
+
+ &nbsp;setState(state: string): void {
+ &nbsp; &nbsp;this.state = state;
+ &nbsp;}
+
+ &nbsp;getState(): string {
+ &nbsp; &nbsp;return this.state;
+ &nbsp;}
+
+ &nbsp;saveState(): Memento {
+ &nbsp; &nbsp;return new Memento(this.state);
+ &nbsp;}
+
+ &nbsp;restoreState(memento: Memento): void {
+ &nbsp; &nbsp;this.state = memento.getState();
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>3. <strong>Caretaker Class</strong>:</h4>
+        <p>Manages mementos to save and retrieve states.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export class Caretaker {
+ &nbsp;private mementos: Memento[] = [];
+
+ &nbsp;addMemento(memento: Memento): void {
+ &nbsp; &nbsp;this.mementos.push(memento);
+ &nbsp;}
+
+ &nbsp;getMemento(index: number): Memento | null {
+ &nbsp; &nbsp;return this.mementos[index] || null;
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>4. <strong>AppComponent</strong>:</h4>
+        <p>Implements the memento pattern in an Angular component.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { Component } from '@angular/core';
+import { TextEditor } from './text-editor';
+import { Caretaker } from './caretaker';
+
+@Component({
+ &nbsp;selector: 'app-root',
+ &nbsp;template: `
+ &nbsp; &nbsp;&lt;div&gt;
+ &nbsp; &nbsp; &nbsp;&lt;h3&gt;Text Editor&lt;/h3&gt;
+ &nbsp; &nbsp; &nbsp;&lt;textarea [(ngModel)]="editorContent" rows="5" cols="30"&gt;&lt;/textarea&gt;
+ &nbsp; &nbsp; &nbsp;&lt;br /&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="save()"&gt;Save&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="undo()"&gt;Undo&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="redo()"&gt;Redo&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;p&gt;&lt;strong&gt;Current State:&lt;/strong&gt; {{ editor.getState() }}&lt;/p&gt;
+ &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp;`,
+})
+export class AppComponent {
+ &nbsp;editor = new TextEditor();
+ &nbsp;caretaker = new Caretaker();
+ &nbsp;editorContent: string = '';
+ &nbsp;currentStateIndex = -1;
+
+ &nbsp;save(): void {
+ &nbsp; &nbsp;this.editor.setState(this.editorContent);
+ &nbsp; &nbsp;const memento = this.editor.saveState();
+ &nbsp; &nbsp;this.caretaker.addMemento(memento);
+ &nbsp; &nbsp;this.currentStateIndex++;
+ &nbsp;}
+
+ &nbsp;undo(): void {
+ &nbsp; &nbsp;if (this.currentStateIndex &gt; 0) {
+ &nbsp; &nbsp; &nbsp;this.currentStateIndex--;
+ &nbsp; &nbsp; &nbsp;const memento = this.caretaker.getMemento(this.currentStateIndex);
+ &nbsp; &nbsp; &nbsp;if (memento) {
+ &nbsp; &nbsp; &nbsp; &nbsp;this.editor.restoreState(memento);
+ &nbsp; &nbsp; &nbsp; &nbsp;this.editorContent = this.editor.getState();
+ &nbsp; &nbsp; &nbsp;}
+ &nbsp; &nbsp;}
+ &nbsp;}
+
+ &nbsp;redo(): void {
+ &nbsp; &nbsp;if (this.currentStateIndex &lt; this.caretaker.getMementos().length - 1) {
+ &nbsp; &nbsp; &nbsp;this.currentStateIndex++;
+ &nbsp; &nbsp; &nbsp;const memento = this.caretaker.getMemento(this.currentStateIndex);
+ &nbsp; &nbsp; &nbsp;if (memento) {
+ &nbsp; &nbsp; &nbsp; &nbsp;this.editor.restoreState(memento);
+ &nbsp; &nbsp; &nbsp; &nbsp;this.editorContent = this.editor.getState();
+ &nbsp; &nbsp; &nbsp;}
+ &nbsp; &nbsp;}
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h3>Explanation:</h3>
+        <p><strong>Originator</strong>:</p>
+        <ul>
+          <li>The <code>TextEditor</code> stores and retrieves its state using mementos.</li>
+        </ul>
+        <p><strong>Memento</strong>:</p>
+        <ul>
+          <li>The <code>Memento</code> class encapsulates the editor's state.</li>
+        </ul>
+        <p><strong>Caretaker</strong>:</p>
+        <ul>
+          <li>The <code>Caretaker</code> manages saved mementos and facilitates undo/redo
+            operations.</li>
+        </ul>
+        <p><strong>Client Interaction</strong>:</p>
+        <ul>
+          <li>The <code>AppComponent</code> provides buttons for saving, undoing, and
+            redoing changes in the editor.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>Real-World Applications:</h3>
+        <ol>
+          <li><strong>Text Editors</strong>: Undo/redo functionality.</li>
+          <li><strong>Database Transactions</strong>: Saving snapshots of data for rollback.</li>
+          <li><strong>Game Development</strong>: Saving game states for checkpoints
+            or rewind features.</li>
+          <li><strong>Configuration Management</strong>: Restoring previous settings.</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+
+</html>

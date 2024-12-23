@@ -1,0 +1,81 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Session 03</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Session 03</h1>
+
+      <div class="ck-content">
+        <p style="margin-left:80px;"># 1) Fractions &amp; Discards</p>
+        <p style="margin-left:80px;">float X = 3.5f; &nbsp;//&nbsp;</p>
+        <p style="margin-left:80px;">double X = 3.5; // this is equal to double X =3.5d; &nbsp; // The default
+          value</p>
+        <p style="margin-left:80px;">decimal = 3.5m; &nbsp; //</p>
+        <p style="margin-left:80px;">// Discards :-&nbsp;</p>
+        <p style="margin-left:80px;">--→ help us to read number ===&gt; &nbsp; long number = 123_234_324 &nbsp;//
+          discard means using underscore (_) to make reading numbers easily and it
+          doesn't has any effects on our compiler&nbsp;</p>
+        <p style="margin-left:80px;">&nbsp;</p>
+        <p style="margin-left:80px;">// Fractions</p>
+        <p style="margin-left:80px;">int X = 3;</p>
+        <p style="margin-left:80px;">int Y = 4;</p>
+        <p style="margin-left:80px;">double result = (double) X / Y; &nbsp; // when we divide int over int
+          (int/int) doesn't work with fractions</p>
+        <p style="margin-left:80px;">--→ using casting to fix</p>
+        <p style="margin-left:80px;"># 2) Implicit Casting &amp; Explicit Casting</p>
+        <p style="margin-left:80px;">Implicit Casting :-</p>
+        <p style="margin-left:80px;">--→ Implicit casting happens automatically when a smaller type is assigned
+          to a larger type, and there is no risk of data los.</p>
+        <p style="margin-left:120px;">int x = 10;</p>
+        <p style="margin-left:120px;">long y = x;</p>
+        <p style="margin-left:120px;">Console.WriteLine(y);</p>
+        <p style="margin-left:80px;">Explicit Casting :-</p>
+        <p style="margin-left:80px;">--→ Explicit casting (manual casting) is needed when converting from a
+          larger type to a smaller type, or from an incompatible type. This can result
+          a data loss or errors.</p>
+        <p style="margin-left:120px;">long x = 12342134;</p>
+        <p style="margin-left:120px;">int y = (int)x</p>
+        <p style="margin-left:120px;">Console.WriteLine(y);</p>
+        <p style="margin-left:80px;"># 3) Convert</p>
+        <p style="margin-left:80px;">int age = Convert.ToInt32(Console.ReadLine());</p>
+        <p style="margin-left:80px;">decimal salary = Convert.ToInt32(Console.ReadLine());</p>
+        <p style="margin-left:80px;">--→ If the casting is not allowed ===&gt; It throws an exception because
+          the conversion is not allowed or the casting didn't work</p>
+        <p style="margin-left:80px;">&nbsp;</p>
+        <p style="margin-left:80px;">&nbsp;</p>
+        <p style="margin-left:80px;">Unary Operators [ ++, -- ] :-</p>
+        <p style="margin-left:80px;">int x = 10; &nbsp; ===&gt; The x called here one operand</p>
+        <p style="margin-left:80px;">// 1. ++ &nbsp; &nbsp;===&gt; Prefix [increment and Then print]</p>
+        <p
+        style="margin-left:80px;">Console.WriteLine(++x);</p>
+          <p style="margin-left:80px;">// 2. ++ ===&gt; Postfix [Print Then Increment]</p>
+          <p style="margin-left:80px;">Console.WriteLine(x++);</p>
+          <p style="margin-left:80px;">&nbsp;</p>
+          <p style="margin-left:80px;">Binary Operators | Arithmetic Operators [+, -, *, /, %]</p>
+          <p style="margin-left:80px;">Assignment Operators [=, +=, -=, *=, /=, %=]</p>
+          <p style="margin-left:80px;">Relational Operators [==, ≠, &lt;, &gt;, ≤, ≥]</p>
+          <p style="margin-left:80px;">Logical Operators [!, &amp;&amp;, ||]</p>
+          <p style="margin-left:80px;">Bitwise Operators [&amp;, |, ^, ~, &lt;&lt;, &gt;&gt;] &nbsp;(&gt;&gt;
+            shift right, &lt;&lt; shift left)</p>
+          <p style="margin-left:80px;">Ternary Operators [ : , ? ]</p>
+          <p style="margin-left:80px;">&nbsp;</p>
+          <p style="margin-left:80px;">String Format :-</p>
+          <p style="margin-left:80px;">string message = String.Format("Equation =&gt; {0} + {1} = {2}", x, y,
+            x + y);</p>
+          <p style="margin-left:80px;">Console.WriteLine(message);</p>
+          <p style="margin-left:80px;">&nbsp;</p>
+          <p style="margin-left:80px;">&nbsp;</p>
+          <p style="margin-left:80px;">&nbsp;</p>
+          <p style="margin-left:80px;">&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

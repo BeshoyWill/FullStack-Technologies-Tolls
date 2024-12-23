@@ -1,0 +1,181 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Template Method Pattern</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Template Method Pattern</h1>
+
+      <div class="ck-content">
+        <p>The <strong>Template Method Pattern</strong> is a behavioral design pattern
+          that defines the structure of an algorithm in a base class but allows its
+          subclasses to override specific steps of the algorithm without changing
+          its overall structure.</p>
+        <p>&nbsp;</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Algorithm Structure</strong>: The high-level algorithm is defined
+            in a template method in the base class.</li>
+          <li><strong>Customizable Steps</strong>: Subclasses can implement or override
+            specific steps of the algorithm.</li>
+          <li><strong>Reusability</strong>: Common logic is reused in the base class,
+            while variations are handled by subclasses.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Data Parsing System</strong>
+        </p>
+        <p>Consider an application that parses files of different formats (e.g.,
+          CSV, JSON, XML). The steps for parsing files are similar:</p>
+        <ol>
+          <li>Open the file.</li>
+          <li>Read the data.</li>
+          <li>Parse the data (format-specific logic).</li>
+          <li>Close the file.</li>
+        </ol>
+        <p>The parsing logic varies based on the file format, but the rest of the
+          steps remain the same.</p>
+        <p>&nbsp;</p>
+        <h3>Implementation in Angular:</h3>
+        <h4>1. <strong>Abstract Class</strong>:</h4>
+        <p>Defines the template method and default implementations of some steps.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export abstract class DataParser {
+ &nbsp;// Template Method
+ &nbsp;public parseFile(): void {
+ &nbsp; &nbsp;this.openFile();
+ &nbsp; &nbsp;this.readData();
+ &nbsp; &nbsp;this.parseData();
+ &nbsp; &nbsp;this.closeFile();
+ &nbsp;}
+
+ &nbsp;protected openFile(): void {
+ &nbsp; &nbsp;console.log('Opening file...');
+ &nbsp;}
+
+ &nbsp;protected readData(): void {
+ &nbsp; &nbsp;console.log('Reading data...');
+ &nbsp;}
+
+ &nbsp;// Abstract method for subclass implementation
+ &nbsp;protected abstract parseData(): void;
+
+ &nbsp;protected closeFile(): void {
+ &nbsp; &nbsp;console.log('Closing file...');
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>2. <strong>Concrete Subclasses</strong>:</h4>
+        <p>Provide specific implementations for parsing data.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { DataParser } from './data-parser';
+
+export class CSVParser extends DataParser {
+ &nbsp;protected parseData(): void {
+ &nbsp; &nbsp;console.log('Parsing CSV data...');
+ &nbsp;}
+}
+
+export class JSONParser extends DataParser {
+ &nbsp;protected parseData(): void {
+ &nbsp; &nbsp;console.log('Parsing JSON data...');
+ &nbsp;}
+}
+
+export class XMLParser extends DataParser {
+ &nbsp;protected parseData(): void {
+ &nbsp; &nbsp;console.log('Parsing XML data...');
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>3. <strong>AppComponent</strong>:</h4>
+        <p>Demonstrates using the template method.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { Component } from '@angular/core';
+import { CSVParser } from './csv-parser';
+import { JSONParser } from './json-parser';
+import { XMLParser } from './xml-parser';
+
+@Component({
+ &nbsp;selector: 'app-root',
+ &nbsp;template: `
+ &nbsp; &nbsp;&lt;div&gt;
+ &nbsp; &nbsp; &nbsp;&lt;h3&gt;Data Parsing System&lt;/h3&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="parseCSV()"&gt;Parse CSV&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="parseJSON()"&gt;Parse JSON&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="parseXML()"&gt;Parse XML&lt;/button&gt;
+ &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp;`,
+})
+export class AppComponent {
+ &nbsp;parseCSV(): void {
+ &nbsp; &nbsp;const parser = new CSVParser();
+ &nbsp; &nbsp;parser.parseFile();
+ &nbsp;}
+
+ &nbsp;parseJSON(): void {
+ &nbsp; &nbsp;const parser = new JSONParser();
+ &nbsp; &nbsp;parser.parseFile();
+ &nbsp;}
+
+ &nbsp;parseXML(): void {
+ &nbsp; &nbsp;const parser = new XMLParser();
+ &nbsp; &nbsp;parser.parseFile();
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h3>Explanation:</h3>
+        <p><strong>Template Method</strong>:</p>
+        <ul>
+          <li><code>parseFile</code> in the <code>DataParser</code> class defines the algorithm's
+            skeleton.</li>
+          <li>Subclasses cannot override this method but can customize specific steps.</li>
+        </ul>
+        <p><strong>Default Implementations</strong>:</p>
+        <ul>
+          <li>Methods like <code>openFile</code>, <code>readData</code>, and <code>closeFile</code> are
+            implemented in the base class to handle common logic.</li>
+        </ul>
+        <p><strong>Custom Steps</strong>:</p>
+        <ul>
+          <li>The <code>parseData</code> method is abstract and must be implemented by
+            subclasses.</li>
+        </ul>
+        <p><strong>Dynamic Behavior</strong>:</p>
+        <ul>
+          <li>Based on the subclass (<code>CSVParser</code>, <code>JSONParser</code>,
+            or <code>XMLParser</code>), the parsing logic varies while the overall structure
+            remains consistent.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>Real-World Applications:</h3>
+        <ol>
+          <li><strong>File Processing</strong>: Reading and processing files in different
+            formats.</li>
+          <li><strong>UI Frameworks</strong>: Defining workflows with customizable steps
+            for UI rendering.</li>
+          <li><strong>Game Development</strong>: Defining common game loops with specialized
+            behavior in subclasses.</li>
+          <li><strong>Testing Frameworks</strong>: Setting up, executing, and tearing
+            down tests with customizable test steps.</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+
+</html>

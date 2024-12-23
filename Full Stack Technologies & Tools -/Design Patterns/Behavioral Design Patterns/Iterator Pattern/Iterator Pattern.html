@@ -1,0 +1,184 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Iterator Pattern</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Iterator Pattern</h1>
+
+      <div class="ck-content">
+        <p>The <strong>Iterator Pattern</strong> is a behavioral design pattern that
+          provides a way to access elements of a collection sequentially without
+          exposing its underlying representation. It decouples the traversal logic
+          from the collection, making it easier to iterate through different types
+          of collections uniformly.</p>
+        <p>&nbsp;</p>
+        <h3>Key Features:</h3>
+        <ol>
+          <li><strong>Encapsulation</strong>: The iterator encapsulates the traversal
+            logic.</li>
+          <li><strong>Uniform Interface</strong>: Allows traversal of different collections
+            (e.g., arrays, lists) using a common interface.</li>
+          <li><strong>Separation of Concerns</strong>: Keeps the collection and iteration
+            logic separate.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Scenario:</h3>
+        <p><strong>Scenario</strong>: <strong>Product Catalog Navigation</strong>
+        </p>
+        <p>Imagine an e-commerce platform with multiple product categories stored
+          in different data structures (e.g., arrays, linked lists). You want to
+          allow users to browse through products sequentially without exposing how
+          they are stored internally.</p>
+        <h4>Components:</h4>
+        <ol>
+          <li><strong>Collection</strong>: Represents the product catalog (e.g., <code>Array</code> for
+            electronics, <code>LinkedList</code> for clothing).</li>
+          <li><strong>Iterator</strong>: Provides methods to traverse the collection
+            (e.g., <code>next()</code>, <code>hasNext()</code>).</li>
+          <li><strong>Client</strong>: Uses the iterator to navigate through the catalog
+            without knowing the storage details.</li>
+        </ol>
+        <p>&nbsp;</p>
+        <h3>Implementation in Angular:</h3>
+        <h4>1. <strong>Iterator Interface</strong>:</h4>
+        <p>Defines the standard interface for iterators.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export interface Iterator&lt;T&gt; {
+ &nbsp;hasNext(): boolean;
+ &nbsp;next(): T | null;
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>2. <strong>Collection Interface</strong>:</h4>
+        <p>Defines the interface for collections that support iterators.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export interface IterableCollection&lt;T&gt; {
+ &nbsp;createIterator(): Iterator&lt;T&gt;;
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>3. <strong>Concrete Iterator</strong>:</h4>
+        <p>Implements the <code>Iterator</code> interface for a specific collection.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export class ArrayIterator&lt;T&gt; implements Iterator&lt;T&gt; {
+ &nbsp;private position = 0;
+
+ &nbsp;constructor(private items: T[]) {}
+
+ &nbsp;hasNext(): boolean {
+ &nbsp; &nbsp;return this.position &lt; this.items.length;
+ &nbsp;}
+
+ &nbsp;next(): T | null {
+ &nbsp; &nbsp;if (this.hasNext()) {
+ &nbsp; &nbsp; &nbsp;return this.items[this.position++];
+ &nbsp; &nbsp;}
+ &nbsp; &nbsp;return null;
+ &nbsp;}
+}</code>
+        </p>
+        <p>&nbsp;</p>
+        <p>4. <strong>Concrete Collection</strong>:</p>
+        <p>Implements the <code>IterableCollection</code> interface.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>export class ProductCollection&lt;T&gt; implements IterableCollection&lt;T&gt; {
+ &nbsp;private products: T[] = [];
+
+ &nbsp;add(product: T): void {
+ &nbsp; &nbsp;this.products.push(product);
+ &nbsp;}
+
+ &nbsp;createIterator(): Iterator&lt;T&gt; {
+ &nbsp; &nbsp;return new ArrayIterator(this.products);
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h4>5. <strong>AppComponent</strong>:</h4>
+        <p>Use the iterator pattern in an Angular component.</p>
+        <p>typescript</p>
+        <p>Copy code</p>
+        <p><code>import { Component } from '@angular/core';
+import { ProductCollection } from './product-collection';
+import { Iterator } from './iterator';
+
+@Component({
+ &nbsp;selector: 'app-root',
+ &nbsp;template: `
+ &nbsp; &nbsp;&lt;div&gt;
+ &nbsp; &nbsp; &nbsp;&lt;h3&gt;Product List&lt;/h3&gt;
+ &nbsp; &nbsp; &nbsp;&lt;button (click)="showNextProduct()"&gt;Next Product&lt;/button&gt;
+ &nbsp; &nbsp; &nbsp;&lt;p *ngIf="currentProduct"&gt;Current Product: {{ currentProduct }}&lt;/p&gt;
+ &nbsp; &nbsp; &nbsp;&lt;p *ngIf="!iterator.hasNext() &amp;&amp; !currentProduct"&gt;No more products!&lt;/p&gt;
+ &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp;`,
+})
+export class AppComponent {
+ &nbsp;private iterator: Iterator&lt;string&gt;;
+ &nbsp;currentProduct: string | null = null;
+
+ &nbsp;constructor() {
+ &nbsp; &nbsp;const productCollection = new ProductCollection&lt;string&gt;();
+ &nbsp; &nbsp;productCollection.add('Laptop');
+ &nbsp; &nbsp;productCollection.add('Smartphone');
+ &nbsp; &nbsp;productCollection.add('Tablet');
+
+ &nbsp; &nbsp;this.iterator = productCollection.createIterator();
+ &nbsp;}
+
+ &nbsp;showNextProduct(): void {
+ &nbsp; &nbsp;this.currentProduct = this.iterator.next();
+ &nbsp;}
+}
+</code>
+        </p>
+        <p>&nbsp;</p>
+        <h3>Explanation:</h3>
+        <p><strong>Collection Encapsulation</strong>:</p>
+        <ul>
+          <li>The <code>ProductCollection</code> stores products internally, hiding the
+            implementation details.</li>
+        </ul>
+        <p><strong>Traversal Logic</strong>:</p>
+        <ul>
+          <li>The <code>ArrayIterator</code> encapsulates the logic to traverse the collection
+            sequentially.</li>
+        </ul>
+        <p><strong>Client Interaction</strong>:</p>
+        <ul>
+          <li>The <code>AppComponent</code> uses the iterator to access products without
+            knowing the collection's internal structure.</li>
+        </ul>
+        <p><strong>Extensibility</strong>:</p>
+        <ul>
+          <li>You can add new types of collections (e.g., linked lists) without changing
+            the client code.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <h3>Real-World Applications:</h3>
+        <ol>
+          <li><strong>UI Components</strong>: Navigating through items in dropdowns,
+            carousels, or paginated lists.</li>
+          <li><strong>File Systems</strong>: Iterating over files in a directory.</li>
+          <li><strong>Database Results</strong>: Traversing query results.</li>
+          <li><strong>Game Development</strong>: Iterating through game objects or entities.</li>
+        </ol>
+      </div>
+    </div>
+  </body>
+
+</html>

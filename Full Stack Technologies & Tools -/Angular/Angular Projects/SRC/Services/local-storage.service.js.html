@@ -1,0 +1,243 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>local-storage.service.js</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>local-storage.service.js</h1>
+
+      <div class="ck-content">
+        <p><span style="color:#00bff9;"><i>import</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#ffffff;">{</span><span style="color:#a7dbf7;"> </span><span style="color:#d6deeb;"><i>Injectable</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;"> </span>
+              <span
+              style="color:#00bff9;"><i>from</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#6bff81;">'</span>
+                <span
+                style="color:#bcf0c0;">@angular/core</span><span style="color:#6bff81;">'</span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#f7ecb5;"><i>@</i></span><span style="color:#87aff4;"><i>Injectable</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; providedIn: </span><span style="color:#6bff81;">'</span>
+          <span
+          style="color:#bcf0c0;">root</span><span style="color:#6bff81;">'</span><span style="color:#a7dbf7;">,</span>
+        </p>
+        <p><span style="color:#ffffff;">}</span><span style="color:#a7dbf7;">)</span>
+        </p>
+        <p><span style="color:#00bff9;"><i>export</i></span><span style="color:#a7dbf7;"> </span>
+          <span
+          style="color:#00bff9;"><i>class</i>
+            </span><span style="color:#a7dbf7;"> </span><span style="color:#d29ffc;">LocalStorageService</span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#a1bde6;"><i>constructor</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#ffffff;">{}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>setItem</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#d7dbe0;">key</span><span style="color:#00bff9;"><i>:</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#7fdbca;">string</span><span style="color:#a7dbf7;">, </span>
+              <span
+              style="color:#d7dbe0;">value</span><span style="color:#00bff9;"><i>:</i></span><span style="color:#a7dbf7;"> </span>
+                <span
+                style="color:#7fdbca;">any</span><span style="color:#a7dbf7;">)</span><span style="color:#00bff9;"><i>:</i></span>
+                  <span
+                  style="color:#a7dbf7;"></span><span style="color:#7fdbca;">void</span><span style="color:#a7dbf7;"> </span>
+                    <span
+                    style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#999999;"><i>// Check if window and localStorage are available</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>typeof</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#d6deeb;"><i>window</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>!==</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#6bff81;">'</span><span style="color:#bcf0c0;">undefined</span>
+                <span
+                style="color:#6bff81;">'</span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>&amp;&amp;</i></span>
+                  <span
+                  style="color:#a7dbf7;"></span><span style="color:#d6deeb;"><i>window</i></span><span style="color:#a7dbf7;">.</span>
+                    <span
+                    style="color:#7fdbca;"><i>localStorage</i>
+                      </span><span style="color:#a7dbf7;">) </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#d6deeb;"><i>window</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>localStorage</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#87aff4;"><i>setItem</i>
+              </span><span style="color:#a7dbf7;">(</span><span style="color:#d6deeb;"><i>key</i></span>
+              <span
+              style="color:#a7dbf7;">,</span><span style="color:#addb67;">JSON</span><span style="color:#a7dbf7;">.</span>
+                <span
+                style="color:#f7ecb5;">stringify</span><span style="color:#a7dbf7;">(</span><span style="color:#d6deeb;"><i>value</i></span>
+                  <span
+                  style="color:#a7dbf7;">));</span><span style="color:#999999;"><i>// Stringify value before storing</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>getItem</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#d7dbe0;">key</span><span style="color:#00bff9;"><i>:</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#7fdbca;">string</span><span style="color:#a7dbf7;">)</span>
+              <span
+              style="color:#00bff9;"><i>:</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#7fdbca;">any</span>
+                <span
+                style="color:#a7dbf7;"></span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#999999;"><i>// Check if window and localStorage are available</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>typeof</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#d6deeb;"><i>window</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>!==</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#6bff81;">'</span><span style="color:#bcf0c0;">undefined</span>
+                <span
+                style="color:#6bff81;">'</span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>&amp;&amp;</i></span>
+                  <span
+                  style="color:#a7dbf7;"></span><span style="color:#d6deeb;"><i>window</i></span><span style="color:#a7dbf7;">.</span>
+                    <span
+                    style="color:#7fdbca;"><i>localStorage</i>
+                      </span><span style="color:#a7dbf7;">) </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#a1bde6;"><i>const</i></span>
+          <span
+          style="color:#c792ea;"><i> </i>
+            </span><span style="color:#92b6f4;"><i>item</i></span><span style="color:#c792ea;"><i> </i></span>
+            <span
+            style="color:#00bff9;"><i>=</i>
+              </span><span style="color:#c792ea;"><i> </i></span><span style="color:#d6deeb;"><i>window</i></span>
+              <span
+              style="color:#c792ea;"><i>.</i>
+                </span><span style="color:#f7ecb5;"><i>localStorage</i></span><span style="color:#c792ea;"><i>.</i></span>
+                <span
+                style="color:#87aff4;"><i>getItem</i>
+                  </span><span style="color:#c792ea;"><i>(</i></span><span style="color:#d6deeb;"><i>key</i></span>
+                  <span
+                  style="color:#c792ea;"><i>)</i>
+                    </span><span style="color:#a7dbf7;">;</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>return</i></span>
+          <span
+          style="color:#a7dbf7;"></span><span style="color:#d6deeb;"><i>item</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#00bff9;"><i>?</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#addb67;">JSON</span>
+              <span
+              style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;">parse</span><span style="color:#a7dbf7;">(</span>
+                <span
+                style="color:#d6deeb;"><i>item</i>
+                  </span><span style="color:#a7dbf7;">) </span><span style="color:#00bff9;"><i>:</i></span>
+                  <span
+                  style="color:#a7dbf7;"></span><span style="color:#92b6f4;">null</span><span style="color:#a7dbf7;">; </span>
+                    <span
+                    style="color:#999999;"><i>// Parse JSON if the item exists</i>
+                      </span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>return</i></span>
+          <span
+          style="color:#a7dbf7;"></span><span style="color:#92b6f4;">null</span><span style="color:#a7dbf7;">; </span>
+            <span
+            style="color:#999999;"><i>// Return null if localStorage is not available</i>
+              </span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>removeItem</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#d7dbe0;">key</span><span style="color:#00bff9;"><i>:</i></span>
+            <span
+            style="color:#a7dbf7;"></span><span style="color:#7fdbca;">string</span><span style="color:#a7dbf7;">)</span>
+              <span
+              style="color:#00bff9;"><i>:</i>
+                </span><span style="color:#a7dbf7;"> </span><span style="color:#7fdbca;">void</span>
+                <span
+                style="color:#a7dbf7;"></span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#999999;"><i>// Check if window and localStorage are available</i></span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#00bff9;"><i>if</i></span>
+          <span
+          style="color:#a7dbf7;">(</span><span style="color:#00bff9;"><i>typeof</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#d6deeb;"><i>window</i>
+              </span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>!==</i></span>
+              <span
+              style="color:#a7dbf7;"></span><span style="color:#6bff81;">'</span><span style="color:#bcf0c0;">undefined</span>
+                <span
+                style="color:#6bff81;">'</span><span style="color:#a7dbf7;"> </span><span style="color:#00bff9;"><i>&amp;&amp;</i></span>
+                  <span
+                  style="color:#a7dbf7;"></span><span style="color:#d6deeb;"><i>window</i></span><span style="color:#a7dbf7;">.</span>
+                    <span
+                    style="color:#7fdbca;"><i>localStorage</i>
+                      </span><span style="color:#a7dbf7;">) </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color:#d6deeb;"><i>window</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#f7ecb5;"><i>localStorage</i></span><span style="color:#a7dbf7;">.</span>
+            <span
+            style="color:#87aff4;"><i>removeItem</i>
+              </span><span style="color:#a7dbf7;">(</span><span style="color:#d6deeb;"><i>key</i></span>
+              <span
+              style="color:#a7dbf7;">);</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#87aff4;"><i>clear</i></span>
+          <span
+          style="color:#a7dbf7;">()</span><span style="color:#00bff9;"><i>:</i></span><span style="color:#a7dbf7;"> </span>
+            <span
+            style="color:#7fdbca;">void</span><span style="color:#a7dbf7;"> </span><span style="color:#ffffff;">{</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; &nbsp;&nbsp;</span><span style="color:#d6deeb;"><i>localStorage</i></span>
+          <span
+          style="color:#a7dbf7;">.</span><span style="color:#87aff4;"><i>clear</i></span><span style="color:#a7dbf7;">();</span>
+        </p>
+        <p><span style="color:#a7dbf7;">&nbsp; </span><span style="color:#ffffff;">}</span>
+        </p>
+        <p><span style="color:#ffffff;">}</span>
+        </p>
+        <p>
+          <br>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>
